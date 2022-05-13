@@ -44,7 +44,7 @@ CREATE TABLE branch_seat_level
     `sl_type`        char(1)        NULL        COMMENT '좌석타입(좌석,스터디룸)'
 );
 
-ALTER TABLE branch_seat_level COMMENT '가맹점 좌석등급정보';
+ALTER TABLE branch_seat_level COMMENT '파트너 좌석등급정보';
 
 
 -- branch_member Table Create SQL
@@ -73,7 +73,7 @@ CREATE TABLE branch_member
     `mb_finger_no`        varchar(30)    NULL        COMMENT '지문코드'
 );
 
-ALTER TABLE branch_member COMMENT '가맹점 회원정보';
+ALTER TABLE branch_member COMMENT '파트너 회원정보';
 
 ALTER TABLE branch_member
     ADD CONSTRAINT FK_branch_member_mb_eh_member_eh_member_m_no FOREIGN KEY (mb_eh_member)
@@ -175,8 +175,8 @@ ALTER TABLE branch_cash_category COMMENT '현금출납 항목';
 CREATE TABLE eh_branch
 (
     `b_no`            int              NOT NULL    AUTO_INCREMENT COMMENT '일련번호',
-    `b_name`          varchar(100)     NOT NULL    DEFAULT '' COMMENT '가맹점명',
-    `b_type`          char(1)          NOT NULL    DEFAULT '1' COMMENT '가맹점형태',
+    `b_name`          varchar(100)     NOT NULL    DEFAULT '' COMMENT '파트너명',
+    `b_type`          char(1)          NOT NULL    DEFAULT '1' COMMENT '파트너형태',
     `b_img1`          varchar(50)      NOT NULL    DEFAULT '' COMMENT '이미지',
     `b_phone`         varchar(20)      NOT NULL    DEFAULT '' COMMENT '전화번호',
     `b_kiosk_type`    CHAR(1)          NULL        COMMENT '키오스크 E, L',
@@ -190,7 +190,7 @@ CREATE TABLE eh_branch
     `b_time_open`     time             NULL        COMMENT '영업개시시간',
     `b_time_close`    time             NULL        COMMENT '영업종료시간',
     `b_time_full`     char(1)          NOT NULL    DEFAULT 'N' COMMENT '24시간운영여부',
-    `b_contents`      text             NULL        COMMENT '가맹점소개',
+    `b_contents`      text             NULL        COMMENT '파트너소개',
     `b_login_count`   int              NULL        DEFAULT 0 COMMENT '로그인횟수',
     `b_created_at`    timestamp        NULL        COMMENT '등록일',
     `b_update_at`     timestamp        NULL        COMMENT '수정일',
@@ -201,12 +201,12 @@ CREATE TABLE eh_branch
     `b_bank_name`     varchar(20)      NULL        COMMENT '정산계좌은행',
     `b_bank_account`  varchar(20)      NULL        COMMENT '정산계좌번호',
     `b_bank_user`     varchar(20)      NULL        COMMENT '정산계좌예금주',
-    `b_id`            VARCHAR(45)      NULL        COMMENT '가맹점ID',
+    `b_id`            VARCHAR(45)      NULL        COMMENT '파트너ID',
     `b_server`        varchar(10)      NULL        COMMENT '서버',
     CONSTRAINT PK_eh_branch PRIMARY KEY (b_no)
 );
 
-ALTER TABLE eh_branch COMMENT '가맹점 정보';
+ALTER TABLE eh_branch COMMENT '파트너 정보';
 
 
 -- branch_seat_order Table Create SQL
@@ -233,15 +233,15 @@ CREATE TABLE branch_seat_order
     `o_refund`          char(1)         NULL        COMMENT '환불요청여부',
     `o_refund_reg_dt`   TIMESTAMP       NULL        COMMENT '환불요청일',
     `o_refund_price`    int(11)         NULL        COMMENT '환불지급액(사용자)',
-    `o_refund_money`    int(11)         NULL        COMMENT '환불수급액(가맹점)',
+    `o_refund_money`    int(11)         NULL        COMMENT '환불수급액(파트너)',
     `o_refund_memo`     varchar(255)    NULL        COMMENT '환불사유',
     `o_memo_admin`      varchar(255)    NULL        COMMENT '메모',
-    `o_memo_branch`     varchar(255)    NULL        COMMENT '가맹점메모',
+    `o_memo_branch`     varchar(255)    NULL        COMMENT '파트너메모',
     `o_eh_member`       int(11)         NULL        COMMENT '은하회원번호',
     CONSTRAINT PK_branch_seat_order PRIMARY KEY (o_no)
 );
 
-ALTER TABLE branch_seat_order COMMENT '가맹점 좌석구매정보';
+ALTER TABLE branch_seat_order COMMENT '파트너 좌석구매정보';
 
 ALTER TABLE branch_seat_order
     ADD CONSTRAINT FK_branch_seat_order_o_seat_branch_seat_seat_no FOREIGN KEY (o_seat)
@@ -289,7 +289,7 @@ CREATE TABLE branch_seat_price
     CONSTRAINT PK_branch_seat_price PRIMARY KEY (p_no)
 );
 
-ALTER TABLE branch_seat_price COMMENT '가맹점 좌석 요금정보';
+ALTER TABLE branch_seat_price COMMENT '파트너 좌석 요금정보';
 
 ALTER TABLE branch_seat_price
     ADD CONSTRAINT FK_branch_seat_price_p_seat_level_branch_seat_level_sl_no FOREIGN KEY (p_seat_level)
@@ -312,7 +312,7 @@ CREATE TABLE branch_seat_use
     CONSTRAINT PK_branch_seat_use PRIMARY KEY (su_no)
 );
 
-ALTER TABLE branch_seat_use COMMENT '가맹점 이용정보 - 검토중.... ( branch_member_input )';
+ALTER TABLE branch_seat_use COMMENT '파트너 이용정보 - 검토중.... ( branch_member_input )';
 
 ALTER TABLE branch_seat_use
     ADD CONSTRAINT FK_branch_seat_use_su_order_branch_seat_order_o_no FOREIGN KEY (su_order)
@@ -332,7 +332,7 @@ ALTER TABLE branch_seat_use
 CREATE TABLE eh_branch_favorite
 (
     `fv_no`          INT            NOT NULL    AUTO_INCREMENT COMMENT '일련번호',
-    `fv_branch`      VARCHAR(45)    NULL        COMMENT '가맹점번호',
+    `fv_branch`      VARCHAR(45)    NULL        COMMENT '파트너번호',
     `fv_member`      int            NULL        COMMENT '회원번호',
     `fv_created_dt`  TIMESTAMP      NULL        COMMENT '등록일',
     `fv_update_dt`   TIMESTAMP      NULL        COMMENT '수정일',
@@ -364,7 +364,7 @@ CREATE TABLE en_branch_view
     CONSTRAINT PK_en_branch_view PRIMARY KEY (v_no)
 );
 
-ALTER TABLE en_branch_view COMMENT '가맹점 조회 정보';
+ALTER TABLE en_branch_view COMMENT '파트너 조회 정보';
 
 ALTER TABLE en_branch_view
     ADD CONSTRAINT FK_en_branch_view_v_member_eh_member_m_no FOREIGN KEY (v_member)
@@ -430,7 +430,7 @@ CREATE TABLE eh_board
     CONSTRAINT PK_eh_board PRIMARY KEY (gno)
 );
 
-ALTER TABLE eh_board COMMENT '가맹점게시판';
+ALTER TABLE eh_board COMMENT '파트너게시판';
 
 ALTER TABLE eh_board
     ADD CONSTRAINT FK_eh_board_uno_eh_member_m_no FOREIGN KEY (uno)
@@ -460,7 +460,7 @@ ALTER TABLE eh_admin COMMENT '관리자 정보';
 CREATE TABLE brench_calculate
 (
     `cal_no`          INT            NOT NULL    AUTO_INCREMENT COMMENT '일련번호',
-    `cal_brach`       VARCHAR(45)    NULL        COMMENT '가맹점번호',
+    `cal_brach`       VARCHAR(45)    NULL        COMMENT '파트너번호',
     `cal_date`        VARCHAR(45)    NULL        COMMENT '날자',
     `cal_price`       VARCHAR(45)    NULL        COMMENT '입금금액',
     `cal_use_count`   INT            NULL        COMMENT '총사용건수',
@@ -471,7 +471,7 @@ CREATE TABLE brench_calculate
     CONSTRAINT PK_en_branch_calculate PRIMARY KEY (cal_no)
 );
 
-ALTER TABLE en_brench_calculate COMMENT '가맹점정산내역';
+ALTER TABLE en_brench_calculate COMMENT '파트너정산내역';
 
 ALTER TABLE en_brench_calculate
     ADD CONSTRAINT FK_en_brench_calculate_cal_brach_eh_branch_b_no FOREIGN KEY (cal_brach)
@@ -489,7 +489,7 @@ CREATE TABLE branch_highlight
     CONSTRAINT PK_branch_highlight PRIMARY KEY (ht_no)
 );
 
-ALTER TABLE branch_highlight COMMENT '가맹점 알림메세지';
+ALTER TABLE branch_highlight COMMENT '파트너 알림메세지';
 
 
 -- branch_iot_device Table Create SQL
@@ -503,7 +503,7 @@ CREATE TABLE branch_iot_device
     CONSTRAINT PK_branch_iot_device PRIMARY KEY (iot_no)
 );
 
-ALTER TABLE branch_iot_device COMMENT '가맹점 IOT 장비정보';
+ALTER TABLE branch_iot_device COMMENT '파트너 IOT 장비정보';
 
 
 -- branch_coupon_used Table Create SQL
@@ -531,7 +531,7 @@ CREATE TABLE brench_member_inout
     CONSTRAINT PK_branch_member_inout PRIMARY KEY (io_no)
 );
 
-ALTER TABLE brench_member_inout COMMENT '가맹점 회원 입출정보';
+ALTER TABLE brench_member_inout COMMENT '파트너 회원 입출정보';
 
 ALTER TABLE partner_member_inout
     ADD CONSTRAINT FK_branch_member_inout_io_member_branch_member_mb_no FOREIGN KEY (io_member)
@@ -590,7 +590,7 @@ ALTER TABLE eh_member_cash
 CREATE TABLE partner_review
 (
     `rv_no`          int(11)        NOT NULL    AUTO_INCREMENT COMMENT '구분항목일련번호',
-    `rv_branch`      int(11)        NOT NULL    DEFAULT 0 COMMENT '가맹점번호',
+    `rv_branch`      int(11)        NOT NULL    DEFAULT 0 COMMENT '파트너번호',
     `rv_member`      INT            NOT NULL    DEFAULT 0 COMMENT '사용자',
     `rv_member_ip`   varchar(20)    NOT NULL    DEFAULT '' COMMENT '사용자아이피',
     `rv_contents`    text           NULL        DEFAULT NULL COMMENT '내용',
@@ -706,10 +706,10 @@ CREATE TABLE branch_locker_order
     `lo_refund`         char(1)         NULL        COMMENT '환불요청여부',
     `lo_refund_reg_dt`  TIMESTAMP       NULL        COMMENT '환불요청일',
     `lo_refund_price`   int(11)         NULL        COMMENT '환불지급액(사용자)',
-    `lo_refund_money`   int(11)         NULL        COMMENT '환불수급액(가맹점)',
+    `lo_refund_money`   int(11)         NULL        COMMENT '환불수급액(파트너)',
     `lo_refund_memo`    varchar(255)    NULL        COMMENT '환불사유',
     `lo_memo_admin`     varchar(255)    NULL        COMMENT '메모',
-    `lo_memo_branch`    varchar(255)    NULL        COMMENT '가맹점메모'
+    `lo_memo_branch`    varchar(255)    NULL        COMMENT '파트너메모'
 );
 
 ALTER TABLE branch_locker_order
@@ -739,8 +739,8 @@ ALTER TABLE branch_laptop COMMENT '노트북';
 #33
 CREATE TABLE branch_setting
 (
-    `f_id`             INT              NOT NULL    AUTO_INCREMENT COMMENT '가맹점아이디',
-    `f_name`           VARCHAR(45)      NULL        COMMENT '가맹점이름',
+    `f_id`             INT              NOT NULL    AUTO_INCREMENT COMMENT '파트너아이디',
+    `f_name`           VARCHAR(45)      NULL        COMMENT '파트너이름',
     `f_discount`       decimal(5,3)     NULL        COMMENT '할인율',
     `f_aaa`            varchar(20)      NULL        COMMENT '통제기',
     `f_dok`            int              NULL        COMMENT 'dok',
@@ -752,7 +752,7 @@ CREATE TABLE branch_setting
     `f_work_stime`     TIME             NULL        COMMENT '영업게시시간',
     `f_work_etime`     TIME             NULL        COMMENT '영업종료시간',
     `f_work_fulltime`  CHAR(1)          NULL        COMMENT '24시간운영여부',
-    `f_intro`          TINYTEXT         NULL        COMMENT '가맹점소개',
+    `f_intro`          TINYTEXT         NULL        COMMENT '파트너소개',
     `f_dong`           VARCHAR(45)      NULL        COMMENT '동명',
      PRIMARY KEY (f_id)
 );

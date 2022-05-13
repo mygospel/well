@@ -268,7 +268,7 @@ DROP TABLE IF EXISTS `french_lockers`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `french_lockers` (
   `l_no` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '일련번호',
-  `l_partner` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '가맹점번호',
+  `l_partner` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '파트너번호',
   `l_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '사물함이름',
   `l_area` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '구역번호',
   `l_dvc_no` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '디바이스번호',
@@ -410,7 +410,7 @@ CREATE TABLE `french_product_orders` (
   `o_refund` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'N' COMMENT '환불여부',
   `o_refund_at` datetime NOT NULL COMMENT '환불요청일',
   `o_refund_price` datetime NOT NULL COMMENT '환불지급액(사용자)',
-  `o_refund_money` datetime NOT NULL COMMENT '환불수급액(가맹점)',
+  `o_refund_money` datetime NOT NULL COMMENT '환불수급액(파트너)',
   `o_refund_memo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '환불메모',
   `o_memo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '메모',
   `o_member_service` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '모바일회원',
@@ -563,7 +563,7 @@ DROP TABLE IF EXISTS `french_seat_levels`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `french_seat_levels` (
   `sl_no` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '일련번호',
-  `sl_partner` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '가맹점번호',
+  `sl_partner` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '파트너번호',
   `sl_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '구분명',
   `sl_type` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'S' COMMENT '타입',
   `sl_price_time` text COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '\'' COMMENT '시간금액정보',
@@ -598,7 +598,7 @@ DROP TABLE IF EXISTS `french_seats`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `french_seats` (
   `s_no` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '일련번호',
-  `s_partner` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '가맹점번호',
+  `s_partner` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '파트너번호',
   `s_room` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '룸번호',
   `s_level` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '좌석등급',
   `s_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '좌석명',

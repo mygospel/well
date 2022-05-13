@@ -43,10 +43,10 @@
 
                                     <div class="col-md-2 col-sm-3 col-xs-12 mt-1">
                                         <select class="single-select form-control-sm col-12" name="fd" id="fd">
-                                            <option value="p_name" <?php if( isset($fd) && $fd == "p_name" ) {?> selected<?}?>>제목+내용+작성자</option>
-                                            <option value="p_name" <?php if( isset($fd) && $fd == "p_name" ) {?> selected<?}?>>제목</option>
-                                            <option value="p_emp_name" <?php if( isset($fd) && $fd == "p_emp_name" ) {?> selected<?}?>>내용</option>
-                                            <option value="p_emp_name" <?php if( isset($fd) && $fd == "p_emp_name" ) {?> selected<?}?>>작성자</option>
+                                            <option value="" @if( isset($param['fd']) && $param['fd'] == "" ) selected @endif>제목+내용+작성자</option>
+                                            <option value="title" @if( isset($param['fd']) && $param['fd'] == "title" ) selected @endif>제목</option>
+                                            <option value="cont" @if( isset($param['fd']) && $param['fd'] == "cont" ) selected @endif>내용</option>
+                                            <option value="uname" @if( isset($param['fd']) && $param['fd'] == "uname" ) selected @endif>작성자</option>
                                         </select>
                                     </div>
                                     <div class="col-md-3 col-sm-5 col-xs-12 mt-1">
@@ -128,7 +128,7 @@
                         <input type="hidden" name="no" id="no" value="">
                         <div class="col-xs-12 mt-3">
                             <input type="hidden" name="review_partner" id="review_partner" value="">
-                            <input name="partner_name" id="partner_name" style="ime-mode:disabled;" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="클릭하여 가맹점검색" aria-label=".form-control-sm example" data-bs-toggle="modal" data-bs-target="#partnerSearchModal" search_mode="review">
+                            <input name="partner_name" id="partner_name" style="ime-mode:disabled;" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="클릭하여 파트너검색" aria-label=".form-control-sm example" data-bs-toggle="modal" data-bs-target="#partnerSearchModal" search_mode="review">
                         </div>
 
                         <div class="startRadio">

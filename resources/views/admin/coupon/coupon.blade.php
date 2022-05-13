@@ -74,7 +74,7 @@
                                 <tr>
                                     <th scope="col" class="text-center">#</th>
                                     <th scope="col">기간</th>
-                                    <th scope="col">가맹점</th>
+                                    <th scope="col">파트너</th>
                                     <th scope="col" class="text-center">제목</th>
                                     <th scope="col" class="text-center">할인</th>
                                     <th scope="col" class="text-center">등록일시</th>

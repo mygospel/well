@@ -64,12 +64,12 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">정산일</th>
-                                    <th scope="col">가맹점</th>
+                                    <th scope="col">파트너</th>
                                     <th scope="col">사용인원</th>
                                     <th scope="col">사용시간</th>
                                     <th scope="col">누적매출</th>
                                     <th scope="col">수수료</th>
-                                    <th scope="col">가맹점정산</th>
+                                    <th scope="col">파트너정산</th>
                                     <th scope="col">내역보기</th>
                                 </tr>
                                 </thead>

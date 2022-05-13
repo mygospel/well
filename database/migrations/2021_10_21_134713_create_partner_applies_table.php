@@ -15,7 +15,7 @@ class CreatePartnerAppliesTable extends Migration
     {
         Schema::create('partner_applies', function (Blueprint $table) {
             $table->id('app_no');
-            $table->string('app_title',70)->default('제목/가맹점명');  
+            $table->string('app_title',70)->default('제목/파트너명');  
             $table->text('app_cont')->default('')->comment("상세내욕");            
             $table->string('app_name', 20)->default('')->comment("작성자");  
             $table->string('app_phone', 20)->default('')->comment("연락처");  

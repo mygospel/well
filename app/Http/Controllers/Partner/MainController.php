@@ -37,13 +37,13 @@ class MainController extends Controller
 
         // 존재하지 않는 경우
         if( !$data["partner"] ) {
-            $data["message"] = "존재하지 않는 가맹점입니다.";
+            $data["message"] = "존재하지 않는 파트너입니다.";
             return view('partner.errorpartner.error_door',$data);
         }
 
         // 차단의 경우경우
         if( $data["partner"]->p_state != "Y" ) {
-            $data["message"] = "접근이 차단된 가맹점입니다.";
+            $data["message"] = "접근이 차단된 파트너입니다.";
             return view('partner.errorpartner.error_door',$data);
         }
 
@@ -79,13 +79,13 @@ class MainController extends Controller
 
         // 존재하지 않는 경우
         if( !$data["partner"] ) {
-            $data["message"] = "존재하지 않는 가맹점입니다.";
+            $data["message"] = "존재하지 않는 파트너입니다.";
             return view('partner.errorpartner.error_door',$data);
         }
 
         // 차단의 경우경우
         if( $data["partner"]->p_state != "Y" ) {
-            $data["message"] = "접근이 차단된 가맹점입니다.";
+            $data["message"] = "접근이 차단된 파트너입니다.";
             return view('partner.errorpartner.error_door',$data);
         }
 

@@ -200,6 +200,30 @@ class EventController extends Controller
         return response($result);
     }
 
+
+
+    public function delete(Request $request)
+    {
+
+        $result = [];
+
+        $result['result'] = false;
+        $result['msg'] = $request;
+        return response($result);
+
+        if( $request->no ) {
+            $event = \App\Models\Event::find('e_no', $request->no);
+
+            if( $result['result'] = $event->delete() ) {
+
+            }
+        } else {
+            $event = new event();
+        }
+
+        return response($result);
+    }    
+
     ## 폼을 위한 정보
     public function getInfo(Request $request){
         $data["result"] = true;

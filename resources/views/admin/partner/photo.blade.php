@@ -18,13 +18,13 @@
         <div class="page-content">
             <!--breadcrumb-->
             <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                <div class="breadcrumb-title pe-3">업체정보관리</div>
+                <div class="breadcrumb-title pe-3">파트너정보관리</div>
                 <div class="ps-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0 p-0">
                             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">업체정보</li>
+                            <li class="breadcrumb-item active" aria-current="page">파트너정보</li>
                         </ol>
                     </nav>
                 </div>
@@ -39,7 +39,7 @@
                 <div class="card-body">
                     <h5 class="mb-0 text-primary">
                         @if( $partner && $partner["p_no"] )
-                        가맹점명 {{ $partner["p_name"] }}
+                        파트너명 {{ $partner["p_name"] }}
                         @endif
                     </h5>
                 </div>
@@ -53,7 +53,7 @@
                                 <div class="d-flex align-items-center">
                                     <div class="tab-icon"><i class='bx bxs-home font-18 me-1'></i>
                                     </div>
-                                    <div class="tab-title">가맹점정보</div>
+                                    <div class="tab-title">파트너정보</div>
                                 </div>
                             </a>
                         </li>
@@ -64,7 +64,7 @@
                                 <div class="d-flex align-items-center">
                                     <div class="tab-icon"><i class='bx bxs-user-pin font-18 me-1'></i>
                                     </div>
-                                    <div class="tab-title">가맹점사진정보</div>
+                                    <div class="tab-title">파트너사진정보</div>
                                 </div>
                             </a>
                         </li>

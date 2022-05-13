@@ -54,7 +54,7 @@
                         <div class="col border-end border-light-2">
                             <div class="card bg-transparent shadow-none mb-0">
                                 <div class="card-body text-center">
-                                    <p class="mb-1 text-white">신규 가맹점 신청</p>
+                                    <p class="mb-1 text-white">신규 파트너 신청</p>
                                     <h3 class="mb-3 text-white">3</h3>
                                     <p class="font-13 text-white">이달 1,009 건 / 총 123,000 건</p>
 
@@ -131,7 +131,7 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <h6 class="mb-3">신규가맹점문의</h6>
+                                    <h6 class="mb-3">신규파트너문의</h6>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center" style="border:1px solid #000000;">
@@ -178,7 +178,7 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <h6 class="mb-3">신규 가맹점 개설신청</h6>
+                                    <h6 class="mb-3">신규 파트너 개설신청</h6>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center" style="border:1px solid #000000;">
@@ -230,7 +230,7 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <h6 class="mb-3">신규 가맹점 개설신청</h6>
+                                    <h6 class="mb-3">신규 파트너 개설신청</h6>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center" style="border:1px solid #000000;">

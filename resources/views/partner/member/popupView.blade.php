@@ -203,7 +203,7 @@
     
                             <div class="alert alert-sm alert-success my-2 p-2">
                                 <div class="bold font-weight-bold">개발가이드</div>
-                                1. 가맹점에서 가입시 회원은 가맹점회원으로만 등록됩니다.<br>
+                                1. 파트너에서 가입시 회원은 파트너회원으로만 등록됩니다.<br>
                                 2. 가입시 메세지, 이벤트 메세지를 통해 모바일에 가입하면 이후 모바일 회원을 전환됩니다.<br>
                             </div>
     
@@ -321,7 +321,7 @@
     
                             <div class="alert alert-sm alert-success my-2 p-2">
                                 <div class="bold font-weight-bold">개발가이드</div>
-                                1. 가맹점 1:1 문의내용만 <br>
+                                1. 파트너 1:1 문의내용만 <br>
                             </div>
     
                         </div>
@@ -367,7 +367,7 @@
     
                             <div class="alert alert-sm alert-success my-2 p-2">
                                 <div class="bold font-weight-bold">개발가이드</div>
-                                1. 회원에게 발송된 자동알람등의 내용으로 이용 가맹점 코드가 구분하고  해당 가맹점의 이용내역에 대한 내용만을 보여준다..<br>
+                                1. 회원에게 발송된 자동알람등의 내용으로 이용 파트너 코드가 구분하고  해당 파트너의 이용내역에 대한 내용만을 보여준다..<br>
                                 2. SMS발송내역에 대한 DB 는 통합DB에 존재해야할것으로 생각됨.<br>
                             </div>
     
@@ -427,7 +427,7 @@
                             </table>
                             <div class="alert alert-sm alert-success my-2 p-2">
                                 <div class="bold font-weight-bold">개발가이드</div>
-                                1. 가맹점(만)의 회원의 환불등은 가맹점 포인트에 적립됩니다.<br>
+                                1. 파트너(만)의 회원의 환불등은 파트너 포인트에 적립됩니다.<br>
                                 2. -(마이너스입력) 가능합니다.<br>
                             </div>
                         </div>
@@ -486,7 +486,7 @@
                             </table>
                             <div class="alert alert-sm alert-success my-2 p-2">
                                 <div class="bold font-weight-bold">개발가이드</div>
-                                1. 가맹점(만)의 회원의 환불등은 가맹점 캐쉬에 적립됩니다.<br>
+                                1. 파트너(만)의 회원의 환불등은 파트너 캐쉬에 적립됩니다.<br>
                                 2. -(마이너스입력) 가능합니다.<br>
                                 3. 캐쉬는 현금의 이동에 의한 온라인 통화로 현금 환불이 가능합니다.
                             </div>

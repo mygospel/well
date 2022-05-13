@@ -168,7 +168,7 @@ class PartnerCouponController extends Controller
             }
         } else  {
             $data["result"] = false;
-            $data["message"] = "가맹점이 선택되지 않았습니다.";
+            $data["message"] = "파트너이 선택되지 않았습니다.";
         }
        
         return response($data);

@@ -770,6 +770,7 @@ class ComposerStaticInit3a5ad204d229a293816c3eba27bf36cb
         'App\\Http\\Controllers\\Partner\\MqttController' => __DIR__ . '/../..' . '/app/Http/Controllers/Partner/MqttController.php',
         'App\\Http\\Controllers\\Partner\\PartnerLoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Partner/PartnerLoginController.php',
         'App\\Http\\Controllers\\Partner\\SettingController' => __DIR__ . '/../..' . '/app/Http/Controllers/Partner/SettingController.php',
+        'App\\Http\\Controllers\\Partner\\SettingIotController' => __DIR__ . '/../..' . '/app/Http/Controllers/Partner/SettingIotController.php',
         'App\\Http\\Controllers\\Partner\\SettingLockerAreaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Partner/SettingLockerAreaController.php',
         'App\\Http\\Controllers\\Partner\\SettingLockerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Partner/SettingLockerController.php',
         'App\\Http\\Controllers\\Partner\\SettingProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/Partner/SettingProductController.php',

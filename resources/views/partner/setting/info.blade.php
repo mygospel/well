@@ -15,13 +15,13 @@
         <div class="page-content">
             <!--breadcrumb-->
             <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                <div class="breadcrumb-title pe-3">업체정보관리</div>
+                <div class="breadcrumb-title pe-3">파트너정보관리</div>
                 <div class="ps-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0 p-0">
                             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">업체정보</li>
+                            <li class="breadcrumb-item active" aria-current="page">파트너정보</li>
                         </ol>
                     </nav>
                 </div>
@@ -49,7 +49,7 @@
                             @endif
 
                             <div class="col-md-6">
-                                <label class="form-label">업체명</label>
+                                <label class="form-label">파트너명</label>
                                 <input type="text" name="name" maxlength="50" class="form-control form-control-sm" value="{{ $partner["p_name"] ?? '' }}" readonly>
                             </div>
                             <div class="col-md-6">
@@ -142,7 +142,7 @@
                                 <input type="text" class="form-control form-control-sm" name="parking" value="{{ $partner["p_parking"] ?? '' }}">
                             </div>
                             <div class="col-12">
-                                <label class="form-label">가맹점소개</label>
+                                <label class="form-label">파트너소개</label>
                                 <textarea class="form-control" id="intro" name="intro" cols="70">{{ $partner["p_intro"] ?? '' }}</textarea>
 
                             </div>

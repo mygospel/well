@@ -15,13 +15,13 @@
         <div class="page-content">
             <!--breadcrumb-->
             <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                <div class="breadcrumb-title pe-3">가맹점관리</div>
+                <div class="breadcrumb-title pe-3">파트너관리</div>
                 <div class="ps-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0 p-0">
                             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">가맹점신청</li>
+                            <li class="breadcrumb-item active" aria-current="page">파트너신청</li>
                         </ol>
                     </nav>
                 </div>
@@ -43,9 +43,9 @@
                                 <div class='row'>
                                     <div class="col-md-2 col-sm-3 col-xs-12 mt-1">
                                         <select class="single-select form-control-sm col-12" name="fd" id="fd">
-                                            <option value="p_name" <?php if( isset($fd) && $fd == "p_name" ) {?> selected<?}?>>제목+내용</option>
-                                            <option value="p_name" <?php if( isset($fd) && $fd == "p_name" ) {?> selected<?}?>>제목</option>
-                                            <option value="p_emp_name" <?php if( isset($fd) && $fd == "p_emp_name" ) {?> selected<?}?>>내용</option>
+                                            <option value="p_name" @if( isset($fd) && $fd == "p_name" ) selected @endif>제목+내용</option>
+                                            <option value="p_name" @if( isset($fd) && $fd == "p_name" ) selected @endif>제목</option>
+                                            <option value="p_emp_name" @if( isset($fd) && $fd == "p_emp_name" ) selected @endif>내용</option>
                                         </select>
                                     </div>
                                     <div class="col-md-3 col-sm-5 col-xs-12 mt-1">

@@ -53,7 +53,7 @@
                                         </select>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 mt-1">
-                                        <input type="text" name="partner" id="partner" value="" placeholder="가맹점선택" class="form-control form-control-sm datepicker col-12">
+                                        <input type="text" name="partner" id="partner" value="" placeholder="파트너선택" class="form-control form-control-sm datepicker col-12">
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-3 col-xs-12 mt-1">
                                         <input type="text" name="sdate" id="sdate" value="" placeholder="기간시작일" class="form-control form-control-sm datepicker col-12">
@@ -144,7 +144,7 @@
                                     <th scope="col">날자</th>
                                     <th scope="col">상품구분</th>
                                     <th scope="col">구매자</th>
-                                    <th scope="col">가맹점</th>
+                                    <th scope="col">파트너</th>
                                     <th scope="col">상품금액</th>
                                     <th scope="col">캐쉬</th>
                                     <th scope="col">포인트</th>

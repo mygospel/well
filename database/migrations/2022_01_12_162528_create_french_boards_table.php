@@ -17,7 +17,7 @@ class CreateFrenchBoardsTable extends Migration
         $fnBlueprint = function (Blueprint $table) {   
             $table->id('b_no')->comment('일련번호');
             $table->string('b_id',20)->default('')->comment('게시판아이디');
-            $table->unsignedInteger('b_partner')->default(0)->comment('가맹점');
+            $table->unsignedInteger('b_partner')->default(0)->comment('파트너');
             $table->unsignedInteger('b_member')->default(0)->comment('작성자');
             $table->string('b_uname',20)->default('')->comment('작성자명');
             $table->string('b_title',100)->default('')->comment('제목');

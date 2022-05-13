@@ -75,7 +75,7 @@ class SettingController extends Controller
         $partner->p_keyword = $request->keyword ?? "";
 
 
-        /* 가맹점이 수정할수 없음.
+        /* 파트너이 수정할수 없음.
 
         $partner->p_id = $request->id;
         $partner->p_name = $request->name ?? "";

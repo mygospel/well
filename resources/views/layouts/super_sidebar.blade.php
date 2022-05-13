@@ -31,16 +31,16 @@
         <a class="has-arrow" href="javascript:;">
             <div class="parent-icon"><i class="bx bx-building"></i>
             </div>
-            <div class="menu-title">가맹점관리</div>
+            <div class="menu-title">파트너관리</div>
         </a>
         <ul>
-            <li> <a href="/partner"><i class="bx bx-right-arrow-alt"></i>가맹점관리</a>
+            <li> <a href="/partner"><i class="bx bx-right-arrow-alt"></i>파트너관리</a>
             </li>
-            <li> <a href="/partner/apply"><i class="bx bx-right-arrow-alt"></i>가맹점신규신청</a>
+            <li> <a href="/partner/apply"><i class="bx bx-right-arrow-alt"></i>파트너신규신청</a>
             </li>
-            <li> <a href="/partner/reg"><i class="bx bx-right-arrow-alt"></i>가맹점연장내역</a>
+            <li> <a href="/partner/reg"><i class="bx bx-right-arrow-alt"></i>파트너연장내역</a>
             </li>
-            <li> <a href="/partner/standard"><i class="bx bx-right-arrow-alt"></i>가맹점기본세팅</a>
+            <li> <a href="/partner/standard"><i class="bx bx-right-arrow-alt"></i>파트너기본세팅</a>
             </li>
         </ul>
     </li>
@@ -78,7 +78,7 @@
         <a class="has-arrow" href="javascript:;">
             <div class="parent-icon"><i class="bx bx-calculator"></i>
             </div>
-            <div class="menu-title">가맹점정산내역</div>
+            <div class="menu-title">파트너정산내역</div>
         </a>
         <ul>
             <li> <a href="/calculate/day"><i class="bx bx-right-arrow-alt"></i>일일정산내역</a>
@@ -111,7 +111,7 @@
         <ul>
             <li> <a href="/event/list"><i class="bx bx-right-arrow-alt"></i>이벤트</a>
             </li>
-            <li> <a href="/event/partner"><i class="bx bx-right-arrow-alt"></i>가맹점이벤트</a>
+            <li> <a href="/event/partner"><i class="bx bx-right-arrow-alt"></i>파트너이벤트</a>
             </li>
         </ul>
     </li>
@@ -122,7 +122,7 @@
             <div class="menu-title">고객센터</div>
         </a>
         <ul>
-            <li> <a href="/customer/partner"><i class="bx bx-right-arrow-alt"></i>가맹점 1:1 문의</a>
+            <li> <a href="/customer/partner"><i class="bx bx-right-arrow-alt"></i>파트너 1:1 문의</a>
             </li>
             <li> <a href="/customer/member"><i class="bx bx-right-arrow-alt"></i>고객 1:1 문의</a>
             </li>

@@ -16,7 +16,7 @@ class CreateFrenchSeatsTable extends Migration
     {
         $fnBlueprint = function (Blueprint $table) {
             $table->id('s_no')->comment('일련번호');
-            $table->unsignedInteger('s_partner')->default(0)->comment('가맹점번호');
+            $table->unsignedInteger('s_partner')->default(0)->comment('파트너번호');
             $table->unsignedInteger('s_room')->default(0)->comment('룸번호');
             $table->unsignedInteger('s_level')->default(0)->comment('좌석등급');
             $table->string('s_name',50)->default('')->comment('좌석명');

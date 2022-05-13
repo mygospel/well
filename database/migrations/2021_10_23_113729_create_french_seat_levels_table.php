@@ -16,7 +16,7 @@ class CreateFrenchSeatLevelsTable extends Migration
     {
         $fnBlueprint = function (Blueprint $table) {
             $table->id('sl_no')->comment('일련번호');
-            $table->unsignedInteger('sl_partner')->default(0)->comment('가맹점번호');
+            $table->unsignedInteger('sl_partner')->default(0)->comment('파트너번호');
             $table->string('sl_name',20)->default('')->comment('구분명');
             $table->char('sl_type',1)->default('S')->comment('타입');
             $table->text('sl_price_time')->default('')->comment('시간금액정보');

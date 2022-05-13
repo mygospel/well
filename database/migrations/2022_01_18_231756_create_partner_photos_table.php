@@ -16,7 +16,7 @@ class CreatePartnerPhotosTable extends Migration
     {
         Schema::create('partner_photos', function (Blueprint $table) {
             $table->id('pt_no')->comment('일련번호');
-            $table->unsignedInteger('pt_partner')->default('0')->comment('가맹점');
+            $table->unsignedInteger('pt_partner')->default('0')->comment('파트너');
             $table->string('pt_kind',2)->default('')->comment('종류');
             $table->string('pt_filename',150)->default('')->comment('파일명');
             $table->integer('pt_seq')->default(0)->comment('정렬순서');

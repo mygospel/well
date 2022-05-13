@@ -3,7 +3,7 @@
         <img src="/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
     </div>
     <div>
-        <h4 class="logo-text">가맹점관리자</h4>
+        <h4 class="logo-text">파트너관리자</h4>
     </div>
     <div class="toggle-icon ms-auto"><i class='bx bx-first-page'></i>
     </div>
@@ -155,7 +155,7 @@
             <div class="menu-title">기본정보</div>
         </a>
         <ul>
-            <li> <a href="/setting/info"><i class="bx bx-right-arrow-alt"></i>가맹점정보관리</a>
+            <li> <a href="/setting/info"><i class="bx bx-right-arrow-alt"></i>파트너정보관리</a>
             </li>
             <li> <a href="/setting/iot"><i class="bx bx-right-arrow-alt"></i>IOT 항목관리</a>
             </li>

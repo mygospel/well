@@ -87,6 +87,7 @@ return array(
     'App\\Http\\Controllers\\Partner\\MqttController' => $baseDir . '/app/Http/Controllers/Partner/MqttController.php',
     'App\\Http\\Controllers\\Partner\\PartnerLoginController' => $baseDir . '/app/Http/Controllers/Partner/PartnerLoginController.php',
     'App\\Http\\Controllers\\Partner\\SettingController' => $baseDir . '/app/Http/Controllers/Partner/SettingController.php',
+    'App\\Http\\Controllers\\Partner\\SettingIotController' => $baseDir . '/app/Http/Controllers/Partner/SettingIotController.php',
     'App\\Http\\Controllers\\Partner\\SettingLockerAreaController' => $baseDir . '/app/Http/Controllers/Partner/SettingLockerAreaController.php',
     'App\\Http\\Controllers\\Partner\\SettingLockerController' => $baseDir . '/app/Http/Controllers/Partner/SettingLockerController.php',
     'App\\Http\\Controllers\\Partner\\SettingProductController' => $baseDir . '/app/Http/Controllers/Partner/SettingProductController.php',

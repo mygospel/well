@@ -38,8 +38,8 @@
                                 <div class='row'>
                                     <div class="col-md-2 col-sm-4 col-xs-12 mt-1">
                                         <select class="single-select form-control-sm col-12" name="estimate" id="estimate">
-                                            <option value="" <?php if( isset($_GET["estimate"]) && $_GET["estimate"] == "Y" ) {?> selected<?}?>>2021</option>
-                                            <option value="" <?php if( isset($_GET["estimate"]) && $_GET["estimate"] == "Y" ) {?> selected<?}?>>2020</option>
+                                            <option value="" @if( isset($_GET["estimate"]) && $_GET["estimate"] == "Y" ) selected @endif>2021</option>
+                                            <option value="" @if( isset($_GET["estimate"]) && $_GET["estimate"] == "Y" ) selected @endif>2020</option>
                                         </select>
                                     </div>
                                     <div class="col-md-2 col-sm-4 col-xs-12 mt-1">
@@ -79,7 +79,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">정산월</th>
-                                    <th scope="col">가맹점</th>
+                                    <th scope="col">파트너</th>
                                     <th scope="col">사용인원</th>
                                     <th scope="col">사용시간</th>
                                     <th scope="col">누적매출</th>

@@ -31,7 +31,7 @@ if( $argv[1] ) {
     if( trim($argv[1]) != "enha" ) {
 
         $target_db = "boss_".$argv[1];
-        echo "타겟 가맹점 존재여부 확인";
+        echo "타겟 파트너 존재여부 확인";
 
         if( $conn = mysqli_connect( $db_host, $db_user, $db_password, $db_name) ) {
     
@@ -45,7 +45,7 @@ if( $argv[1] ) {
             if( $result = mysqli_query($conn, $sql) ) {
 
                 if($partner_row = mysqli_fetch_array($result)) {
-                    echo $partner_row['p_id']."::".$partner_row['p_name']." 가맹점 확인됨.\n";
+                    echo $partner_row['p_id']."::".$partner_row['p_name']." 파트너 확인됨.\n";
         
                     if( $conn = mysqli_connect( $db_host, $db_user, $db_password, $target_db) ) {
                 
@@ -101,7 +101,7 @@ if( $argv[1] ) {
         
             } else {
 
-                echo "가맹점이 존재하지 않습니다.\n";
+                echo "파트너이 존재하지 않습니다.\n";
             }
      
         } else {
@@ -109,7 +109,7 @@ if( $argv[1] ) {
             echo " - 확인불가.\n";  
         }
     } else {
-        echo "변경할수 없는 가맹점입니다.\n";
+        echo "변경할수 없는 파트너입니다.\n";
    
     }
 

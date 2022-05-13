@@ -41,7 +41,7 @@
                                     <div class="col-md-2 col-sm-3 col-xs-12 mt-1">
                                         <select class="single-select form-control-sm col-12" name="kind" id="kind">
                                             <option value="" <?php if( isset($param['kind']) && $param['kind'] == "" ) {?> selected<?}?>>전체</option>
-                                            <option value="p" <?php if( isset($param['kind']) && $param['kind'] == "p" ) {?> selected<?}?>>가맹점회원</option>
+                                            <option value="p" <?php if( isset($param['kind']) && $param['kind'] == "p" ) {?> selected<?}?>>파트너회원</option>
                                             <option value="m" <?php if( isset($param['kind']) && $param['kind'] == "m" ) {?> selected<?}?>>모바일회원</option>
                                         </select>
                                     </div>

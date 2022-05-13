@@ -15,13 +15,13 @@
         <div class="page-content">
             <!--breadcrumb-->
             <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                <div class="breadcrumb-title pe-3">가맹점관리</div>
+                <div class="breadcrumb-title pe-3">파트너관리</div>
                 <div class="ps-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0 p-0">
                             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">가맹점 기본세팅</li>
+                            <li class="breadcrumb-item active" aria-current="page">파트너 기본세팅</li>
                         </ol>
                     </nav>
                 </div>

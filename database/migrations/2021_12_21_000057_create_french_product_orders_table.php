@@ -57,14 +57,14 @@ class CreateFrenchProductOrdersTable extends Migration
             $table->Integer('o_pay_discount')->default(0)->comment('할인금액'); 
             $table->Integer('o_pay_money')->default(0)->comment('결제금액'); 
 
-            $table->string('o_pay_kind',10)->default('LCASH')->comment('결제방법'); // LCASH 가맹점 현금 LCARD 가맹점카드
+            $table->string('o_pay_kind',10)->default('LCASH')->comment('결제방법'); // LCASH 파트너 현금 LCARD 파트너카드
             $table->string('o_pay_state',1)->default('N')->comment('결제상태'); 
             $table->datetime('o_pay_at',0)->comment('결제일'); 
 
             $table->string('o_refund',1)->default('N')->comment('환불여부'); 
             $table->datetime('o_refund_at',0)->comment('환불요청일'); 
             $table->datetime('o_refund_price',0)->comment('환불지급액(사용자)'); 
-            $table->datetime('o_refund_money',0)->comment('환불수급액(가맹점)'); 
+            $table->datetime('o_refund_money',0)->comment('환불수급액(파트너)'); 
             $table->string('o_refund_memo',255)->comment('환불메모'); 
             $table->string('o_memo',255)->comment('메모'); 
 

@@ -10,7 +10,7 @@
     <div class="page-wrapper">
         <div class="page-content">
 
-            존재하지 않는 가맹점입니다.
+            존재하지 않는 파트너입니다.
 
         </div>
     </div>

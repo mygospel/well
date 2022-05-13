@@ -311,7 +311,7 @@ class PartnerController extends Controller
 
             $result["result"] = false;
             $result["partner"] = $request->id;
-            $result["message"] = "가맹점명은 3자이상 입력해주세요.";
+            $result["message"] = "파트너명은 3자이상 입력해주세요.";
             return response($result);
         }
 
@@ -322,11 +322,11 @@ class PartnerController extends Controller
 
             if( $partner = \App\Models\Partner::where('p_id', $request->id)->first() ) {
                 $result["result"] = false;
-                $result["message"] = "이미 존재하는 가맹점입니다.";
+                $result["message"] = "이미 존재하는 파트너입니다.";
                 return response($result);
             } else if( $partner = \App\Models\Partner::where('p_name', $request->name)->first() ) {
                 $result["result"] = false;
-                $result["message"] = "이미 존재하는 가맹점입니다.";
+                $result["message"] = "이미 존재하는 파트너입니다.";
                 return response($result);
             } else {
                 $partner = new Partner();
@@ -433,7 +433,7 @@ class PartnerController extends Controller
             }
         } else {
             $data["result"] = false;
-            $data["message"] = "가맹점이 선택되지 않았습니다.";
+            $data["message"] = "파트너이 선택되지 않았습니다.";
         }
 
         return response($result);
@@ -597,7 +597,7 @@ class PartnerController extends Controller
         return response($data);
     }
 
-    # API.가맹점 목록을 얻음
+    # API.파트너 목록을 얻음
     public function get_list(Request $request){
         $data["result"] = true;
         $data["partners"] = $this->partner->select(["p_no", "p_name"])
@@ -644,7 +644,7 @@ class PartnerController extends Controller
         return response($data);
     }
 
-    # API.가맹점 찜등록/해제
+    # API.파트너 찜등록/해제
     public function set_favorite(Request $request){
         if( $fv = \App\Models\Partner_favorite::where('fv_partner', $request->no)
         //->where('fv_user', $request->user)
@@ -662,7 +662,7 @@ class PartnerController extends Controller
     }
 
 
-    # API.가맹점 방문한 가맹점
+    # API.파트너 방문한 파트너
     public function set_visit(Request $request){
         if( $visit = \App\Models\Partner_view::where('v_partner', $request->no)
         ->where('v_user', $request->user)

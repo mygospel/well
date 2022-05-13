@@ -1,4 +1,3 @@
-<!-- Stored in resources/views/child.blade.php -->
 
 @extends('layouts.admin')
 
@@ -15,13 +14,13 @@
         <div class="page-content">
             <!--breadcrumb-->
             <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                <div class="breadcrumb-title pe-3">가맹점관리</div>
+                <div class="breadcrumb-title pe-3">파트너관리</div>
                 <div class="ps-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0 p-0">
                             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">가맹점연장내역</li>
+                            <li class="breadcrumb-item active" aria-current="page">파트너연장내역</li>
                         </ol>
                     </nav>
                 </div>
@@ -42,7 +41,7 @@
                                 <div class='row'>
                                     <div class="col-md-2 col-sm-3 col-xs-12 mt-1">
                                         <select class="single-select form-control-sm col-12" name="fd" id="fd">
-                                            <option value="p_name" <?php if( isset($fd) && $fd == "p_name" ) {?> selected<?}?>>가맹점명</option>
+                                            <option value="p_name" @if( isset($fd) && $fd == "p_name" ) selected @endif>파트너명</option>
                                         </select>
                                     </div>
                                     <div class="col-md-3 col-sm-5 col-xs-12 mt-1">
@@ -63,7 +62,7 @@
                                 <thead>
                                 <tr>
                                     <th scope="col" class="text-center">#</th>
-                                    <th scope="col">가맹점</th>
+                                    <th scope="col">파트너</th>
                                     <th scope="col">기간</th>
                                     <th scope="col" class="text-center">결제방법</th>
                                     <th scope="col" class="text-center">연장금액</th>
@@ -123,7 +122,7 @@
                     <form class="form-horizontal" role="form" name="frm_reg" id="frm_reg">
                     {{csrf_field()}}
                     <input type="hidden" name="partner" id="partner" value="">
-                    <input name="partner_name" id="partner_name" style="ime-mode:disabled;" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="클릭하여 가맹점검색" aria-label=".form-control-sm example" data-bs-toggle="modal" data-bs-target="#partnerSearchModal" search_mode="reg">
+                    <input name="partner_name" id="partner_name" style="ime-mode:disabled;" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="클릭하여 파트너검색" aria-label=".form-control-sm example" data-bs-toggle="modal" data-bs-target="#partnerSearchModal" search_mode="reg">
 
                     <div class="col-xs-12 mt-3">
                         <input type="date" name="sdate" id="sdate" value="" placeholder="기간시작일" class="form-control form-control-sm datepicker col-12">

@@ -164,7 +164,7 @@ class UserController extends Controller
     }
 
 
-    # API.가맹점 목록을 얻음
+    # API.파트너 목록을 얻음
     public function get_list(Request $request){
         $data["result"] = true;
         $data["users"] = $this->user->select(["p_no", "p_name"])
