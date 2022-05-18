@@ -68,6 +68,8 @@ use App\Http\Middleware\PartnerAuthenticate;
 use App\Http\Middleware\UserAuthenticate;
 
 
+Route::get('/calendar', [EventController::class, 'calendar']);
+
 Route::prefix('/mqtt')->group(function () {
     Route::any('/put', [MqttController::class, 'put']);
 });

@@ -117,4 +117,5 @@ return array(
     'Aws\\' => array($vendorDir . '/aws/aws-sdk-php/src'),
     'Asm89\\Stack\\' => array($vendorDir . '/asm89/stack-cors/src'),
     'App\\' => array($baseDir . '/app'),
+    'Acaronlex\\LaravelCalendar\\' => array($vendorDir . '/acaronlex/laravel-calendar/src'),
 );

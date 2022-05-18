@@ -85,7 +85,7 @@
                                 </td>
                                 <td class="d-none d-md-table-cell "><a href="/partner/form/{{ $partner['p_no'] ?? '' }}">{{ $partner['p_id'] ?? '' }}</span></a></td>
                                 <td><a href="/partner/form/{{ $partner['p_no'] ?? '' }}"><span style="font-size:11pt;font-weight:500;color:#000000;">{{ $partner['p_name'] ?? '' }}</span></a></td>
-                                <td class="d-none d-lg-table-cell">{{ $partner['p_area'][0] ? $partner['p_area'][0].' '.$partner['p_area'][1] : '' }}</td>
+                                <td class="d-none d-lg-table-cell">{{ $partner['p_address1'] ?? '' }}</td>
                                 <td class="d-none d-md-table-cell">{{ $partner['p_phone'] ?? '' }}</td>
                                 <td><a href="//{{ $partner['p_id'] ?? '' }}.partner.{{ env('APP_HOST') }}" target="_blank" class="btn btn-primary btn-xs">들어가기</a></td>
                             </tr>

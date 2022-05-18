@@ -80,7 +80,7 @@
                             <th scope="col">선택</th>
                         </tr>
                         </thead>
-                        <tbody id="partner_search_list">
+                        <tbody id="partner_search_list" style="overflow:scroll; height:300px;">
                         </tbody>
                     </table>
 

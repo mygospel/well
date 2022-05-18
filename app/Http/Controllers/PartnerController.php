@@ -42,8 +42,8 @@ class PartnerController extends Controller
         $data["result"] = true;
         $data["options"] = Config::get('partner.options');
 
-        $client_id = "gxwne8kx8n";
-        $client_secret = "uh1HB2gV8Ol4zz0uTcF4mjSCoBA4tpcOSc7tnEu2";
+        $client_id = "";
+        $client_secret = "";
 
 
         // if( $request->query1 && !$request->query ) {
@@ -338,13 +338,10 @@ class PartnerController extends Controller
         $partner->p_kind = $request->kind ?? "";
         $partner->p_open_mobile = $request->open_mobile ?? "N";
         $partner->p_open_kiosk = $request->open_kiosk ?? "N";
-        $partner->p_door = $request->door ?? "Q";
         
         $partner->p_name = $request->name ?? "";
         $partner->p_homepage = $request->homepage ?? "";
         $partner->p_phone = $request->phone ?? "";
-        $partner->p_bizno = $request->bizno ?? "";
-        $partner->p_ceo = $request->ceo ?? "";
         $partner->p_email = $request->email ?? "";
         $partner->p_intro = $request->intro ?? "";
 
@@ -382,6 +379,8 @@ class PartnerController extends Controller
         if( $partner->p_no ) {
             $result['result'] = $partner->update();
         } else {
+
+            $partner->p_id = uniqid();
             $result['result'] = $partner->save();
 
             $partnerReg = new PartnerRegController();
@@ -390,21 +389,21 @@ class PartnerController extends Controller
 
         if( $partner->p_id ) {
 
-            ## 디비를 실시간으로 생성.
-            $schemaName = "boss_".$partner->p_id;
-            $charset = config("database.connections.mysql.charset",'utf8mb4');
-            $collation = config("database.connections.mysql.collation",'utf8mb4_unicode_ci');
-            //config(["database.connections.mysql.database" => null]);
-            $query = "CREATE DATABASE IF NOT EXISTS $schemaName CHARACTER SET $charset COLLATE $collation;";
-            DB::statement($query);
+            // ## 디비를 실시간으로 생성.
+            // $schemaName = "boss_".$partner->p_id;
+            // $charset = config("database.connections.mysql.charset",'utf8mb4');
+            // $collation = config("database.connections.mysql.collation",'utf8mb4_unicode_ci');
+            // //config(["database.connections.mysql.database" => null]);
+            // $query = "CREATE DATABASE IF NOT EXISTS $schemaName CHARACTER SET $charset COLLATE $collation;";
+            // DB::statement($query);
 
-            ## 샘플디비로 부터 복사.            
-            try {
-                $pwd = exec('pwd');
-                $makedb = exec('php '.$pwd.'/../exbuilder_shell/french_makedb.php '.$partner->p_id);
-            } catch(Exception $e) {
+            // ## 샘플디비로 부터 복사.            
+            // try {
+            //     $pwd = exec('pwd');
+            //     $makedb = exec('php '.$pwd.'/../exbuilder_shell/french_makedb.php '.$partner->p_id);
+            // } catch(Exception $e) {
 
-            }
+            // }
         } 
 
         $data["partner"] = $partner;

@@ -68,15 +68,20 @@
                             </form>
                         </div>
                         <div class="card-body">
-                            <div>총 {{ isset($total) ? number_format($total) : '' }} 건</div>
+                            <div class="row">
+                                <div class="col-sm-3">총 {{ isset($total) ? number_format($total) : '' }} 건</div>
+                                <div class="col-sm-6"></div>
+                                <div class="col-sm-3"><a href="/calendar" target="_blank" class="btn btn-warning px-2 btn-sm col-12">달력보기</a></div>
+                            </div>
                             <table class="table mb-0 table-striped">
                                 <thead>
                                 <tr>
                                     <th scope="col-sm-1" class="text-center">#</th>
+                                    <th scope="col-sm-1" class="text-center">공개</th>
+                                    <th scope="col-sm-1" class="text-center">타입</th>
                                     <th scope="col-sm-2" class="text-center">파트너</th>
                                     <th scope="col-sm-2" class="text-center">기간</th>
                                     <th scope="col-sm-4">제목</th>
-                                    <th scope="col-sm-1" class="text-center">타입</th>
                                     <th scope="col-sm-2" class="text-center">등록일시</th>
                                     <th scope="col-sm-1" class="text-center">관리</th>
                                 </tr>
@@ -86,10 +91,11 @@
                                 @foreach( $events as $ei => $event )
                                 <tr>
                                     <th scope="row" class="text-center">{{ ($start - $ei) }}</th>
+                                    <td class="text-center">@if($event['e_open'] == "Y" ) <button type="button" class="btn btn-xs btn-info event_item">공개</button> @elseif($event['e_open'] == "N" ) <button type="button" class="btn btn-xs btn-secondary event_item">비공개</button> @endif</td>
+                                    <td class="text-center">@if($event['e_type'] == "A" ) 일반 @elseif($event['e_type'] == "S" ) <button type="button" class="btn btn-xs btn-danger event_item">긴급</button> @endif</td>
                                     <td class="text-center">{{ $event['p_name'] }}</td>
                                     <td class="text-center">{{ $event['e_sdate'] }}</td>
                                     <td>{{ substr($event['e_cont'],0,50) }}</td>
-                                    <td class="text-center">@if($event['e_type'] == "A" ) 일반 @elseif($event['e_type'] == "S" ) 긴급 @endif</td>
                                     <td class="text-center">{{ substr($event['created_at'],0,16) }}</td>
                                     <td class="text-center"><button class="btn btn-xs btn-secondary event_item" event="{{ $event['e_no'] }}" data-bs-toggle="modal" data-bs-target="#eventFormModal">관리</button></td>
                                 </tr>
@@ -141,13 +147,17 @@
                         </select>
                     </div>
 
-                    <!--div class="col-xs-12 mt-3">
-                        <input type="text" name="uname" id="uname" value="{{ $key ?? '' }}" placeholder="작성자" class="form-control form-control-sm col-12">
-                    </div-->
+                    <div class="col-6">
+                        <label class="form-label col-12">공개여부</label>
+                        <div class="form-check-inline col-12">
+                            <input type="radio" class='form-check-input' name="open" id="open_Y" value="Y"> 공개
+                            <input type="radio" class='form-check-input' name="open" id="open_N" value="N"> 비공개
+                        </div>
+                    </div>
 
-                    <!--div class="col-xs-12 mt-3">
-                        <input type="text" name="title" id="title" value="" placeholder="제목" class="form-control form-control-sm col-12">
-                    </div-->
+                    <div class="col-xs-12 mt-3">
+                        <input type="text" name="title" id="title" value="" placeholder="날자대신 제목을 표기하는 경우" class="form-control form-control-sm col-12">
+                    </div>
 
                     <div class="col-xs-12 mt-3">
                         <textarea name="cont" id="cont" class="form-control" style="height:200px;"></textarea>
@@ -241,6 +251,7 @@
                 },
                 data: req,
                 success: function (res, textStatus, xhr) {
+                    console.log(res);
                     if (res.result == true) {
                         document.location.reload();
                     } else {
@@ -249,7 +260,10 @@
                     }
                 },
                 error: function (xhr, textStatus, errorThrown) {
-                    console.log('PUT error.');
+                    console.log(xhr);
+                    console.log(xhr.responseJSON.file);
+                    console.log(xhr.responseJSON.line);
+                    console.log(xhr.responseJSON.message);     
                 }
             });
         }
@@ -278,31 +292,8 @@
                         $("#title").val(res.event.title);
                         $("#cont").val(res.event.cont);
                         $("#type").val(res.event.type);
-                    } else {
-                        $("#eventDetail_msg").html(res.message);
-                        console.log("실패.");
-                    }
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    console.log('PUT error.');
-                }
-            });
-        }
+                        $("#open_"+res.event.open).prop("checked", true);
 
-        function event_delete() {
-            var req = $("#partner_event").serialize();
-            console.log(req);
-            $.ajax({
-                url: '/event/delete',
-                type: 'POST',
-                async: true,
-                beforeSend: function (xhr) {
-                    $("#eventDetail_msg").html("");
-                },
-                data: req,
-                success: function (res, textStatus, xhr) {
-                    if (res.result == true) {
-                        document.location.reload();
                     } else {
                         $("#eventDetail_msg").html(res.message);
                         console.log("실패.");

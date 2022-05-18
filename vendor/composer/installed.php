@@ -5,11 +5,20 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'b398d4b50b2a905a8f50cfd97d08f5c8c81f595c',
+        'reference' => '0c87afcbfce6f202a9c5478f2f80dcab196275fe',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
+        'acaronlex/laravel-calendar' => array(
+            'pretty_version' => '1.6',
+            'version' => '1.6.0.0',
+            'type' => 'package',
+            'install_path' => __DIR__ . '/../acaronlex/laravel-calendar',
+            'aliases' => array(),
+            'reference' => '03490c4990187b1191e2d6686a881502b8cb7439',
+            'dev_requirement' => false,
+        ),
         'asm89/stack-cors' => array(
             'pretty_version' => 'v2.0.3',
             'version' => '2.0.3.0',
@@ -544,7 +553,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'b398d4b50b2a905a8f50cfd97d08f5c8c81f595c',
+            'reference' => '0c87afcbfce6f202a9c5478f2f80dcab196275fe',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(

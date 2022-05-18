@@ -298,6 +298,7 @@
 
         function event_delete() {
             var req = $("#frm_event").serialize();
+            console.log("데이터....");
             console.log(req);
             $.ajax({
                 url: '/event/delete',

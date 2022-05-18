@@ -216,6 +216,7 @@ class ComposerStaticInit3a5ad204d229a293816c3eba27bf36cb
             'Aws\\' => 4,
             'Asm89\\Stack\\' => 12,
             'App\\' => 4,
+            'Acaronlex\\LaravelCalendar\\' => 26,
         ),
     );
 
@@ -669,6 +670,10 @@ class ComposerStaticInit3a5ad204d229a293816c3eba27bf36cb
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+        'Acaronlex\\LaravelCalendar\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -712,6 +717,13 @@ class ComposerStaticInit3a5ad204d229a293816c3eba27bf36cb
         'AWS\\CRT\\NativeResource' => __DIR__ . '/..' . '/aws/aws-crt-php/src/AWS/CRT/NativeResource.php',
         'AWS\\CRT\\OptionValue' => __DIR__ . '/..' . '/aws/aws-crt-php/src/AWS/CRT/Options.php',
         'AWS\\CRT\\Options' => __DIR__ . '/..' . '/aws/aws-crt-php/src/AWS/CRT/Options.php',
+        'Acaronlex\\LaravelCalendar\\Calendar' => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src/Calendar.php',
+        'Acaronlex\\LaravelCalendar\\Event' => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src/Event.php',
+        'Acaronlex\\LaravelCalendar\\EventCollection' => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src/EventCollection.php',
+        'Acaronlex\\LaravelCalendar\\Facades\\Calendar' => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src/Facades/Calendar.php',
+        'Acaronlex\\LaravelCalendar\\IdentifiableEvent' => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src/IdentifiableEvent.php',
+        'Acaronlex\\LaravelCalendar\\ServiceProvider' => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src/ServiceProvider.php',
+        'Acaronlex\\LaravelCalendar\\SimpleEvent' => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src/SimpleEvent.php',
         'App\\Actions\\Fortify\\CreateNewUser' => __DIR__ . '/../..' . '/app/Actions/Fortify/CreateNewUser.php',
         'App\\Actions\\Fortify\\PasswordValidationRules' => __DIR__ . '/../..' . '/app/Actions/Fortify/PasswordValidationRules.php',
         'App\\Actions\\Fortify\\ResetUserPassword' => __DIR__ . '/../..' . '/app/Actions/Fortify/ResetUserPassword.php',

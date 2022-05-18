@@ -146,36 +146,27 @@
                             <label class="form-label">비빌번호</label>
                             <input type="text" class="form-control form-control-sm" name="passwd" value="">
                         </div>
+                        
                         <div class="col-md-6">
                             <label class="form-label">파트너명</label>
                             <input type="text" name="name" maxlength="50" class="form-control form-control-sm" value="{{ $partner["p_name"] ?? '' }}">
                         </div>
                         <div class="col-md-6">
+                            <label class="form-label" for="address1">지역</label>
+                            <input type="text" class="form-control form-control-sm" name="address1" id="address1" maxlength="50" value="{{ $partner["p_address1"] ?? '' }}">
+                        </div>
+
+
+                        <div class="col-md-6">
                             <label class="form-label">전화번호</label>
                             <input type="text" class="form-control form-control-sm" name="phone" maxlength="50" value="{{ $partner["p_phone"] ?? '' }}">
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label" for="ceo">대표자명</label>
-                            <input type="text" class="form-control form-control-sm" name="ceo" id="ceo" maxlength="50" value="{{ $partner["p_ceo"] ?? '' }}">
-                        </div>
+
                         <div class="col-md-6">
                             <label class="form-label">이메일</label>
                             <input type="email" class="form-control form-control-sm" name="email" maxlength="50" value="{{ $partner["p_email"] ?? '' }}">
                         </div>
 
-                        <div class="col-md-12">
-                            <label class="form-label">주소</label>                            
-                            <input type="text" class="form-control form-control-sm" id="address1" name="address1" value="{{ $partner["p_address1"] ?? '' }}" onclick="execDaumPostcode('partner')">
-                        </div>
-
-                        <div class="col-md-12">
-                            <label class="form-label">출입문타입</label>
-                            <br>
-                            <input class="form-check-input" type="radio" name="door" value="Q" @if( $partner && $partner["p_door"] == "Q" ) checked @endif> QR코드
-                            <input class="form-check-input" type="radio" name="door" value="S" @if( $partner && $partner["p_door"] == "S" ) checked @endif> 비밀번호
-                            <input class="form-check-input" type="radio" name="door" value="B" @if( $partner && $partner["p_door"] == "B" ) checked @endif> 버튼
-                            <input class="form-check-input" type="radio" name="door" value="P" @if( $partner && $partner["p_door"] == "P" ) checked @endif> 지문인식
-                        </div>
                         <div class="col-12">
                             <label class="form-label">기타소개</label>
                             <textarea class="form-control" id="intro" name="intro" cols="70">{{ $partner["p_intro"] ?? '' }}</textarea>
