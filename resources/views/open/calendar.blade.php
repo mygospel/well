@@ -79,16 +79,14 @@
 							<td class=" cal_day {{$cal_style??""}} cal_date" rel="{{ $THIS_DATE ?? ""}}" id="">
 									<?=$i?>
 									<?
-									if( $events[$THIS_DATE] ) {
+									if( isset( $events[$THIS_DATE] ) ) {
 										?><br>
 										
 										<div class="att_date" rp_no="">
-											@if( isset($events[$THIS_DATE]) )
 												@foreach($events[$THIS_DATE] as $event)
 												<div style="padding:1px 0 3px;font-weight:500;">@if( trim($event['e_title']) ){{ $event['e_title'] }} @else {{ $event['p_name'] }} @endif</div>
 												<div class="d-none d-sm-block">{{ $event->e_cont }}</div>
 												@endforeach
-											@endif
 										</div>
 										<?	
 									} 
