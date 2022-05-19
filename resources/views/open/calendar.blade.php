@@ -85,7 +85,7 @@
 										<div class="att_date" rp_no="">
 											@if( isset($events[$THIS_DATE]) )
 												@foreach($events[$THIS_DATE] as $event)
-												<div style="padding:1px 0 3px;font-weight:500; font-size:12pt;">@if( trim($event['e_title']) ){{ $event['e_title'] }} @else {{ $event['p_name'] }} @endif</div>
+												<div style="padding:1px 0 3px;font-weight:500;">@if( trim($event['e_title']) ){{ $event['e_title'] }} @else {{ $event['p_name'] }} @endif</div>
 												<div class="d-none d-sm-block">{{ $event->e_cont }}</div>
 												@endforeach
 											@endif
@@ -186,6 +186,11 @@
 @endsection
 
 <style>
+
+@media (max-width:439px){.att_date{font-size:10pt;}}
+@media (min-width:440px){.att_date{font-size:12pt;}}
+
+
 /* 달력 */
 .event-cal2 {
 }
