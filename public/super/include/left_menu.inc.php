@@ -114,7 +114,7 @@
         <ul>
             <li> <a href="admin_event_list.html"><i class="bx bx-right-arrow-alt"></i>이벤트</a>
             </li>
-            <li> <a href="admin_event_partner.html"><i class="bx bx-right-arrow-alt"></i>파트너이벤트</a>
+            <li> <a href="admin_event_partner.html"><i class="bx bx-right-arrow-alt"></i>TOPIC</a>
             </li>
         </ul>
     </li>

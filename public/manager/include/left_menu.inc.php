@@ -78,7 +78,7 @@
             <div class="menu-title">이벤트관리</div>
         </a>
         <ul>
-            <li> <a href="event_list.html"><i class="bx bx-right-arrow-alt"></i>파트너이벤트</a>
+            <li> <a href="event_list.html"><i class="bx bx-right-arrow-alt"></i>TOPIC</a>
             </li>
         </ul>
     </li>

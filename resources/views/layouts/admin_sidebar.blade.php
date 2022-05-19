@@ -35,7 +35,7 @@
             <li> 
                 <a href="/community/notice"><i class="bx bx-right-arrow-alt"></i>공지사항</a>
             </li>
-            <li> <a href="/event/partner"><i class="bx bx-right-arrow-alt"></i>파트너이벤트</a>
+            <li> <a href="/event/partner"><i class="bx bx-right-arrow-alt"></i>TOPIC</a>
             </li>
             <li> 
                 <a href="/customer/partner"><i class="bx bx-right-arrow-alt"></i>파트너 1:1 문의</a>

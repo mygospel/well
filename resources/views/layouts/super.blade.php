@@ -37,7 +37,7 @@
     <div class="sidebar-wrapper" data-simplebar="true">
 
         <!--navigation-->
-        @include("layouts.super_sidebar")
+        @include("layouts.admin_sidebar")
         @yield('sidebar')
         <!--end navigation-->
 
@@ -45,7 +45,7 @@
     <!--end sidebar wrapper -->
     <!--start header -->
     <header>
-        @include("layouts.super_topnav")
+        @include("layouts.admin_topnav")
     </header>
 
     @yield('content')

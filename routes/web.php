@@ -224,7 +224,7 @@ Route::domain('api.eodilo.com')->group(function () {
         Route::prefix('/event')->group(function () {
             Route::post('/getInfo', [EventController::class, 'getInfo']);
 
-            // 파트너이벤트
+            // TOPIC
             Route::get('/partner', [EventController::class, 'index_partner']);
             Route::post('/delete', [EventController::class, 'delete']);
             Route::post('/update', [EventController::class, 'update']);

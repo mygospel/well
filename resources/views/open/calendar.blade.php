@@ -10,6 +10,19 @@
 				<a href="{{ $cal_url_next ?? "" }}" class="next" title="1개월 뒤의 달력을 보여줍니다.">»</a>
 			</div>			
 
+
+			@if( $evs2 ) 
+			<div class="alert alert-warning">
+				<div style="padding:1px 0 3px;font-weight:700; font-size:12pt;">긴급</div>
+				<div class="att_Sp">
+					@foreach($evs2 as $event)
+					<div style="padding:1px 0 3px;font-weight:500; font-size:12pt;">{{ $event['p_name'] }}</div>
+					<div>{{ $event->e_title }} <span>{{ $event->e_cont }}</span></div>
+					@endforeach
+				</div>
+			</div>
+			@endif 
+
 			<table class="table table-bordered table-condensed tt-calendar2" cellpadding="0" cellspacing="1" >
 			<thead>
 			  <tr>
@@ -73,7 +86,7 @@
 											@if( isset($events[$THIS_DATE]) )
 												@foreach($events[$THIS_DATE] as $event)
 												<div style="padding:1px 0 3px;font-weight:500; font-size:12pt;">@if( trim($event['e_title']) ){{ $event['e_title'] }} @else {{ $event['p_name'] }} @endif</div>
-												<div>{{ $event->e_cont }}</div>
+												<div class="d-none d-sm-block">{{ $event->e_cont }}</div>
 												@endforeach
 											@endif
 										</div>
@@ -102,15 +115,7 @@
 
 	</div>
 	
-		@if( $evs2 ) 
-		<div class="att_Sp">
-				@foreach($evs2 as $event)
-				<div style="padding:1px 0 3px;font-weight:500; font-size:12pt;">{{ $event['p_name'] }}</div>
-				<div>{{ $event->e_title }}</div>
-				<div>{{ $event->e_cont }}</div>
-				@endforeach
-		</div>
-		@endif 
+
     <div class="modal fade" id="topicInfoModal" tabindex="-2" aria-labelledby="topicInfoModalLabel" style="display: none;z-index:90000;" aria-hidden="true">
         <div class="modal-dialog modal- md">
             <div class="modal-content">
@@ -168,8 +173,9 @@
 		$("#topicInfoModal #topicInfoTitle").html(dt);
 		$(".popup_topic").html($(".cal_day[rel='"+dt+"'] .att_date").html());
 		$("#topicInfoModal").modal("show");
+		$("#topicInfoModal div").removeClass("d-none").removeClass("d-sm-block");
 	}
-
+	
 	$('#topicInfoModal').on('hide.bs.modal', function (e) {
 		$("#sp_tab").hide();
 		$(".popup_topic").html("");

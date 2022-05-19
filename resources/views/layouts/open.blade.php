@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="/assets/css/semi-dark.css" />
     <link rel="stylesheet" href="/assets/css/header-colors.css" />
     <link rel="stylesheet" href="/assets/css/style.css">
-    <title>관리자</title>
+    <title>이달의 TOPIC</title>
 </head>
 
 <body>
