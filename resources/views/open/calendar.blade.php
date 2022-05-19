@@ -124,15 +124,16 @@
                 <div class="modal-body">
 
                     <div class="col-12">
+
+                        <div class="col-12 alert popup_topic">
+
+                        </div>
+						
                         <div class="col-12" id="sp_tab">
                             <div class="alert alert-warning">
                                 <h6>긴급</h6>
                                 <div id="sp_topic"></div>
                             </div>
-                        </div>
-
-                        <div class="col-12 alert popup_topic">
-
                         </div>
                     </div>
 
