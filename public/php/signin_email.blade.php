@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/swiper.min.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/ui.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +29,7 @@
 	<section class="sign-in-email">
 
 		<div class="inner wrap">
-			<div class="tit-box">어디로 앱 로그인</div>
+			<div class="tit-box">인터서브 앱 로그인</div>
 
 
 			<div class="input-form">
@@ -66,7 +66,7 @@
 
 
 			<div class="sign-up-box">
-				<div class="txt-box">혹시, 어디로 앱이 처음이신가요?</div>
+				<div class="txt-box">혹시, 인터서브 앱이 처음이신가요?</div>
 				<div class="link-box">
 					<a href="/signup_terms_agree." class="link-btn">회원가입 하기</a>
 				</div>

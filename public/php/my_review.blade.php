@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/swiper.min.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/ui.css" rel="stylesheet" type="text/css"/>
@@ -54,7 +54,7 @@
 									<a href="javascript:popupOpen('alarm')" class="menu-btn">삭제</a>
 								</div>
 
-								<div class="shop-box">어디로 스터디 카페 대흥점</div>
+								<div class="shop-box">인터서브 스터디 카페 대흥점</div>
 								<div class="seat-box">자유석 이용</div>
 								<div class="rate-box">
 
@@ -97,7 +97,7 @@
 									<a href="javascript:popupOpen('alarm')" class="menu-btn">삭제</a>
 								</div>
 
-								<div class="shop-box">어디로 스터디 카페 대흥점</div>
+								<div class="shop-box">인터서브 스터디 카페 대흥점</div>
 								<div class="seat-box">자유석 이용</div>
 								<div class="rate-box">
 

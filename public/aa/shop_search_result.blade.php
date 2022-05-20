@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="/mobile/css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/ui.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/style.css" rel="stylesheet" type="text/css"/>
@@ -49,7 +49,7 @@
 
 					<li>
 						<a href="#none">
-							<div class="top-box"><b>어디로</b> 스터디 카페</div>
+							<div class="top-box"><b>인터서브</b> 스터디 카페</div>
 							<div class="bottom-box">
 								<div class="meter-box">500m</div>
 								<div class="addr-box">서울 마포구 마포대로 92(도화동)</div>
@@ -59,7 +59,7 @@
 
 					<li>
 						<a href="#none">
-							<div class="top-box"><b>어디로</b> 스터디 카페</div>
+							<div class="top-box"><b>인터서브</b> 스터디 카페</div>
 							<div class="bottom-box">
 								<div class="meter-box">500m</div>
 								<div class="addr-box">서울 마포구 마포대로 92(도화동)</div>

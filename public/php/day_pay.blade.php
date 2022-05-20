@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/ui.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/style.css" rel="stylesheet" type="text/css"/>
@@ -37,7 +37,7 @@
 
 			<article class="pay-head">
 
-				<div class="main-box">어디로 스터디 까페 대흥점</div>
+				<div class="main-box">인터서브 스터디 까페 대흥점</div>
 				<div class="sub-box">
 					<div class="row">1회 이용권, 사물함 1회 이용권</div>
 					<div class="row">2021년 9월 1일 토요일 (2시간) / 사물함 A-7, 오전9시부터</div>
@@ -114,7 +114,7 @@
 					<div class="pay-toggle-box">
 						<a href="#none" class="toggle-head-box on">
 							<div class="subject">결제방법</div>
-							<div class="con"><span class="accent-txt1">어디로 캐시</span></div>
+							<div class="con"><span class="accent-txt1">인터서브 캐시</span></div>
 						</a>
 						<div class="toggle-body-box">
 

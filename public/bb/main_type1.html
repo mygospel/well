@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="/mobile/css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/ui.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/style.css" rel="stylesheet" type="text/css"/>
@@ -49,7 +49,7 @@
 						<i class="ic ic-welcome"></i>
 						<div class="welcome-txt">안녕하세요!</div>
 					</div>
-					<div class="intro-txt-box">오늘 어디로 갈까요?</div>
+					<div class="intro-txt-box">오늘 인터서브 갈까요?</div>
 				</div>
 
 				<div class="link-box">
@@ -122,7 +122,7 @@
 
 									<div class="top-item-box">
 
-										<div class="top-box">어디로 스터디 카페</div>
+										<div class="top-box">인터서브 스터디 카페</div>
 										<div class="mid-box">
 											<div class="txt-box">마포점</div>
 											<div class="rate-box">
@@ -196,7 +196,7 @@
 
 									<div class="top-item-box">
 
-										<div class="top-box">어디로 스터디 카페</div>
+										<div class="top-box">인터서브 스터디 카페</div>
 										<div class="mid-box">
 											<div class="txt-box">마포점</div>
 											<div class="rate-box">
@@ -271,7 +271,7 @@
 
 									<div class="top-item-box">
 
-										<div class="top-box">어디로 스터디 카페</div>
+										<div class="top-box">인터서브 스터디 카페</div>
 										<div class="mid-box">
 											<div class="txt-box">마포점</div>
 											<div class="rate-box">
@@ -664,7 +664,7 @@
 
 			<div class="item-wrap">
 
-				<div class="tit-box">어디로 스터디 까페</div>
+				<div class="tit-box">인터서브 스터디 까페</div>
 				<div class="list-wrap">
 
 					<div class="item-list">

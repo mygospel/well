@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/ui.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/style.css" rel="stylesheet" type="text/css"/>
@@ -50,7 +50,7 @@
 									</div>
 
 									<div class="voucher-subject-box">
-										어디로 스터디 카페 대흥점
+										인터서브 스터디 카페 대흥점
 									</div>
 
 									<div class="voucher-qr-group">
@@ -113,7 +113,7 @@
 									</div>
 
 									<div class="voucher-subject-box">
-										어디로 스터디 카페 대흥점
+										인터서브 스터디 카페 대흥점
 									</div>
 
 									<div class="voucher-qr-group">
@@ -777,7 +777,7 @@
 
 			<div class="item-wrap">
 
-				<div class="tit-box">어디로 스터디 까페</div>
+				<div class="tit-box">인터서브 스터디 까페</div>
 				<div class="list-wrap">
 
 					<div class="item-list">

@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/ui.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/style.css" rel="stylesheet" type="text/css"/>
@@ -33,7 +33,7 @@
 
 			<article class="history-detail-head" style="padding-bottom: 15px;">
 				<div class="detail-head-box">
-					<div class="head-txt">어디로 스터디 카페 대흥점</div>
+					<div class="head-txt">인터서브 스터디 카페 대흥점</div>
 				</div>
 				<div class="detail-sub-box">
 					<div class="">예약하고 싶은 이용권을 선택해 주세요!</div>

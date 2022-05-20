@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/ui.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/style.css" rel="stylesheet" type="text/css"/>
@@ -35,7 +35,7 @@
 				</a>
 
 				<a href="#none" class="board-item">
-					<div class="txt-box">어디로 응원하기 이벤트 당첨자 안내</div>
+					<div class="txt-box">인터서브 응원하기 이벤트 당첨자 안내</div>
 				</a>
 
 

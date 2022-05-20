@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/swiper.min.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/ui.css" rel="stylesheet" type="text/css"/>
@@ -44,7 +44,7 @@
 							</div>
 
 							<div class="con-box">
-								<div class="subject-box">어디로 스터디 카페 대흥점</div>
+								<div class="subject-box">인터서브 스터디 카페 대흥점</div>
 
 								<div class="place-box">
 									<i class="ic ic-place"></i>
@@ -78,7 +78,7 @@
 							</div>
 
 							<div class="con-box">
-								<div class="subject-box">어디로 스터디 카페 대흥점</div>
+								<div class="subject-box">인터서브 스터디 카페 대흥점</div>
 
 								<div class="place-box">
 									<i class="ic ic-place"></i>

@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="/mobile/css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/swiper.min.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/ui.css" rel="stylesheet" type="text/css"/>
@@ -38,7 +38,7 @@
 							<a class="coupon-btn" href="javascript:popupOpenBottom('coupon-use')">
 								<div class="coupon-head-box">
 									<div class="main-box">10% 할인 쿠폰</div>
-									<div class="sub-box">어디로 스터디 까페 쿠폰</div>
+									<div class="sub-box">인터서브 스터디 까페 쿠폰</div>
 								</div>
 
 								<div class="coupon-body-box">
@@ -59,7 +59,7 @@
 							<a class="coupon-btn" href="javascript:popupOpenBottom('coupon-use')">
 								<div class="coupon-head-box">
 									<div class="main-box">10% 할인 쿠폰</div>
-									<div class="sub-box">어디로 스터디 까페 쿠폰</div>
+									<div class="sub-box">인터서브 스터디 까페 쿠폰</div>
 								</div>
 
 								<div class="coupon-body-box">
@@ -80,7 +80,7 @@
 							<a class="coupon-btn" href="javascript:popupOpenBottom('coupon-use')">
 								<div class="coupon-head-box">
 									<div class="main-box">10% 할인 쿠폰</div>
-									<div class="sub-box">어디로 스터디 까페 쿠폰</div>
+									<div class="sub-box">인터서브 스터디 까페 쿠폰</div>
 								</div>
 
 								<div class="coupon-body-box">

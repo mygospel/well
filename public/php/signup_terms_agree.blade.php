@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/swiper.min.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/ui.css" rel="stylesheet" type="text/css"/>
@@ -30,7 +30,7 @@
 
 		<div class="inner wrap">
 
-			<div class="tit-box">어디로 앱 회원가입</div>
+			<div class="tit-box">인터서브 앱 회원가입</div>
 
 			<div class="agree-box">
 				<div class="agree-txt">안녕하세요, 당신의 <span class="col_success">약관동의</span>가 필요해요!</div>
@@ -50,7 +50,7 @@
 						<div class="cbox">
 							<label>
 								<input type="checkbox" class="normal"><i></i>
-								<span class="txt">어디로 이용약관 동의 (필수)</span>
+								<span class="txt">인터서브 이용약관 동의 (필수)</span>
 							</label>
 						</div>
 						<a href="#none" class="link-btn"></a>

@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="/mobile/css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/swiper.min.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/ui.css" rel="stylesheet" type="text/css"/>
@@ -35,7 +35,7 @@
 					</div>
 
 					<div class="finish-user-box">환영해요, <span style="color:#6DB9C6;">제스</span> 님!</div>
-					<div class="finish-sub-box">어디로앱 홈으로 갈까요?</div>
+					<div class="finish-sub-box">인터서브앱 홈으로 갈까요?</div>
 
 					<div class="finish-menu-box">
 						<article class="menu-btn-box">

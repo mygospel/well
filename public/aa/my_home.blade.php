@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="/mobile/css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/ui.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/style.css" rel="stylesheet" type="text/css"/>
@@ -36,7 +36,7 @@
 				</div>
 
 				<div class="my-cash-box">
-					<div class="subject-box">어디로 캐시</div>
+					<div class="subject-box">인터서브 캐시</div>
 					<div class="con-box">
 						<div class="cash-txt">50,000</div>
 						<div class="unit-txt">캐시</div>

@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="/mobile/css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/ui.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/style.css" rel="stylesheet" type="text/css"/>
@@ -51,7 +51,7 @@
 
 				<div class="info-box">
 					<div class="top-box">마포구 대흥로 360 2층</div>
-					<div class="bottom-box">마포구 대흥동 17-9 상가 203호 어디로 스터디 카페</div>
+					<div class="bottom-box">마포구 대흥동 17-9 상가 203호 인터서브 스터디 카페</div>
 				</div>
 
 			</div>

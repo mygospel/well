@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/swiper.min.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/ui.css" rel="stylesheet" type="text/css"/>
@@ -47,7 +47,7 @@
 				</div>
 
 				<div class="mileage-box">
-					<div class="subject-txt">어디로앱 마일리지</div>
+					<div class="subject-txt">인터서브앱 마일리지</div>
 					<div class="mileage-txt">1,300마일리지</div>
 				</div>
 

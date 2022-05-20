@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/swiper.min.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/ui.css" rel="stylesheet" type="text/css"/>
@@ -38,7 +38,7 @@
 				<div class="img-box">
 					<img src="../img/img_voucher_info_img4.svg" alt="이미지">
 				</div>
-				<div class="txt-box"><b>어디로 캐시 충전이 완료되었어요!</b></div>
+				<div class="txt-box"><b>인터서브 캐시 충전이 완료되었어요!</b></div>
 				<div class="link-box">
 					<a href="#none" class="link-underline-btn">캐시충전 요청하기</a>
 					<article class="question-mark" style="margin-left: 3px;">

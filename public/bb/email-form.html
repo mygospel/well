@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 </head>
 <body>
 
@@ -53,7 +53,7 @@
 
 		<div class="tit-box" style="padding:32px 0 16px; font-size:16px; font-weight: 700; line-height: 24px;">
 			안녕하세요!<br/>
-			어디로앱에 오신 것을 환영해요!
+			인터서브앱에 오신 것을 환영해요!
 		</div>
 
 		<div class="con-box" style="font-size:16px; line-height: 24px; color: #2E2E34;">
@@ -70,7 +70,7 @@
 
 		<div class="foot-box" style="color: #989898; font-size: 12px; line-height: 24px; padding-top: 160px;">
 			Copyright 2021. Eodilo All rights reserved.<br/>
-			이 메일은 <b style="color: #252849;">어디로앱</b> 에서 발송되었습니다.
+			이 메일은 <b style="color: #252849;">인터서브앱</b> 에서 발송되었습니다.
 		</div>
 
 

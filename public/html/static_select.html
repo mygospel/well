@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="../css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/ui.css" rel="stylesheet" type="text/css"/>
 	<link href="../css/style.css" rel="stylesheet" type="text/css"/>
@@ -30,7 +30,7 @@
 
 			<article class="seat-head-box">
 				<div class="head-box">
-					<div class="main-txt">어디로 스터디 까페 대흥점</div>
+					<div class="main-txt">인터서브 스터디 까페 대흥점</div>
 					<div class="sub-txt">고정권 기간을 선택해 주세요!</div>
 				</div>
 			</article>

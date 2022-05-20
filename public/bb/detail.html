@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="/mobile/css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/ui.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/style.css" rel="stylesheet" type="text/css"/>
@@ -85,7 +85,7 @@
 			<div class="inner wrap">
 
 				<div class="top-box">
-					<div class="top-txt">어디로 스터디 카페</div>
+					<div class="top-txt">인터서브 스터디 카페</div>
 					<a href="/detail_review" class="link-btn">10명의 후기</a>
 				</div>
 
@@ -119,14 +119,14 @@
 
 				<article class="coupon-download-box" style="margin-top: 40px;">
 
-					<a href="javascript:popupOpenBottom('coupon')" class="coupon-download-btn">어디로 스터디 카페 쿠폰 받기!</a>
+					<a href="javascript:popupOpenBottom('coupon')" class="coupon-download-btn">인터서브 스터디 카페 쿠폰 받기!</a>
 
 					<a href="#none" class="coupon-download-btn type-used">다운로드 완료!</a>
 
 				</article>
 
 				<div class="des-box">
-					커피가 정말 맛있고 편한 자리가 많은 어디로 스터디 카페
+					커피가 정말 맛있고 편한 자리가 많은 인터서브 스터디 카페
 				</div>
 
 

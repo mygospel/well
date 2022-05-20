@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="/mobile/css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/ui.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/style.css" rel="stylesheet" type="text/css"/>
@@ -42,7 +42,7 @@
 						<div class="body-box">
 							<div class="row">
 								<div class="subject">즉석 추첨</div>
-								<div class="con">10만원 이상 어디로 캐시 충전 후 어디로까페 예약 시</div>
+								<div class="con">10만원 이상 인터서브 캐시 충전 후 인터서브까페 예약 시</div>
 							</div>
 
 							<div class="row">
@@ -52,7 +52,7 @@
 
 							<div class="row">
 								<div class="subject">현장 수령</div>
-								<div class="con">어디로 까페에서 굿즈 현장 수령<br/>
+								<div class="con">인터서브 까페에서 굿즈 현장 수령<br/>
 									(이벤트 당첨자는 앱 공지사항 확인)</div>
 							</div>
 						</div>

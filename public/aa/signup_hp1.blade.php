@@ -6,7 +6,7 @@
 	  name="viewport">
 <head>
 	<meta charset="UTF-8">
-	<title>어디로</title>
+	<title>인터서브</title>
 	<link href="/mobile/css/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/swiper.min.css" rel="stylesheet" type="text/css"/>
 	<link href="/mobile/css/ui.css" rel="stylesheet" type="text/css"/>
@@ -31,12 +31,12 @@
 
 		<div class="inner wrap">
 
-			<div class="tit-box">어디로 앱 회원가입</div>
+			<div class="tit-box">인터서브 앱 회원가입</div>
 
 			<div class="hp-signup-group">
 				<div class="hp-des-box">
 					<div class="main-box">휴대폰 인증</div>
-					<div class="sub-box">어디로는 안전한 예약과 결제를 위해 본인인증을 진행하고 있어요.</div>
+					<div class="sub-box">인터서브는 안전한 예약과 결제를 위해 본인인증을 진행하고 있어요.</div>
 				</div>
 
 				<div class="hp-input-box">
