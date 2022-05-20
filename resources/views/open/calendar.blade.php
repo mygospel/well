@@ -1,5 +1,5 @@
 @extends('layouts.open')
-	<div class="event-inner clearfix">
+	<div class="event-inner clearfix" style="padding:10px;">
 
 		<div class="event-cal2">
 			<div class="cal_month">

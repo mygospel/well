@@ -3,7 +3,7 @@
         <img src="/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
     </div>
     <div>
-        <h4 class="logo-text">서비스관리자</h4>
+        <h4 class="logo-text">관리자</h4>
     </div>
     <div class="toggle-icon ms-auto"><i class='bx bx-first-page'></i>
     </div>

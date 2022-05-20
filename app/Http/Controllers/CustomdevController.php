@@ -69,12 +69,16 @@ class CustomdevController extends Controller
         $result = [];
         if( $request->no ) {
             $custom = \App\Models\Customdev::where('q_no', $request->no)->firstOrFail();
+
+            if( Auth::guard("admin")->user()->admin_no != $custom->q_member ) {
+                return redirect()->back()->withErrors(['alert' => '권한이 없습니다.']);
+            }
         } else {
             $custom = new Customdev();
         }
 
         $custom->q_partner = $request->partner ?? 0;
-        $custom->q_member = $request->member ?? 0;
+        $custom->q_member = Auth::guard("admin")->user()->admin_no ?? 0;
         $custom->q_uname = $request->uname ?? "";
         $custom->q_title = $request->title ?? "";
         $custom->q_cont = $request->cont ?? "";
@@ -110,6 +114,11 @@ class CustomdevController extends Controller
         $result = [];
         if( $request->no ) {
             $custom = \App\Models\Customdev::where('q_no', $request->no)->firstOrFail();
+
+            if( Auth::guard("admin")->user()->admin_no != $custom->q_member ) {
+                return redirect()->back()->withErrors(['alert' => '권한이 없습니다.']);
+            }
+               
         } else {
             $custom = new Customdev();
         }
@@ -137,6 +146,7 @@ class CustomdevController extends Controller
         $result = [];
         if( $request->no ) {
             $custom = \App\Models\Customdev::where('q_no', $request->no)->firstOrFail();
+            
         } else {
             $custom = new Customdev();
         }
@@ -159,6 +169,25 @@ class CustomdevController extends Controller
         return response($result);
     }
 
+
+    ## 폼을 위한 정보
+    public function form(Request $request){
+
+        $data["result"] = true;
+        if( $request->no ) {
+            $custom = $this->custom->select()->where("q_no",  $request->no)->first();
+
+            if( Auth::guard("admin")->user()->admin_no != $custom->q_member ) {
+                return redirect()->back()->withErrors(['alert' => '권한이 없습니다.']);
+            }
+
+            $data["custom"] = $custom;
+
+        } else {
+            $data["custom"] = [];
+        }
+        return view('admin.customer.form', $data);
+    }
 
     ## 폼을 위한 정보
     public function answerform(Request $request){

@@ -68,7 +68,7 @@
                             </form>
                         </div>
                         <div class="card-body">
-                            <div>총 {{ isset($total) ? number_format($total) : '' }} 건  <a target="_blank" href="https://docs.google.com/spreadsheets/d/12_MjxFUjM7NzJccwLXPbIDHyVJHg5ypjELY57UBHC3Q/edit?usp=sharing" class="btn btn-success">어디로 개발 IA</a></div>
+                            <div>총 {{ isset($total) ? number_format($total) : '' }} 건 </div>
                             <table class="table mb-0 table-striped">
                                 <thead>
                                 <tr>
@@ -89,6 +89,7 @@
                                     <td class="text-center">{{ $custom['q_uname'] }}</td>
                                     <td class="text-center">{{ substr($custom['created_at'],0,16) }}</td>
                                     <td class="text-center">
+                                        
                                         @if( $custom['a_answer'] == "Y" )
                                             <button class="btn btn-xs btn-secondary" data-bs-toggle="modal" data-bs-target="#boardQnaModal">답변완료</button>
                                         @else

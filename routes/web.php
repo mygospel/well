@@ -250,6 +250,7 @@ Route::domain('api.eodilo.com')->group(function () {
 
             Route::get('/dev', [CustomdevController::class, 'index']);
             Route::get('/dev/view/{no}', [CustomdevController::class, 'view']);
+            Route::get('/dev/form/{no}', [CustomdevController::class, 'form']);
             Route::get('/dev/answerform/{no}', [CustomdevController::class, 'answerform']);
             Route::post('/dev/update', [CustomdevController::class, 'update']);
             Route::post('/dev/delete', [CustomdevController::class, 'delete']);
@@ -342,9 +343,11 @@ Route::domain('api.eodilo.com')->group(function () {
                 Route::get('/sms', function () {
                     return view('partner.member.sms_list');
                 });
+                
                 Route::get('/refund', function () {
                     return view('partner.member.refund_list');
                 });
+
             });
     
             Route::prefix('/product')->group(function () {
@@ -536,7 +539,6 @@ Route::domain('api.eodilo.com')->group(function () {
                     Route::any('/', [SettingProductController::class, 'index']);
                     Route::any('/update', [SettingProductController::class, 'update']);
                     Route::any('/getStandardProduct', [SettingProductController::class, 'getStandardProduct']);
-    
                     Route::any('/getProduct', [SettingProductController::class, 'getProduct']); // 상품목록가져오기
                 });
     

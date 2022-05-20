@@ -78,7 +78,10 @@
                     @endif
 
                     <div class="col-12 text-center">
-                        <button type="button" class="btn btn-primary px-5" onclick="location.href='/customer/dev/answerform/{{ $custom["q_no"] }}'">답변하기</button>
+
+                        <button type="button" class="btn btn-primary px-5" onclick="location.href='/customer/dev/form/{{ $custom['q_no'] }}'">수정하기</button>
+
+                        <button type="button" class="btn btn-primary px-5" onclick="location.href='/customer/dev/answerform/{{ $custom['q_no'] }}'">답변하기</button>
                         <button type="button" class="btn btn-secondary px-5" onclick="location.href='/customer/dev/'">돌아가기</button>
                         <button type="button" class="btn btn-danger px-5" id="btn_delete">삭제하기</button>
                     </div>
@@ -118,14 +121,12 @@
                     </form>
                 </div>
 
+                
+
             </div>
         </div>
     </div>
-    <!--end page wrapper -->
-    <?
-    //include $CFG['module_dir']."/zipcode/zipcode.inc.php";
-    ?>
-    <!--end page wrapper -->
+
 @endsection
 
 
@@ -325,18 +326,15 @@
                     }
                 },
                 error: function (request, textStatus, errorThrown) {
-                    console.log(1);
                     console.log(request);
-                    console.log(2);
                     console.log(textStatus);
-                    console.log(3);
                     console.log(errorThrown);
                 }
             });
         }
-        console.log(44444444);
+
         comm_list();
-        console.log(55555555);
+
     </script>
 
 @endsection
