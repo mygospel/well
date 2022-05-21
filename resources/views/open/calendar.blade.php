@@ -1,5 +1,5 @@
 @extends('layouts.open')
-	<div class="event-inner clearfix" style="padding:10px;">
+	<div class="event-inner clearfix" style="padding:3px;">
 
 		<div class="event-cal2">
 			<div class="cal_month">
@@ -205,22 +205,22 @@
 	width:100%;
 	margin: 0 auto;
 	padding: 10px 0 10px 0;
-	font-size: 12px;
+	font-size: 12pt;
 	text-align: center;
 	font-weight: 700;
 }
 .cal_month .prev,
 .cal_month .next {
   padding: -12px 5px;
-  font-size: 12px;
+  font-size: 12pt;
   font-family: consolas;
   background-color: #fafafa;
   border: 1px solid #dedfe0;
 }
 .cal_month a {
-  font-size: 25px;
+  font-size: 20px;
   color: #000;
-  line-height:25px;
+  line-height:20px;
 }
 .tt-calendar2 thead {
   border: solid #ececec;
@@ -246,9 +246,8 @@
 */
 .tt-calendar2 .cal_week1,
 .tt-calendar2 .cal_week2 {
-  padding: 5px 0;
   color: #fff;
-  font-size: 11px;
+  font-size: 8pt;
   text-align: center;
   background-color: #bdc1c5;
   border: solid #fff;
@@ -266,10 +265,11 @@
   background-color: #f4f4f4;
   border: solid #fff;
   border-width: 1px 0 0 1px;
+
 }
-.tt-calendar2 .cal_day div{
-	clear:both;
-	margin-top: 5px;
+
+.tt-calendar2 .cal_day{
+	min-height:50px;
 }
 .tt-calendar2 .cal_day_sunday {
   background-color: #f8f2f2 !important;
@@ -280,27 +280,18 @@
 .tt-calendar2 .cal_dayEvent {
   background-color: #f4f4f5 !important;
 }
-.tt-calendar2 .cal_dayEvent img {
-	width: 60px;
-	height: 40px;
-	border:1px solid #c9c9c9;
-}
+
 .tt-calendar2 .cal_week td {
-  padding: 6px;
+  padding: 4px;
   color: #555;
-  font-size: 10pt;
+  font-size: 8pt;
   text-align: left;
   background-color: #f4f4f4;
   border: solid #fff;
   border-width: 1px 0 0 1px;
   min-height:50px;
 }
-.tt-calendar2 .media div {
-  padding: 25px 0;
-  border-top: 1px solid #dbdbdb;
-}
-.tt-calendar2 .cal-title p {
-  width:40px;
-}
+
+
 
 </style>    
