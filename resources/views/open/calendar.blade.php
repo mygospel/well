@@ -42,7 +42,6 @@
 							$THIS_WEEKDAY = date("D",mktime(0,0,0,$LMON,$i,$LYEAR)); 
 							$THIS_WEEKEND = date("w",mktime(0,0,0,$LMON,$i,$LYEAR)); 
 							$THIS_DATE = date("Y-m-d",mktime(0,0,0,$LMON,$i,$LYEAR)) ?? ""; 
-							
 						?>
 
 							@if( $i == 1 || $THIS_WEEKDAY == 'Sun' ) 
@@ -75,12 +74,10 @@
 
 							$view_script = "";
 							?>
-							<td class=" cal_day {{$cal_style??""}} cal_date" rel="{{ $THIS_DATE ?? ""}}" id="">
-									<?=$i?>
-									<?
-									@if( isset( $events[$THIS_DATE] ) ) 
-										?><br>
-										
+							<td class=" cal_day {{ $cal_style ?? "" }} cal_date" rel="{{ $THIS_DATE ?? ""}}" id="">
+									{{ $i }}
+									@if( isset( $events ) && isset($events[$THIS_DATE] ) ) 
+										<br>
 										<div class="att_date" rp_no="">
 												@foreach( $events[$THIS_DATE] as $event)
 												<div style="padding:1px 0 3px;font-weight:500;">@if( trim($event['e_title']) ){{ $event['e_title'] }} @else {{ $event['p_name'] }} @endif</div>
