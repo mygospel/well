@@ -116,8 +116,10 @@ Route::domain('api.eodilo.com')->group(function () {
 
     Route::group(['middleware' => ['admin']], function () {
 
-        Route::get('/', [IndexController::class, 'index'])->name("adminhome");
-        Route::get('index2', [IndexController::class, 'index2']);
+        //Route::get('/', [IndexController::class, 'index'])->name("adminhome");
+        
+        //Route::get('/', redirect('/partner') );
+        Route::redirect('/', '/partner')->name("adminhome");
 
         Route::get('/history', function () {
             return view('admin.history');
@@ -166,7 +168,7 @@ Route::domain('api.eodilo.com')->group(function () {
                 });
             });
 
-            Route::get('/', [PartnerController::class, 'index']);
+            Route::get('/', [PartnerController::class, 'index'])->name("partner");
             Route::get('/deleted', [PartnerController::class, 'deleted_index']);
         });
 
@@ -343,7 +345,7 @@ Route::domain('api.eodilo.com')->group(function () {
                 Route::get('/sms', function () {
                     return view('partner.member.sms_list');
                 });
-                
+
                 Route::get('/refund', function () {
                     return view('partner.member.refund_list');
                 });

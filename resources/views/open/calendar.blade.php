@@ -10,14 +10,13 @@
 				<a href="{{ $cal_url_next ?? "" }}" class="next" title="1개월 뒤의 달력을 보여줍니다.">»</a>
 			</div>			
 
-
-			@if( $evs2 ) 
+			@if( count( $evs2 ) ) 
 			<div class="alert alert-warning">
-				<div style="padding:1px 0 3px;font-weight:700; font-size:12pt;">긴급</div>
-				<div class="att_Sp">
+				<div style="font-weight:700; font-size:10pt;">긴급</div>
+				<div class="att_Sp" style="line-height:100%;">
 					@foreach($evs2 as $event)
-					<div style="padding:1px 0 3px;font-weight:500; font-size:12pt;">{{ $event['p_name'] }}</div>
-					<div>{{ $event->e_title }} <span>{{ $event->e_cont }}</span></div>
+					<div style="font-weight:500; font-size:10pt;">{{ $event['p_name'] }}</div>
+					<div>{{ $event->e_title }} <span style="font-size:9pt;line-height:100%;">{{ $event->e_cont }}</span></div>
 					@endforeach
 				</div>
 			</div>
@@ -79,18 +78,16 @@
 							<td class=" cal_day {{$cal_style??""}} cal_date" rel="{{ $THIS_DATE ?? ""}}" id="">
 									<?=$i?>
 									<?
-									if( isset( $events[$THIS_DATE] ) ) {
+									@if( isset( $events[$THIS_DATE] ) ) 
 										?><br>
 										
 										<div class="att_date" rp_no="">
-												@foreach($events[$THIS_DATE] as $event)
+												@foreach( $events[$THIS_DATE] as $event)
 												<div style="padding:1px 0 3px;font-weight:500;">@if( trim($event['e_title']) ){{ $event['e_title'] }} @else {{ $event['p_name'] }} @endif</div>
 												<div class="d-none d-sm-block">{{ $event->e_cont }}</div>
 												@endforeach
 										</div>
-										<?	
-									} 
-									?>
+									@endif
 							</td>
 
 							@if( $THIS_WEEKDAY == 'Sat' )
@@ -164,15 +161,25 @@
 			$("#sp_tab #sp_topic").html( $(".att_Sp").html() );
 		} else {
 			$("#sp_tab").html("").hide();
-
 		}
 	}
 
 	function view_topic(dt){
+
+		var html = $(".cal_day[rel='"+dt+"'] .att_date").html();
+				
 		$("#topicInfoModal #topicInfoTitle").html(dt);
-		$(".popup_topic").html($(".cal_day[rel='"+dt+"'] .att_date").html());
-		$("#topicInfoModal").modal("show");
-		$("#topicInfoModal div").removeClass("d-none").removeClass("d-sm-block");
+		$(".popup_topic").html(html);
+
+		if( html != "" ) {
+			$("#topicInfoModal div").removeClass("d-none").removeClass("d-sm-block");
+		} else {
+			$("#topicInfoModal div").addClass("d-none").addClass("d-sm-block");
+		}
+
+		if( html && $(".att_Sp").length ) {
+			$("#topicInfoModal").modal("show");
+		}
 	}
 	
 	$('#topicInfoModal').on('hide.bs.modal', function (e) {
@@ -186,8 +193,8 @@
 
 <style>
 
-@media (max-width:439px){.att_date{font-size:10pt;}}
-@media (min-width:440px){.att_date{font-size:12pt;}}
+@media (max-width:439px){.att_date{font-size:9pt;}}
+@media (min-width:440px){.att_date{font-size:10pt;}}
 
 
 /* 달력 */
@@ -200,7 +207,7 @@
 .cal_month {
 	width:100%;
 	margin: 0 auto;
-	padding: 20px 0 20px 0;
+	padding: 10px 0 10px 0;
 	font-size: 12px;
 	text-align: center;
 	font-weight: 700;
@@ -242,14 +249,14 @@
 */
 .tt-calendar2 .cal_week1,
 .tt-calendar2 .cal_week2 {
-  padding: 10px 0;
+  padding: 5px 0;
   color: #fff;
   font-size: 11px;
   text-align: center;
   background-color: #bdc1c5;
   border: solid #fff;
   border-width: 1px 0 0 1px;
-  height:40px;
+  height:25px;
 }
 .tt-calendar2 .cal_week2 {
   background-color: #feaa96 !important;
@@ -257,7 +264,7 @@
 .tt-calendar2 .cal_week td {
   padding: 3px;
   color: #555;
-  font-size: 10px;
+  font-size: 8pt;
   text-align: center;
   background-color: #f4f4f4;
   border: solid #fff;
@@ -284,15 +291,14 @@
 .tt-calendar2 .cal_week td {
   padding: 6px;
   color: #555;
-  font-size: 14px;
+  font-size: 10pt;
   text-align: left;
   background-color: #f4f4f4;
   border: solid #fff;
   border-width: 1px 0 0 1px;
-  height:70px;
+  min-height:50px;
 }
 .tt-calendar2 .media div {
-  min-height: 165px;
   padding: 25px 0;
   border-top: 1px solid #dbdbdb;
 }

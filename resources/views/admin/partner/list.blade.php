@@ -77,7 +77,7 @@
                             <tr>
                                 <td class="d-none d-md-table-cell" scope="row"><a href="/partner/form/{{ $partner['p_no'] ?? '' }}">{{ (count($partners)-$pi) }}</a></td>
                                 <td class="text-center">
-                                @if( $partner['p_state'] == "Y" )
+                                @if( $partner['p_open'] == "Y" )
                                     <span class="btn btn-xs btn-warning">공개</span>
                                 @else
                                     <span class="btn btn-xs btn-secondary">비공개</span>

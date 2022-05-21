@@ -13,7 +13,7 @@
     <div class="page-wrapper">
         <div class="page-content">
 
-            <div class="dash-wrapper bg-dark">
+            <!--div class="dash-wrapper bg-dark">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-5 row-cols-xxl-5">
 
                     <a href="admin_member_list.html">
@@ -74,12 +74,12 @@
                         </div>
                     </a>
                 </div><!--end row-->
-            </div>
+            </div-->
 
-            <div class="row row-cols-1 row-cols-xl-2">
+            <div class="row --row-cols-1 --row-cols-xl-2">
 
 
-                <div class="col d-flex">
+                <!--div class="col d-flex">
                     <div class="card radius-10 w-100">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
@@ -124,9 +124,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div-->
 
-                <div class="col d-flex">
+                <!--div class="col d-flex">
                     <div class="card radius-10 w-100">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
@@ -222,7 +222,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div-->
                 
                 
                 <div class="col d-flex">

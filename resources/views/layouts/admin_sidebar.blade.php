@@ -14,17 +14,6 @@
 
     <li>
         <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="bx bx-desktop"></i>
-            </div>
-            <div class="menu-title">DashBoard</div>
-        </a>
-        <ul>
-            <li> <a href="/"><i class="bx bx-right-arrow-alt"></i>이용현황보기</a>
-            </li>
-        </ul>
-    </li>
-    <li>
-        <a class="has-arrow" href="javascript:;">
             <div class="parent-icon"><i class="bx bx-building"></i>
             </div>
             <div class="menu-title">파트너관리</div>
@@ -32,19 +21,19 @@
         <ul>
             <li> <a href="/partner"><i class="bx bx-right-arrow-alt"></i>파트너관리</a>
             </li>
-            <li> 
+            <!--li> 
                 <a href="/community/notice"><i class="bx bx-right-arrow-alt"></i>공지사항</a>
-            </li>
+            </li-->
             <li> <a href="/event/partner"><i class="bx bx-right-arrow-alt"></i>TOPIC</a>
             </li>
-            <li> 
+            <!--li> 
                 <a href="/customer/partner"><i class="bx bx-right-arrow-alt"></i>파트너 1:1 문의</a>
-            </li>
+            </li-->
             <li> 
                 <a href="/emp"><i class="bx bx-right-arrow-alt"></i>관리자관리</a>
             </li>
             <li> 
-                <a href="/customer/dev"><i class="bx bx-chat"></i>개발자게시판</a>
+                <a href="/customer/dev"><i class="bx bx-right-arrow-alt"></i>개발자게시판</a>
             </li>
         </ul>
     </li>

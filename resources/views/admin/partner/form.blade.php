@@ -37,16 +37,6 @@
             <div class="card">
 
                 <div class="card-body">
-                    <h5 class="mb-0 text-primary">
-                        @if( $partner && $partner["p_no"] )
-                        파트너명 {{ $partner["p_name"] }}
-                        @else
-                        신규파트너 등록
-                        @endif
-                    </h5>
-                </div>
-
-                <div class="card-body">
                     <ul class="nav nav-tabs nav-primary" role="tablist">
                         <li class="nav-item" role="presentation"
                         onclick="location.href='/partner/form/{{ $partner["p_no"] ?? "" }}'">
@@ -55,73 +45,16 @@
                                 <div class="d-flex align-items-center">
                                     <div class="tab-icon"><i class='bx bxs-home font-18 me-1'></i>
                                     </div>
-                                    <div class="tab-title">파트너정보</div>
-                                </div>
-                            </a>
-                        </li>
-                        @if( isset( $partner )  && isset($partner["p_no"]) ) 
-                        <li class="nav-item" role="presentation"
-                        onclick="location.href='/partner/photo/{{ $partner["p_no"] ?? "" }}'">
-                            <a class="nav-link" data-bs-toggle="tab" href="/partner/photo/{{ $partner["p_no"]  ?? "" }}"
-                               role="tab" aria-selected="false">
-                                <div class="d-flex align-items-center">
-                                    <div class="tab-icon"><i class='bx bxs-user-pin font-18 me-1'></i>
+                                    <div class="tab-title">
+                                        @if( $partner && $partner["p_no"] )
+                                        파트너명 {{ $partner["p_name"] }}
+                                        @else
+                                        신규파트너 등록
+                                        @endif
                                     </div>
-                                    <div class="tab-title">파트너사진정보</div>
                                 </div>
                             </a>
                         </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-bs-toggle="tab" href="#"
-                               role="tab" aria-selected="false">
-                                <div class="d-flex align-items-center">
-                                    <div class="tab-icon"><i class='bx bxs-microphone font-18 me-1'></i>
-                                    </div>
-                                    <div class="tab-title">이용현황</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-bs-toggle="tab" href="#"
-                               role="tab" aria-selected="true">
-                                <div class="d-flex align-items-center">
-                                    <div class="tab-icon"><i class='bx bxs-home font-18 me-1'></i>
-                                    </div>
-                                    <div class="tab-title">1:1문의</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-bs-toggle="tab" href="#"
-                               role="tab" aria-selected="false">
-                                <div class="d-flex align-items-center">
-                                    <div class="tab-icon"><i class='bx bxs-user-pin font-18 me-1'></i>
-                                    </div>
-                                    <div class="tab-title">공지사항</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-bs-toggle="tab" href="#"
-                               role="tab" aria-selected="false">
-                                <div class="d-flex align-items-center">
-                                    <div class="tab-icon"><i class='bx bxs-microphone font-18 me-1'></i>
-                                    </div>
-                                    <div class="tab-title">이용통계</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" data-bs-toggle="tab" href="#"
-                               role="tab" aria-selected="false">
-                                <div class="d-flex align-items-center">
-                                    <div class="tab-icon"><i class='bx bxs-microphone font-18 me-1'></i>
-                                    </div>
-                                    <div class="tab-title">정산내역</div>
-                                </div>
-                            </a>
-                        </li>
-                        @endif
                     </ul>
                 </div>
 
@@ -186,6 +119,15 @@
                             </ul>
                         </div>
                         @endif
+
+
+                        <div class="col-md-12">
+                            <label class="form-label">공개여부</label>
+                            <div class="form-check-inline">
+                                <input type="radio" class='form-check-input' name="open" value="Y" @if( !$partner || ($partner && $partner["p_open"] == 'Y') ) checked @endif> 공개
+                                <input type="radio" class='form-check-input' name="open" value="N" @if( $partner && $partner["p_open"] == 'N' ) checked @endif> 비공개
+                            </div>
+                        </div>
 
                         <div class="alert alert-danger d-none" id="partnerErrMsg">
 

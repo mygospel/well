@@ -35,8 +35,6 @@ class PartnerController extends Controller
         $this->partner = new Partner();
     }
 
-
-
     public function nmap_get_point(Request $request){
         $data = [];
         $data["result"] = true;
@@ -119,8 +117,6 @@ class PartnerController extends Controller
 
         return view('admin.partner.nmap', $data);
     }
-    
-
 
     ## 목록
     public function index(Request $request){
@@ -161,8 +157,8 @@ class PartnerController extends Controller
                         ->orwhere("p_email", "like", "%".$request->q."%")
                         ->orwhere("p_phone", "like", "%".$request->q."%");
                 }
-                if( $request->state ) {
-                    $query->where("p_state", $request->state);
+                if( $request->open ) {
+                    $query->where("p_open", $request->open);
                 }
             })
             ->orderBy("p_no","desc")->paginate(10)->setPath('')->appends(request()->query());
@@ -300,7 +296,6 @@ class PartnerController extends Controller
         $result = [];
 
         // if( !$request->id || !isset($request->id) || strlen($request->id) < 6  ) {
-
         //     $result["result"] = false;
         //     $result["partner"] = $request->id;
         //     $result["message"] = "아이디는 6자이상 입력해주세요.";
@@ -316,9 +311,10 @@ class PartnerController extends Controller
         }
 
         if( $request->no ) {
-            $partner = \App\Models\Partner::where('p_no', $request->no)->first();
-        } else {
 
+            $partner = \App\Models\Partner::where('p_no', $request->no)->first();
+
+        } else {
 
             if( $partner = \App\Models\Partner::where('p_id', $request->id)->first() ) {
                 $result["result"] = false;
@@ -332,6 +328,7 @@ class PartnerController extends Controller
                 $partner = new Partner();
                 $partner->p_id = $request->id;
             }
+
         }
 
         if( $request->passwd ) $partner->p_passwd = $request->passwd ?? "";
@@ -373,8 +370,7 @@ class PartnerController extends Controller
         $partner->p_seq = $request->seq ?? 0;
         $partner->p_memo = $request->memo ?? "";
 
-        $partner->p_state = $request->state ?? "N";
-
+        $partner->p_open = $request->open ?? "N";
 
         if( $partner->p_no ) {
             $result['result'] = $partner->update();

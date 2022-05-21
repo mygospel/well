@@ -68,7 +68,7 @@
                             </form>
                         </div>
                         <div class="card-body">
-                            <div>총 {{ isset($total) ? number_format($total) : '' }} 건 11111</div>
+                            <div>총 {{ isset($total) ? number_format($total) : '' }} 건</div>
                             <table class="table mb-0 table-striped">
                                 <thead>
                                 <tr>

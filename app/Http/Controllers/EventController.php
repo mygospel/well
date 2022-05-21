@@ -123,6 +123,8 @@ class EventController extends Controller
     public function calendar(Request $request){
 
             $data = [];
+            $data['events'] = [];
+            $data['evs2'] = [];
 
             if( $request->LMON ) $data["LMON"] = $request->LMON;
             else $data["LMON"] = date("m");
@@ -193,8 +195,10 @@ class EventController extends Controller
 
             //DB::enableQueryLog();	//query log 시작 선언부
             $evs = $this->event->select("events.*", "partners.p_name")
-            ->leftjoin('partners', 'e_partner', '=', 'partners.p_no')
+            ->leftJoin('partners', 'e_partner', '=', 'partners.p_no')
             ->where("e_type","A")
+            ->where("e_open","Y")    
+            ->where('partners.p_open', '=', 'Y')
             ->where(function ($query) use ($request) {
                 if ($request->q) {
                     if( $request->fd == "title" ) {
@@ -227,10 +231,14 @@ class EventController extends Controller
             }  
 
             //DB::enableQueryLog();	//query log 시작 선언부
-            $data['evs2'] = $this->event->select("events.*", "partners.p_name")
-            ->leftjoin('partners', 'e_partner', '=', 'partners.p_no')
-            ->where("e_type","S")    
-            ->orderBy("e_no","desc")->get();            
+            if ( date("Ym") == $data["LYEAR"].$data["LMON"] ) {
+                $data['evs2'] = $this->event->select("events.*", "partners.p_name")
+                ->leftjoin('partners', 'e_partner', '=', 'partners.p_no')
+                ->where("e_type","S")    
+                ->where("e_open","Y")    
+                ->where('partners.p_open', '=', 'Y')
+                ->orderBy("e_no","desc")->get();            
+            } 
 
         return view('open.calendar', $data);
     }
