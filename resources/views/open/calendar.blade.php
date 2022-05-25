@@ -8,7 +8,7 @@
 				<a href="#" title="현재 달의 달력을 보여줍니다.">{{ $LYEAR ?? "" }}년 {{ $LMON ?? "" }}월</a>
 				&nbsp;
 				<a href="{{ $cal_url_next ?? "" }}" class="next" title="1개월 뒤의 달력을 보여줍니다.">»</a>
-			</div>			
+			</div>
 
 			@if( count( $evs2 ) ) 
 			<div class="alert alert-warning">
