@@ -22,7 +22,7 @@
 			</div>
 			@endif 
 
-			<table class="table table-bordered table-condensed tt-calendar2" cellpadding="0" cellspacing="1" >
+			<table class="table table-bordered table-condensed tt-calendar2">
 			<thead>
 			  <tr>
 						<th class="cal_week2">일</th>
@@ -70,6 +70,11 @@
 							## 행사가 있다면...
 							if( isset($events[$THIS_DATE]) ) {
 								$cal_style = " cal_dayEvent";
+							}
+
+							## 오늘이라면
+							if( $THIS_DATE == date("Y-m-d") ) {
+								$cal_style = " cal_day_today";
 							}
 
 							$view_script = "";
@@ -196,6 +201,7 @@
 
 /* 달력 */
 .event-cal2 {
+
 }
 .tt-calendar2 {
 	width:100%;
@@ -270,6 +276,9 @@
 
 .tt-calendar2 .cal_day{
 	min-height:50px;
+}
+.tt-calendar2 .cal_day_today {
+  background-color: #97caef !important;
 }
 .tt-calendar2 .cal_day_sunday {
   background-color: #f8f2f2 !important;
