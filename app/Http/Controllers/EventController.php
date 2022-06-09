@@ -119,6 +119,11 @@ class EventController extends Controller
         return view('admin.event.event_partner', $data);
     }
 
+    public function form(Request $request){
+
+        $data = [];
+    return view('open.form', $data);
+}
 
     public function calendar(Request $request){
 

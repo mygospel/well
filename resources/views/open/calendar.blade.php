@@ -152,6 +152,7 @@
 
 		$(document).on("click",".cal_day",function(){
 			var dt = $(this).attr("rel");
+			console.log(dt);
 			view_topic(dt);
 		});
 
@@ -169,6 +170,7 @@
 	function view_topic(dt){
 
 		var html = $(".cal_day[rel='"+dt+"'] .att_date").html();
+		console.log(html);
 				
 		$("#topicInfoModal #topicInfoTitle").html(dt);
 		$(".popup_topic").html(html);
@@ -179,7 +181,7 @@
 			$("#topicInfoModal div").addClass("d-none").addClass("d-sm-block");
 		}
 
-		if( html && $(".att_Sp").length ) {
+		if( html  ) {
 			$("#topicInfoModal").modal("show");
 		}
 	}

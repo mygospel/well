@@ -10,7 +10,50 @@
                 </li>
             </ul>
         </div>
+        <div class="top-menu ms-auto">
+            <ul class="navbar-nav align-items-center">
 
+                <li class="nav-item dropdown dropdown-large">
+                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">	<i class='bx bx-category'></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <div class="row row-cols-3 g-3 p-3">
+                            <div class="col text-center">
+                                <div class="app-box mx-auto bg-gradient-burning text-white"><i class='bx bx-atom'></i>
+                                </div>
+                                <div class="app-title"><a href="/partner">이용현황</a></div>
+                            </div>
+                            <div class="col text-center">
+                                <div class="app-box mx-auto bg-gradient-cosmic text-white"><i class='bx bx-group'></i>
+                                </div>
+                                <div class="app-title"><a href="/event/partner">TOPIC관리</a></div>
+                            </div>
+                            <div class="col text-center" data-bs-toggle="modal" data-bs-target="#controlGlobalModal">
+                                <div class="app-box mx-auto bg-gradient-lush text-white"><i class='bx bx-shield'></i>
+                                </div>
+                                <div class="app-title"><a href="/emp">관리자관리</a></div>
+                            </div>
+                            <!--div class="col text-center" data-bs-toggle="modal" data-bs-target="#memberRegModal">
+                                <div class="app-box mx-auto bg-gradient-kyoto text-dark"><i class='bx bx-notification'></i>
+                                </div>
+                                <div class="app-title">회원가입</div>
+                            </div>
+                            <div class="col text-center">
+                                <div class="app-box mx-auto bg-gradient-blues text-dark"><i class='bx bx-file'></i>
+                                </div>
+                                <div class="app-title">이용권구매</div>
+                            </div>
+                            <div class="col text-center">
+                                <div class="app-box mx-auto bg-gradient-moonlit text-white"><i class='bx bx-filter-alt'></i>
+                                </div>
+                                <div class="app-title">업무마감</div>
+                            </div-->
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
         <div class="user-box dropdown">
             <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <!--img src="assets/images/avatars/avatar-2.png" class="user-img" alt="user avatar"-->
