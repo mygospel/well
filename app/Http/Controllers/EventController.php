@@ -184,6 +184,8 @@ class EventController extends Controller
                 if( trim($ev->e_name_view) ) $ev->e_name = $ev->e_name_view;
                 if( !$ev->e_name ) $ev->e_name = $ev->p_name;
 
+                if( !$ev->e_cont2 ) $ev->e_cont2 = $ev->e_cont;
+
                 $data['events'][substr($ev->e_sdate,0,10)][] = $ev;
             }  
 
@@ -225,46 +227,9 @@ class EventController extends Controller
         $event->e_value = $request->value ?? "";
         $event->e_title = $request->title ?? "";
         $event->e_cont = $request->cont ?? "";
+        $event->e_cont2 = $request->cont2 ?? "";
         $event->e_open = $request->open ?? "N";
-
-        if( $request->del_img1=="Y" ) {
-            Storage::disk('ncloud')->delete($event->e_img1);
-            $event->e_img1 = ""; 
-        }
-
-        if( $request->del_img2=="Y" ) {
-            Storage::disk('ncloud')->delete($event->e_img2);
-            $event->e_img2 = ""; 
-            
-        }
-        if( $request->del_img2=="Y" ) {
-            Storage::disk('ncloud')->delete($event->e_img3);
-            $event->e_img3 = ""; 
-            
-        }
-
-        if( $request->img1 ) {
-            $NCPdisk = new NCPdisk;
-            $upload_res = $NCPdisk->upload("event", $request->img1);            
-            if( $upload_res ) {
-                $event->e_img1 = $upload_res['filepath'];  
-            }
-        }
-
-        if( $request->img2 ) {
-            $NCPdisk = new NCPdisk;
-            $upload_res = $NCPdisk->upload("event", $request->img2);            
-            if( $upload_res ) {
-                $event->e_img2 = $upload_res['filepath'];  
-            }
-        } 
-        if( $request->img3 ) {
-            $NCPdisk = new NCPdisk;
-            $upload_res = $NCPdisk->upload("event", $request->img3);            
-            if( $upload_res ) {
-                $event->e_img3 = $upload_res['filepath'];   
-            }
-        }           
+    
 
         if( $event->e_no ) {
             $result['result'] = $event->update();

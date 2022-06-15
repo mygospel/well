@@ -129,7 +129,7 @@
                     <h5 class="modal-title" id="eventFormModalLabel">TOPIC</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="overflow:scroll; ">
                 
                     <form class="form-horizontal" role="form" name="frm_event" id="frm_event">
                     {{csrf_field()}}
@@ -202,7 +202,13 @@
                     </div>
 
                     <div class="col-xs-12 mt-3">
+                        <label class="form-label col-12">작성한내용</label>
                         <textarea name="cont" id="cont" class="form-control" style="height:200px;"></textarea>
+                    </div>
+
+                    <div class="col-xs-12 mt-3">
+                        <label class="form-label col-12">정리</label>
+                        <textarea name="cont2" id="cont2" class="form-control" style="height:100px;"></textarea>
                     </div>
 
                     <div class="col-xs-12 mt-3" id="eventDetail_msg">
@@ -336,6 +342,7 @@
                         $("#value").val(res.event.value);
                         $("#title").val(res.event.title);
                         $("#cont").val(res.event.cont);
+                        $("#cont2").val(res.event.cont2);
                         $("#type").val(res.event.type);
                         $("#open_"+res.event.open).prop("checked", true);
 

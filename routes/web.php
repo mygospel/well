@@ -152,7 +152,7 @@ Route::prefix('/admin')->group(function () {
         //Route::get('/', [IndexController::class, 'index'])->name("adminhome");
         
         //Route::get('/', redirect('/partner') );
-        Route::redirect('/', '/partner')->name("adminhome");
+        Route::redirect('/', '/admin/partner')->name("adminhome");
 
         Route::get('/history', function () {
             return view('admin.history');

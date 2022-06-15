@@ -16,7 +16,7 @@
 				<div class="att_Sp" style="line-height:100%;">
 					@foreach($evs2 as $event)
 					<div style="font-weight:500; font-size:10pt;">{{ $event['e_name'] }}</div>
-					<div>{{ $event->e_title }} <span style="font-size:9pt;line-height:100%;">{{ $event->e_cont }}</span></div>
+					<div>{{ $event->e_title }} <span style="font-size:9pt;line-height:100%;">{{ $event->e_cont2 }}</span></div>
 					@endforeach
 				</div>
 			</div>
@@ -86,7 +86,7 @@
 										<div class="att_date" rp_no="">
 												@foreach( $events[$THIS_DATE] as $event)
 												<div style="padding:1px 0 3px;font-weight:500;">@if( trim($event['e_title']) ){{ $event['e_title'] }} @else {{ $event['e_name']  }} @endif</div>
-												<div class="d-none d-sm-block">{{ $event->e_cont }}</div>
+												<div class="d-none d-sm-block">{{ $event->e_cont2 }}</div>
 												@endforeach
 										</div>
 									@endif
