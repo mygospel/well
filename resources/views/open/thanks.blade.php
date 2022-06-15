@@ -20,7 +20,7 @@
 	
 				<div class="col-xs-12 mt-3">
 					<label>달력에 표기될 이름을 입력해주세요(원하는 경우 선택)</label>
-					<input type="text" value="{{ $event['e_name2'] }}" disabled=disabled placeholder="표기될이름/표기될이름" class="form-control form-control-sm col-12">
+					<input type="text" value="{{ $event['e_name_view'] }}" disabled=disabled placeholder="표기될이름/표기될이름" class="form-control form-control-sm col-12">
 				</div>
 	
 				<div class="col-xs-12 mt-3">

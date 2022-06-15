@@ -162,7 +162,6 @@
 
 
 @section('javascript')
-    <script src="/assets/js/nmap.js"></script> 
     <script>
         $(document).ready(function() {
             $.ajaxSetup({
@@ -190,7 +189,7 @@
 
             formData = $("#form1").serialize();
             $.ajax({
-                url: '/partner/update',
+                url: '/admin/partner/update',
                 //processData: false,
                 //contentType: false,
                 data: formData,

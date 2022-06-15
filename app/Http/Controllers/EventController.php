@@ -19,63 +19,6 @@ class EventController extends Controller
         $this->event = new Event();
     }
 
-    ## 목록
-    public function index(Request $request){
-        //DB::enableQueryLog();	//query log 시작 선언부
-
-        $data["events"] = [];
-        $data["events"] = $this->event->select()
-            ->where(function ($query) use ($request) {
-                if ($request->q) {
-                    if( $request->fd == "title" ) {
-                        $query->where("e_title", "like", "%" . $request->q . "%");
-                    }  elseif( $request->fd == "cont" ) {
-                        $query->where("e_cont", "like", "%" . $request->q . "%");
-                    } else {
-                        $query->
-                                where("e_title", "like", "%" . $request->q . "%")
-                            ->orwhere("e_cont", "like", "%" . $request->q . "%");
-                    }
-                }
-                if ($request->state) {
-
-                    if( $request->state == "A" ) {
-                        $query->where("e_sdate",  ">", now());
-                    } elseif( $request->state == "I" ) {
-                        $query->where("e_sdate",  "<=", now());
-                        $query->where("e_edate",  ">=", now());
-                    }  elseif( $request->state == "E" ) {
-                        $query->where("e_edate",  "<", now());
-                    }
-
-                }
-            })
-            ->orderBy("e_no","desc")->paginate(10);
-
-
-            $NCPdisk = new NCPdisk;            
-            foreach(  $data['events'] as $event ) {
-                if( $event->e_img1 ) {
-                    $event->e_img1 = $NCPdisk->url($event->e_img1);
-                }
-                if( $event->e_img2 ) {
-                    $event->e_img2 = $NCPdisk->url($event->e_img2);
-                }
-                if( $event->e_img3 ) {
-                    $event->e_img3 = $NCPdisk->url($event->e_img3);
-                }
-            }  
-
-        $data['query'] = $request->query;
-        //$i = $this->board->perPage() * ($this->board->currentPage() - 1);
-        $data['start'] = $data["events"]->total() - $data["events"]->perPage() * ($data["events"]->currentPage() - 1);
-        $data['total'] = $data["events"]->total();
-        $data['param'] = ['state' => $request->state, 'fd' => $request->fd, 'q' => $request->q];
-        //dd(DB::getQueryLog());
-
-        return view('admin.event.event_list', $data);
-    }
-
     public function index_partner(Request $request){
         //DB::enableQueryLog();	//query log 시작 선언부
         $data["events"] = [];
@@ -118,6 +61,7 @@ class EventController extends Controller
 
         return view('admin.event.event_partner', $data);
     }
+
 
     public function form(Request $request){
 
@@ -237,6 +181,9 @@ class EventController extends Controller
             ->orderBy("e_no","desc")->get();
 
             foreach(  $evs as $ev ) {
+                if( trim($ev->e_name_view) ) $ev->e_name = $ev->e_name_view;
+                if( !$ev->e_name ) $ev->e_name = $ev->p_name;
+
                 $data['events'][substr($ev->e_sdate,0,10)][] = $ev;
             }  
 
@@ -270,7 +217,7 @@ class EventController extends Controller
         $event->e_partner = $request->partner ?? 0;
         $event->e_admin = $request->admin ?? 0;
         $event->e_name = $request->name ?? "";
-        $event->e_name2 = $request->name2 ?? "";
+        $event->e_name_view = $request->name_view ?? "";
         $event->e_manager = $request->manager ?? 0;
         $event->e_sdate = $request->sdate ?? "";
         $event->e_edate = $request->edate ?? "";
@@ -350,7 +297,7 @@ class EventController extends Controller
         $event->e_partner = $request->partner ?? 0;
         $event->e_admin = $request->admin ?? 0;
         $event->e_name = $request->name ?? "";
-        $event->e_name2 = $request->name2 ?? "";
+        $event->e_name_view = $request->name_view ?? "";
         $event->e_sdate = $request->sdate ?? "";
         $event->e_title = $request->title ?? "";
         $event->e_cont = $request->cont ?? "";
@@ -411,7 +358,6 @@ class EventController extends Controller
                     'e_edate as edate',
                     'e_title as title',
                     'e_name as name',
-                    'e_name2 as name2',
                     'e_name_view as name_view',
                     'e_cont as cont',
                     'e_cont2 as cont2',
@@ -426,20 +372,6 @@ class EventController extends Controller
             )
             ->leftjoin('partners', 'events.e_partner', '=', 'partners.p_no')
             ->where("e_no",  $request->no)->first();
-
-            $NCPdisk = new NCPdisk;            
-        
-
-            if( $data['event']->img1 ) {
-                $data['event']->img1_url = $NCPdisk->url($data['event']->img1);
-            }
-            if( $data['event']->img2 ) {
-                $data['event']->img2_url = $NCPdisk->url($data['event']->img2);
-            }
-            if( $data['event']->img3 ) {
-                $data['event']->img3_url = $NCPdisk->url($data['event']->img3);
-            }
-
 
 
         return response($data);

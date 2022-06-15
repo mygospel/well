@@ -87,10 +87,50 @@ Route::prefix('/partner')->group(function () {
     });
 
 });
+Route::prefix('/admin')->group(function () {
 
-    Route::get('/adminlogin', [LoginController::class, 'showAdminLoginForm'])->name("adminlogin");
-    Route::post('/adminloginok', [LoginController::class, 'adminLogin']);
+    Route::get('/login', [LoginController::class, 'showAdminLoginForm'])->name("adminlogin");
+    Route::post('/loginok', [LoginController::class, 'adminLogin']);
     Route::get('/logout', [AdminController::class, 'logout']);
+
+
+    Route::prefix('/event')->group(function () {
+        Route::any('/getInfo', [EventController::class, 'getInfo']);
+
+        // TOPIC
+        Route::get('/partner', [EventController::class, 'index_partner']);
+        Route::post('/delete', [EventController::class, 'delete']);
+        Route::post('/update', [EventController::class, 'update']);
+    });
+
+
+    Route::group(['prefix' => '/partner'],function () {
+
+        //Route::any('/login', [PartnerController::class, 'login']);
+        Route::get('/form/{no?}',  [PartnerController::class, 'form']);
+
+
+        Route::any('/update', [PartnerController::class, 'update']);
+        Route::any('/delete', [PartnerController::class, 'delete']);
+
+
+        
+
+
+        Route::get('/reg', [PartnerRegController::class, 'index']);
+
+        Route::any('/reg/update', [PartnerRegController::class, 'update']);
+
+        // Route::get('/standard', function () {
+        //     return view('admin.partner.standard');
+        // });
+
+        Route::get('/', [PartnerController::class, 'index'])->name("partner");
+        Route::get('/deleted', [PartnerController::class, 'deleted_index']);
+    });
+
+});
+
 
     //Auth::routes();
 
@@ -118,41 +158,9 @@ Route::prefix('/partner')->group(function () {
             return view('admin.history');
         });
 
-        Route::group(['prefix' => '/partner'],function () {
 
-            //Route::any('/login', [PartnerController::class, 'login']);
-            Route::get('/form/{no?}',  [PartnerController::class, 'form']);
-            Route::get('/photo/{no?}',  [PartnerController::class, 'photo']);
-            Route::post('/photo/{no?}/upload',  [PartnerController::class, 'photo_upload']);
-            Route::post('/photo/{no?}/list',  [PartnerController::class, 'photo_list']);
-            Route::post('/photo/{no?}/delete',  [PartnerController::class, 'photo_delete']);
 
-            Route::any('/update', [PartnerController::class, 'update']);
-            Route::any('/delete', [PartnerController::class, 'delete']);
 
-            Route::get('/apply', [PartnerApplyController::class, 'index']);
-            Route::any('/apply/store', [PartnerApplyController::class, 'store']);
-
-            Route::get('/reg', [PartnerRegController::class, 'index']);
-
-            Route::any('/reg/update', [PartnerRegController::class, 'update']);
-
-            // Route::get('/standard', function () {
-            //     return view('admin.partner.standard');
-            // });
-
-            Route::get('/', [PartnerController::class, 'index'])->name("partner");
-            Route::get('/deleted', [PartnerController::class, 'deleted_index']);
-        });
-
-        Route::prefix('/event')->group(function () {
-            Route::post('/getInfo', [EventController::class, 'getInfo']);
-
-            // TOPIC
-            Route::get('/partner', [EventController::class, 'index_partner']);
-            Route::post('/delete', [EventController::class, 'delete']);
-            Route::post('/update', [EventController::class, 'update']);
-        });
 
         Route::prefix('/customer')->group(function () {
             Route::get('/partner', [Custom2Controller::class, 'index']);

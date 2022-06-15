@@ -80,7 +80,9 @@
                                     <th scope="col-sm-1" class="text-center">공개</th>
                                     <th scope="col-sm-1" class="text-center">타입</th>
                                     <th scope="col-sm-2" class="text-center">파트너</th>
-                                    <th scope="col-sm-2" class="text-center">기간</th>
+                                    <th scope="col-sm-2" class="text-center">본명</th>
+                                    <th scope="col-sm-2" class="text-center">보여질이름</th>
+                                    <th scope="col-sm-2" class="text-center">날자</th>
                                     <th scope="col-sm-4">제목</th>
                                     <th scope="col-sm-2" class="text-center">등록일시</th>
                                     <th scope="col-sm-1" class="text-center">관리</th>
@@ -94,6 +96,8 @@
                                     <td class="text-center">@if($event['e_open'] == "Y" ) <button type="button" class="btn btn-xs btn-info event_item">공개</button> @elseif($event['e_open'] == "N" ) <button type="button" class="btn btn-xs btn-secondary event_item">비공개</button> @endif</td>
                                     <td class="text-center">@if($event['e_type'] == "A" ) 일반 @elseif($event['e_type'] == "S" ) <button type="button" class="btn btn-xs btn-danger event_item">긴급</button> @endif</td>
                                     <td class="text-center">{{ $event['p_name'] }}</td>
+                                    <td class="text-center">{{ $event['e_name']  }}</td>
+                                    <td class="text-center">{{ $event['e_name_view']  }}</td>
                                     <td class="text-center">{{ $event['e_sdate'] }}</td>
                                     <td>{{ substr($event['e_cont'],0,50) }}</td>
                                     <td class="text-center">{{ substr($event['created_at'],0,16) }}</td>
@@ -131,32 +135,66 @@
                     {{csrf_field()}}
                     <input type="hidden" name="no" id="no" value="">
                     <div class="col-xs-12 mt-3">
+
+                        <label class="form-label col-12">파트너매칭</label>
                         <input type="hidden" name="partner" id="partner" value="">
                         <input name="partner_name" id="partner_name" style="ime-mode:disabled;" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="클릭하여 파트너검색" aria-label=".form-control-sm example" data-bs-toggle="modal" data-bs-target="#partnerSearchModal" search_mode="event">
                     </div>
 
-                    <div class="col-xs-12 mt-3">
-                        <input name="name" id="name" style="ime-mode:disabled;" class="form-control form-control-sm mb-3 col-6" type="text" placeholder="보여질이름">
-                    </div>                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="col-xs-12 mt-3">
+                                <label class="form-label col-12">이름</label>
+                                <input name="name" id="name" style="ime-mode:disabled;" class="form-control form-control-sm mb-3 col-6" type="text" placeholder="이름">
+                            </div>  
+
+                        </div>
+                        <div class="col">
+                            <div class="col-xs-12 mt-3">
+                                <label class="form-label col-12">보여질이름</label>
+                                <input name="name_view" id="name_view" style="ime-mode:disabled;" class="form-control form-control-sm mb-3 col-6" type="text" placeholder="보여질이름">
+                            </div>  
+
+                        </div>
+
+                    </div>  
+
+
+                    <div class="row">
+                        <div class="col-6">
+
+                                <label class="form-label col-12">달력에표기될날자</label>
+                                <input type="date" name="sdate" id="sdate" value="" placeholder="날자시작일" class="form-control form-control-sm datepicker col-12">
+
+
+                        </div>
+                        <div class="col-3">
+                            <label class="form-label col-12">공개여부</label>
+                            <div class="form-check-inline col-12">
+                                <input type="radio" class='form-check-input' name="open" id="open_Y" value="Y"> 공개
+                                <input type="radio" class='form-check-input' name="open" id="open_N" value="N"> 비공개
+                            </div>
+
+                        </div>
+                        <div class="col-3">
+                            <label class="form-label col-12">구분</label>
+                            <select name="type" id="type" class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                                <option value="A">일반</option>
+                                <option value="S">긴급</option>
+                            </select>
+
+                        </div>
+
+                    </div>  
+                  
+
 
                     <div class="col-xs-12 mt-3">
-                        <input type="date" name="sdate" id="sdate" value="" placeholder="날자시작일" class="form-control form-control-sm datepicker col-12">
-                    </div>
 
-
-                    <div class="col-xs-12 mt-3">
-                        <select name="type" id="type" class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
-                            <option value="A">일반</option>
-                            <option value="S">긴급</option>
-                        </select>
                     </div>
 
                     <div class="col-6">
-                        <label class="form-label col-12">공개여부</label>
-                        <div class="form-check-inline col-12">
-                            <input type="radio" class='form-check-input' name="open" id="open_Y" value="Y"> 공개
-                            <input type="radio" class='form-check-input' name="open" id="open_N" value="N"> 비공개
-                        </div>
+
                     </div>
 
                     <div class="col-xs-12 mt-3">
@@ -223,7 +261,7 @@
         function event_update() {
             var req = $("#frm_event").serialize();
             $.ajax({
-                url: '/event/update',
+                url: '/admin/event/update',
                 type: 'POST',
                 async: true,
                 beforeSend: function (xhr) {
@@ -247,7 +285,7 @@
             var req = $("#frm_event").serialize();
             console.log(req);
             $.ajax({
-                url: '/event/delete',
+                url: '/admin/event/delete',
                 type: 'POST',
                 async: true,
                 beforeSend: function (xhr) {
@@ -274,8 +312,9 @@
 
         function event_getInfo(no) {
             var req = "no=" + no;
+            console.log(req);     
             $.ajax({
-                url: '/event/getInfo',
+                url: '/admin/event/getInfo',
                 type: 'POST',
                 async: true,
                 beforeSend: function (xhr) {
@@ -290,6 +329,7 @@
                         $("#partner").val(res.event.partner);
                         $("#name").val(res.event.name);
                         $("#partner_name").val(res.event.partner_name);
+                        $("#name_view").val(res.event.name_view);
                         //$("#aid").val(res.event.id).attr("readonly", true);
                         $("#sdate").val(res.event.sdate);
                         $("#edate").val(res.event.edate);

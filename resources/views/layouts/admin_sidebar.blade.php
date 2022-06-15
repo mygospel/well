@@ -19,21 +19,21 @@
             <div class="menu-title">파트너관리</div>
         </a>
         <ul>
-            <li> <a href="/partner"><i class="bx bx-right-arrow-alt"></i>파트너관리</a>
+            <li> <a href="/admin/partner"><i class="bx bx-right-arrow-alt"></i>파트너관리</a>
             </li>
             <!--li> 
                 <a href="/community/notice"><i class="bx bx-right-arrow-alt"></i>공지사항</a>
             </li-->
-            <li> <a href="/event/partner"><i class="bx bx-right-arrow-alt"></i>TOPIC</a>
+            <li> <a href="/admin/event/partner"><i class="bx bx-right-arrow-alt"></i>TOPIC</a>
             </li>
             <!--li> 
                 <a href="/customer/partner"><i class="bx bx-right-arrow-alt"></i>파트너 1:1 문의</a>
             </li-->
             <li> 
-                <a href="/emp"><i class="bx bx-right-arrow-alt"></i>관리자관리</a>
+                <a href="/admin/emp"><i class="bx bx-right-arrow-alt"></i>관리자관리</a>
             </li>
             <li> 
-                <a href="/customer/dev"><i class="bx bx-right-arrow-alt"></i>개발자게시판</a>
+                <a href="/admin/customer/dev"><i class="bx bx-right-arrow-alt"></i>개발자게시판</a>
             </li>
         </ul>
     </li>

@@ -337,6 +337,7 @@ class PartnerController extends Controller
         $partner->p_open_kiosk = $request->open_kiosk ?? "N";
         
         $partner->p_name = $request->name ?? "";
+        $partner->p_area = $request->area ?? "";
         $partner->p_name_view = $request->name_view ?? "";
         $partner->p_homepage = $request->homepage ?? "";
         $partner->p_phone = $request->phone ?? "";
