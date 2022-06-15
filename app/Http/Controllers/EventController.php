@@ -120,13 +120,12 @@ class EventController extends Controller
     }
 
     public function form(Request $request){
+
         if( $request->e ) {
             $data["event"] = $this->event->where("e_no", $request->e)->first();
-
         } else {
             $data["event"] = [];
         }
-
 
         return view('open.form', $data);
     }

@@ -6,10 +6,10 @@
 
 		<form class="form-horizontal" role="form" name="frm_event" id="frm_event">
 			{{csrf_field()}}
-			<input type="hidden" name="no" id="no" value="{{ $event['e_no'] }}">
+			<input type="hidden" name="no" id="no" value="{{ $event['e_no'] ?? "" }}">
 			<div class="col-xs-12 mt-3">
 				<label>본부에서 알고 있는 이름을 입력해주세요</label>
-				<input name="name" id="name" value="{{ $event['e_name'] }}" style="ime-mode:disabled;" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="파트너이름/파트너이름">
+				<input name="name" id="name" value="{{ $event['e_name'] ?? ""  }}" style="ime-mode:disabled;" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="파트너이름/파트너이름">
 			</div>
 
 			<!--div class="col-xs-12 mt-3">
@@ -21,11 +21,11 @@
 
 			<div class="col-xs-12 mt-3">
 				<label>달력에 표기될 이름을 입력해주세요(원하는 경우 입력)</label>
-				<input type="text" name="name2" id="name2" value="{{ $event['e_name2'] }}" placeholder="표기될이름/표기될이름" class="form-control form-control-sm col-12">
+				<input type="text" name="name2" id="name2" value="{{ $event['e_name2'] ?? ""  }}" placeholder="표기될이름/표기될이름" class="form-control form-control-sm col-12">
 			</div>
 
 			<div class="col-xs-12 mt-3">
-				<textarea name="cont" id="cont" class="form-control" style="height:200px;" placeholder="이달의 제목을 입력해주세요.">{{ $event['e_cont'] }}</textarea>
+				<textarea name="cont" id="cont" class="form-control" style="height:200px;" placeholder="이달의 제목을 입력해주세요.">{{ $event['e_cont'] ?? ""  }}</textarea>
 			</div>
 
 			<div class="col-xs-12 mt-3" id="eventDetail_msg">
