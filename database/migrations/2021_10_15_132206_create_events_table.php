@@ -18,7 +18,8 @@ class CreateEventsTable extends Migration
             $table->unsignedInteger('e_partner')->default(0)->comment('파트너번호');
             $table->unsignedInteger('e_admin')->default(0)->comment('작성관리자번호'); 
             $table->unsignedInteger('e_manager')->default(0)->comment('작성직원번호'); 
-            $table->string('e_name',50)->default('')->comment('보여질이름');
+            $table->string('e_name',50)->default('')->comment('이름');
+            $table->string('e_name2',50)->default('')->comment('보여질이름');
             $table->date('e_sdate',0)->default('0000-00-00')->comment('시작일');
             $table->date('e_edate',0)->default('0000-00-00')->comment('종료일');
             $table->string('e_type',1)->default('A')->comment('할인타입제목');  ## A 할인없음 P 금액 또는 R 할인율

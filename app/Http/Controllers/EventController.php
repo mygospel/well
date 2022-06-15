@@ -120,10 +120,16 @@ class EventController extends Controller
     }
 
     public function form(Request $request){
+        if( $request->e ) {
+            $data["event"] = $this->event->where("e_no", $request->e)->first();
 
-        $data = [];
-    return view('open.form', $data);
-}
+        } else {
+            $data["event"] = [];
+        }
+
+
+        return view('open.form', $data);
+    }
 
     public function calendar(Request $request){
 
@@ -264,7 +270,8 @@ class EventController extends Controller
 
         $event->e_partner = $request->partner ?? 0;
         $event->e_admin = $request->admin ?? 0;
-        $event->e_name = $request->name ?? 0;
+        $event->e_name = $request->name ?? "";
+        $event->e_name2 = $request->name2 ?? "";
         $event->e_manager = $request->manager ?? 0;
         $event->e_sdate = $request->sdate ?? "";
         $event->e_edate = $request->edate ?? "";
@@ -329,6 +336,52 @@ class EventController extends Controller
 
 
 
+    public function reg(Request $request)
+    {
+
+        #DB::enableQueryLog();	//query log 시작 선언부
+        #dd(DB::getQueryLog());
+        $result = [];
+        if( $request->no ) {
+            $event = \App\Models\Event::where('e_no', $request->no)->firstOrFail();
+        } else {
+            $event = new event();
+        }
+
+        $event->e_partner = $request->partner ?? 0;
+        $event->e_admin = $request->admin ?? 0;
+        $event->e_name = $request->name ?? "";
+        $event->e_name2 = $request->name2 ?? "";
+        $event->e_sdate = $request->sdate ?? "";
+        $event->e_title = $request->title ?? "";
+        $event->e_cont = $request->cont ?? "";
+
+        if( $event->e_no ) {
+            $result['result'] = $event->update();
+        } else {
+            $result['result'] = $event->save();
+        }
+
+
+        $result['rURL'] = "/thanks?e=".$event->e_no;
+
+
+        return response($result);
+    }
+
+    ## 폼을 위한 정보 - 사용자에서 사용할...
+    public function thanks(Request $request){
+
+        $data["result"] = true;
+        if( $request->e ) {
+            $data["event"] = $this->event->where("e_no", $request->e)->first();
+
+        } else {
+            $data["event"] = [];
+        }
+        return view('open.thanks', $data);
+    }
+
     public function delete(Request $request)
     {
 
@@ -359,6 +412,7 @@ class EventController extends Controller
                     'e_edate as edate',
                     'e_title as title',
                     'e_name as name',
+                    'e_name2 as name2',
                     'e_name_view as name_view',
                     'e_cont as cont',
                     'e_cont2 as cont2',

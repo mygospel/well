@@ -67,6 +67,8 @@ use App\Http\Middleware\UserAuthenticate;
 
 Route::get('/calendar', [EventController::class, 'calendar']);
 Route::get('/form', [EventController::class, 'form']);
+Route::post('/reg', [EventController::class, 'reg']);
+Route::get('/thanks', [EventController::class, 'thanks']);
 
 Route::prefix('/partner')->group(function () {
 

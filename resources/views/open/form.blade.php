@@ -1,33 +1,31 @@
 @extends('layouts.open')
 
+<div class="container">
 <div class="panel panel-default">
 	<div class="panel-body">
 
 		<form class="form-horizontal" role="form" name="frm_event" id="frm_event">
 			{{csrf_field()}}
-			<input type="hidden" name="no" id="no" value="">
+			<input type="hidden" name="no" id="no" value="{{ $event['e_no'] }}">
 			<div class="col-xs-12 mt-3">
-				<input type="hidden" name="partner" id="partner" value="">
-				<input name="partner_name" id="partner_name" style="ime-mode:disabled;" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="클릭하여 파트너검색" aria-label=".form-control-sm example" data-bs-toggle="modal" data-bs-target="#partnerSearchModal" search_mode="event">
+				<label>본부에서 알고 있는 이름을 입력해주세요</label>
+				<input name="name" id="name" value="{{ $event['e_name'] }}" style="ime-mode:disabled;" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="파트너이름/파트너이름">
 			</div>
 
-			<div class="col-xs-12 mt-3">
-				<input type="date" name="sdate" id="sdate" value="<?=date('Y-m-d')?>" placeholder="날자시작일" class="form-control form-control-sm datepicker col-12">
-			</div>
-
-			<div class="col-xs-12 mt-3">
+			<!--div class="col-xs-12 mt-3">
 				<select name="type" id="type" class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
 					<option value="A">일반</option>
 					<option value="S">긴급</option>
 				</select>
+			</div-->
+
+			<div class="col-xs-12 mt-3">
+				<label>달력에 표기될 이름을 입력해주세요(원하는 경우 입력)</label>
+				<input type="text" name="name2" id="name2" value="{{ $event['e_name2'] }}" placeholder="표기될이름/표기될이름" class="form-control form-control-sm col-12">
 			</div>
 
 			<div class="col-xs-12 mt-3">
-				<input type="text" name="name" id="name" value="" placeholder="표기될 이름" class="form-control form-control-sm col-12">
-			</div>
-
-			<div class="col-xs-12 mt-3">
-				<textarea name="cont" id="cont" class="form-control" style="height:200px;" placeholder="기도제목을 입력해주세요."></textarea>
+				<textarea name="cont" id="cont" class="form-control" style="height:200px;" placeholder="이달의 제목을 입력해주세요.">{{ $event['e_cont'] }}</textarea>
 			</div>
 
 			<div class="col-xs-12 mt-3" id="eventDetail_msg">
@@ -36,15 +34,14 @@
 
 
 			<div class="col-xs-12 mt-3 text-center">
-				<button type="button" class="btn btn-sm btn-primary" id="btn_event_update">글작성</button>
-				<button type="button" class="btn btn-sm btn-secondary" onclick="location.href='/calendar'">취소</button>
+				<button type="button" class="btn btn-sm btn-primary" id="btn_event_update">보내기</button>
 			</div>
 			</form>
 
 	</div>
   </div>
 
-
+</div>
 
 @section('javascript')	
 <script>
@@ -77,8 +74,9 @@
 
 	function event_update() {
 		var req = $("#frm_event").serialize();
+		console.log(req);
 		$.ajax({
-			url: '/event/update',
+			url: '/reg',
 			type: 'POST',
 			async: true,
 			beforeSend: function (xhr) {
@@ -86,9 +84,9 @@
 			},
 			data: req,
 			success: function (res, textStatus, xhr) {
+				console.log(res);
 				if (res.result == true) {
-					alert("등록되었습니다. 관리자 확인후애 등록됩니다.");
-					location.href='/calendar'
+					location.href=res.rURL
 				} else {
 					$("#eventDetail_msg").html(xhr.message);
 				}
@@ -99,39 +97,5 @@
 		});
 	}
 
-	function event_delete() {
-		var req = $("#frm_event").serialize();
-		console.log(req);
-		$.ajax({
-			url: '/event/delete',
-			type: 'POST',
-			async: true,
-			beforeSend: function (xhr) {
-				$("#eventDetail_msg").html("");
-			},
-			data: req,
-			success: function (res, textStatus, xhr) {
-				console.log(res);
-				if (res.result == true) {
-					location.href='/calendar'
-				} else {
-					$("#eventDetail_msg").html(res.message);
-					console.log("실패.");
-				}
-			},
-			error: function (xhr, textStatus, errorThrown) {
-				console.log(xhr);
-				console.log(xhr.responseJSON.file);
-				console.log(xhr.responseJSON.line);
-				console.log(xhr.responseJSON.message);     
-			}
-		});
-	}
-
-
-	function setPartnerSelected_event(no,name){
-		$("#frm_event #partner").val(no);
-		$("#frm_event #partner_name").val(name);   
-	}
 </script>
 @endsection	
