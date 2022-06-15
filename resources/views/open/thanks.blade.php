@@ -1,7 +1,15 @@
 @extends('layouts.open')
 
-<div class="container">
-	아래와 같이 등록되었습니다. 감사합니다.
+<div class="container mt-3">
+
+	<div class="card">
+		<div class="card-body">
+		  <p class="card-text">아래와 같이 등록되었습니다. 감사합니다.</a>
+		</div>
+	  </div>
+
+
+	
 	<div class="panel panel-default">
 		<div class="panel-body">
 	

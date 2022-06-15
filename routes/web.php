@@ -65,6 +65,8 @@ use App\Http\Middleware\PartnerAuthenticate;
 use App\Http\Middleware\UserAuthenticate;
 
 
+Route::redirect('/', 'http://news.naver.com');
+
 Route::get('/calendar', [EventController::class, 'calendar']);
 Route::any('/form', [EventController::class, 'form']);
 Route::post('/reg', [EventController::class, 'reg']);
@@ -75,59 +77,76 @@ Route::prefix('/partner')->group(function () {
     Route::get('/login', [LoginController::class, 'showPartnerLoginForm'])->name("partnerlogin");
     Route::post('/loginok', [LoginController::class, 'partnerLogin']);
     Route::get('/logout', [LoginController::class, 'logout']);
-    
-    Route::group(['middleware' => ['partner']], function () {
-
-        Route::prefix('/event')->group(function () {
-            Route::get('/' ,[FrenchEventController::class, 'index']);
-            Route::post('/getInfo', [FrenchEventController::class, 'getInfo']);
-            Route::post('/update', [FrenchEventController::class, 'update']);
-        });
-
-    });
 
 });
+
 Route::prefix('/admin')->group(function () {
 
     Route::get('/login', [LoginController::class, 'showAdminLoginForm'])->name("adminlogin");
     Route::post('/loginok', [LoginController::class, 'adminLogin']);
     Route::get('/logout', [AdminController::class, 'logout']);
 
-
-    Route::prefix('/event')->group(function () {
-        Route::any('/getInfo', [EventController::class, 'getInfo']);
-
-        // TOPIC
-        Route::get('/partner', [EventController::class, 'index_partner']);
-        Route::post('/delete', [EventController::class, 'delete']);
-        Route::post('/update', [EventController::class, 'update']);
-    });
+    Route::group(['middleware' => ['admin']], function () {
 
 
-    Route::group(['prefix' => '/partner'],function () {
 
-        //Route::any('/login', [PartnerController::class, 'login']);
-        Route::get('/form/{no?}',  [PartnerController::class, 'form']);
-
-
-        Route::any('/update', [PartnerController::class, 'update']);
-        Route::any('/delete', [PartnerController::class, 'delete']);
-
-
+        Route::prefix('/event')->group(function () {
+            Route::any('/getInfo', [EventController::class, 'getInfo']);
+    
+            // TOPIC
+            Route::get('/partner', [EventController::class, 'index_partner']);
+            Route::post('/delete', [EventController::class, 'delete']);
+            Route::post('/update', [EventController::class, 'update']);
+        });
+    
+    
+        Route::group(['prefix' => '/partner'],function () {
+    
+            //Route::any('/login', [PartnerController::class, 'login']);
+            Route::get('/form/{no?}',  [PartnerController::class, 'form']);
+    
+    
+            Route::any('/update', [PartnerController::class, 'update']);
+            Route::any('/delete', [PartnerController::class, 'delete']);
+    
+            Route::get('/reg', [PartnerRegController::class, 'index']);
+    
+            Route::any('/reg/update', [PartnerRegController::class, 'update']);
+    
+            // Route::get('/standard', function () {
+            //     return view('admin.partner.standard');
+            // });
+    
+            Route::get('/', [PartnerController::class, 'index'])->name("partner");
+            Route::get('/deleted', [PartnerController::class, 'deleted_index']);
+        });
         
+        Route::prefix('/customer')->group(function () {
 
+            Route::get('/dev', [CustomdevController::class, 'index']);
+            Route::get('/dev/view/{no}', [CustomdevController::class, 'view']);
+            Route::get('/dev/form/{no}', [CustomdevController::class, 'form']);
+            Route::get('/dev/answerform/{no}', [CustomdevController::class, 'answerform']);
+            Route::post('/dev/update', [CustomdevController::class, 'update']);
+            Route::post('/dev/delete', [CustomdevController::class, 'delete']);
+            Route::post('/dev/answer', [CustomdevController::class, 'answer']);
+        });
 
-        Route::get('/reg', [PartnerRegController::class, 'index']);
+        Route::prefix('/comments')->group(function () {
+            Route::any('update', [CustomdevController::class, 'comm_update']);
+            Route::any('delete', [CustomdevController::class, 'comm_delete']);
+            Route::any('list', [CustomdevController::class, 'comm_list']);
+        });
 
-        Route::any('/reg/update', [PartnerRegController::class, 'update']);
+        Route::prefix('/emp')->group(function () {
+            Route::get('/', [AdminController::class, 'index']);
+            Route::post('/getInfo', [AdminController::class, 'getInfo']);
+            Route::any('/update', [AdminController::class, 'store']);
+            Route::post('/delete', [AdminController::class, 'delete']);
+        });
 
-        // Route::get('/standard', function () {
-        //     return view('admin.partner.standard');
-        // });
+    });   
 
-        Route::get('/', [PartnerController::class, 'index'])->name("partner");
-        Route::get('/deleted', [PartnerController::class, 'deleted_index']);
-    });
 
 });
 
@@ -142,31 +161,10 @@ Route::prefix('/admin')->group(function () {
 
     });
 
-    Route::prefix('/nmap')->group(function () {
-        Route::any('/nmap_get_point', [PartnerController::class, 'nmap_get_point']);
-    });
-
 
     Route::group(['middleware' => ['admin']], function () {
 
-        //Route::get('/', [IndexController::class, 'index'])->name("adminhome");
-        
-        //Route::get('/', redirect('/partner') );
-        Route::redirect('/', '/admin/partner')->name("adminhome");
-
-        Route::get('/history', function () {
-            return view('admin.history');
-        });
-
-
-
-
-
         Route::prefix('/customer')->group(function () {
-            Route::get('/partner', [Custom2Controller::class, 'index']);
-            Route::get('/partner/view/{no}', [Custom2Controller::class, 'view']);
-            Route::post('/partner/update', [Custom2Controller::class, 'update']);
-            Route::post('/partner/answer', [Custom2Controller::class, 'answer']);
 
             Route::get('/dev', [CustomdevController::class, 'index']);
             Route::get('/dev/view/{no}', [CustomdevController::class, 'view']);
