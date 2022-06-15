@@ -152,7 +152,7 @@ class EventController extends Controller
             ->leftJoin('partners', 'e_partner', '=', 'partners.p_no')
             ->where("e_type","A")
             ->where("e_open","Y")    
-            ->where('partners.p_open', '=', 'Y')
+            //->where('partners.p_open', '=', 'Y')
             ->where(function ($query) use ($request) {
                 if ($request->q) {
                     if( $request->fd == "title" ) {
@@ -244,8 +244,6 @@ class EventController extends Controller
 
         return response($result);
     }
-
-
 
     public function reg(Request $request)
     {

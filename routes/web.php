@@ -117,10 +117,10 @@ Route::prefix('/admin')->group(function () {
             //     return view('admin.partner.standard');
             // });
     
-            Route::get('/', [PartnerController::class, 'index'])->name("partner");
+            Route::get('/', [PartnerController::class, 'index'])->name("adminhome");
             Route::get('/deleted', [PartnerController::class, 'deleted_index']);
         });
-        
+
         Route::prefix('/customer')->group(function () {
 
             Route::get('/dev', [CustomdevController::class, 'index']);
