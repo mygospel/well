@@ -19,7 +19,7 @@
 		<div class="wrap">
 			<article class="header-page-group">
 				<a href="#none" class="back-btn"></a>
-				<div class="page-txt">이벤트</div>
+				<div class="page-txt">TOPIC</div>
 			</article>
 		</div>
 	</header>
@@ -47,7 +47,7 @@
 						<div class="img-box">
 							<img src="../img/img_event_dummy3.png" alt="이미지">
 						</div>
-						<div class="end-box">종료된 이벤트</div>
+						<div class="end-box">종료된 TOPIC</div>
 					</a>
 
 

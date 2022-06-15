@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Http\Classes\NCPdisk;
+use Illuminate\Support\Facades\Hash;
+
+use Illuminate\Support\Facades\Auth;
 
 
 use App\Http\Controllers\PartnerRegController;
@@ -167,9 +170,6 @@ class PartnerController extends Controller
         $data['start'] = $data["partners"]->total() - $data["partners"]->perPage() * ($data["partners"]->currentPage() - 1);
         foreach(  $data["partners"] as $partner ) {
 
-            ## 지역명
-            $partner->p_area = explode(" ", $partner->p_address1);
-
             if( $partner->p_last_dt != "0000-00-00") {
                 $last_dt = new Carbon($partner->p_last_dt);
                 $last_timestamp = $last_dt->getTimestamp();
@@ -301,7 +301,6 @@ class PartnerController extends Controller
         //     $result["message"] = "아이디는 6자이상 입력해주세요.";
         //     return response($result);
         // }
-
         if( !$request->name || !isset($request->name) || strlen($request->name) < 3  ) {
 
             $result["result"] = false;
@@ -331,12 +330,14 @@ class PartnerController extends Controller
 
         }
 
-        if( $request->passwd ) $partner->p_passwd = $request->passwd ?? "";
+        if( $request->passwd ) $partner->password = Hash::make($request->passwd);
+
         $partner->p_kind = $request->kind ?? "";
         $partner->p_open_mobile = $request->open_mobile ?? "N";
         $partner->p_open_kiosk = $request->open_kiosk ?? "N";
         
         $partner->p_name = $request->name ?? "";
+        $partner->p_name_view = $request->name_view ?? "";
         $partner->p_homepage = $request->homepage ?? "";
         $partner->p_phone = $request->phone ?? "";
         $partner->p_email = $request->email ?? "";
@@ -447,8 +448,6 @@ class PartnerController extends Controller
                 return redirect()->back()->withErrors(['alert', 'Updated!']);
             }
 
-            //
-            $data["partner"]->p_area = explode(" ",$data["partner"]->p_address1);
 
             if( isset($data["partner"]->p_options) ) {
                 $data["partner"]->option_arr = explode(",",$data["partner"]->p_options);
@@ -472,8 +471,6 @@ class PartnerController extends Controller
             if( !$data["partner"] ) {
                 return redirect()->back()->withErrors(['alert', 'Updated!']);
             }
-
-            $data["partner"]->p_area = explode(" ",$data["partner"]->p_address1);
 
         } else {
             $data["partner"] = [];
@@ -612,7 +609,7 @@ class PartnerController extends Controller
     public function search(Request $request){
 
         $data["q"] = $request->q ?? "";
-        $data["partners"] = $this->partner->select(["p_no as no", "p_name as name", "p_address1 as area", "p_phone as phone"])
+        $data["partners"] = $this->partner->select(["p_no as no", "p_name as name","p_phone as phone"])
             ->where(function ($query) use ($request) {
                 if ($request->q) {
                         $query->where("p_name", "like", "%".$request->q."%")

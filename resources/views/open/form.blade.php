@@ -12,9 +12,8 @@
 			</div>
 
 			<div class="col-xs-12 mt-3">
-				<input type="date" name="sdate" id="sdate" value="" placeholder="날자시작일" class="form-control form-control-sm datepicker col-12">
+				<input type="date" name="sdate" id="sdate" value="<?=date('Y-m-d')?>" placeholder="날자시작일" class="form-control form-control-sm datepicker col-12">
 			</div>
-
 
 			<div class="col-xs-12 mt-3">
 				<select name="type" id="type" class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
@@ -23,20 +22,12 @@
 				</select>
 			</div>
 
-			<div class="col-6">
-				<label class="form-label col-12">공개여부</label>
-				<div class="form-check-inline col-12">
-					<input type="radio" class='form-check-input' name="open" id="open_Y" value="Y"> 공개
-					<input type="radio" class='form-check-input' name="open" id="open_N" value="N"> 비공개
-				</div>
+			<div class="col-xs-12 mt-3">
+				<input type="text" name="name" id="name" value="" placeholder="표기될 이름" class="form-control form-control-sm col-12">
 			</div>
 
 			<div class="col-xs-12 mt-3">
-				<input type="text" name="title" id="title" value="" placeholder="날자대신 제목을 표기하는 경우" class="form-control form-control-sm col-12">
-			</div>
-
-			<div class="col-xs-12 mt-3">
-				<textarea name="cont" id="cont" class="form-control" style="height:200px;"></textarea>
+				<textarea name="cont" id="cont" class="form-control" style="height:200px;" placeholder="기도제목을 입력해주세요."></textarea>
 			</div>
 
 			<div class="col-xs-12 mt-3" id="eventDetail_msg">
@@ -46,10 +37,10 @@
 
 			<div class="col-xs-12 mt-3 text-center">
 				<button type="button" class="btn btn-sm btn-primary" id="btn_event_update">글작성</button>
-				
+				<button type="button" class="btn btn-sm btn-secondary" onclick="location.href='/calendar'">취소</button>
 			</div>
 			</form>
-			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
 	</div>
   </div>
 
@@ -96,7 +87,8 @@
 			data: req,
 			success: function (res, textStatus, xhr) {
 				if (res.result == true) {
-					document.location.reload();
+					alert("등록되었습니다. 관리자 확인후애 등록됩니다.");
+					location.href='/calendar'
 				} else {
 					$("#eventDetail_msg").html(xhr.message);
 				}
@@ -121,7 +113,7 @@
 			success: function (res, textStatus, xhr) {
 				console.log(res);
 				if (res.result == true) {
-					document.location.reload();
+					location.href='/calendar'
 				} else {
 					$("#eventDetail_msg").html(res.message);
 					console.log("실패.");
@@ -136,42 +128,6 @@
 		});
 	}
 
-	function event_getInfo(no) {
-		var req = "no=" + no;
-		$.ajax({
-			url: '/event/getInfo',
-			type: 'POST',
-			async: true,
-			beforeSend: function (xhr) {
-				$("#eventDetail_msg").html("");
-			},
-			data: req,
-			success: function (res, textStatus, xhr) {
-				console.log(res);                    
-
-				if (res.event != null) {
-					$("#no").val(res.event.no);
-					$("#partner").val(res.event.partner);
-					$("#partner_name").val(res.event.partner_name);
-					//$("#aid").val(res.event.id).attr("readonly", true);
-					$("#sdate").val(res.event.sdate);
-					$("#edate").val(res.event.edate);
-					$("#value").val(res.event.value);
-					$("#title").val(res.event.title);
-					$("#cont").val(res.event.cont);
-					$("#type").val(res.event.type);
-					$("#open_"+res.event.open).prop("checked", true);
-
-				} else {
-					$("#eventDetail_msg").html(res.message);
-					console.log("실패.");
-				}
-			},
-			error: function (xhr, textStatus, errorThrown) {
-				console.log('PUT error.');
-			}
-		});
-	}
 
 	function setPartnerSelected_event(no,name){
 		$("#frm_event #partner").val(no);

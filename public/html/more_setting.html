@@ -50,7 +50,7 @@
 				</div>
 
 				<a href="#none" class="more-menu-btn type-link">
-					<div class="txt-box">이벤트</div>
+					<div class="txt-box">TOPIC</div>
 				</a>
 
 				<a href="#none" class="more-menu-btn type-link">

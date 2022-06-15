@@ -50,6 +50,20 @@ class LoginController extends Controller
         return back()->withInput($request->only('admin_id', 'remember'));
     }
 
+    public function showPartnerLoginForm()
+    {
+        return view('partner.auth.login', ['url' => 'adminlogin2']);// 파라미터는 확인용으로 그냥 넣어본거 
+    }
+
+    public function partnerLogin(Request $request)
+    {        
+
+        if (Auth::guard('partner')->attempt(['p_id' => $request->login_id, 'password' => $request->login_pw], $request->get('remember'))) {
+            return redirect()->route('partnerhome'); //요거도 마찬가지네 그려.
+        }
+        return back()->withInput($request->only('partner_id', 'remember'));
+    }
+
    
     /* 일반유저 */
     public function showUserLoginForm()

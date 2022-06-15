@@ -8,7 +8,7 @@ class FrenchManager extends Authenticatable
 {
     use Notifiable;
 
-    protected $connection = 'partner';
+    //protected $connection = 'partner';
     public $incrementing = true;
     protected $guard = 'partner';
     protected $primaryKey = 'mn_no';

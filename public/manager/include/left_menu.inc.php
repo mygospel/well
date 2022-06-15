@@ -75,7 +75,7 @@
         <a class="has-arrow" href="javascript:;">
             <div class="parent-icon"><i class="bx bx-calendar-event"></i>
             </div>
-            <div class="menu-title">이벤트관리</div>
+            <div class="menu-title">TOPIC관리</div>
         </a>
         <ul>
             <li> <a href="event_list.html"><i class="bx bx-right-arrow-alt"></i>TOPIC</a>

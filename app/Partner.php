@@ -15,17 +15,13 @@ class Partner extends Authenticatable
     use Notifiable;
     //use HasFactory;
 
-    protected $connection = 'partner';
+    //protected $connection = 'partner';  요것이 디비선택
     protected $guard = 'partner';
-    protected $primaryKey = 'mn_no';
+    protected $primaryKey = 'p_no';
     public $incrementing = true;
     //protected $keyType = 'string';
 
     protected $dates = ['deleted_at'];
-
-    protected $attributes = [
-        'mn_login_last' => '0000-00-00 00:00:00',
-    ];
 
     protected $hidden = [
         'password', 'remember_token',

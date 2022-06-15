@@ -68,7 +68,6 @@
                                 <th scope="col" class="text-center">파트너명</th>
                                 <th class="d-none d-lg-table-cell" scope="col">지역</th>
                                 <th class="d-none d-md-table-cell" scope="col">연락처</th>
-                                <th class="" scope="col">들어가기</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -87,7 +86,6 @@
                                 <td><a href="/partner/form/{{ $partner['p_no'] ?? '' }}"><span style="font-size:11pt;font-weight:500;color:#000000;">{{ $partner['p_name'] ?? '' }}</span></a></td>
                                 <td class="d-none d-lg-table-cell">{{ $partner['p_address1'] ?? '' }}</td>
                                 <td class="d-none d-md-table-cell">{{ $partner['p_phone'] ?? '' }}</td>
-                                <td><a href="//{{ $partner['p_id'] ?? '' }}.partner.{{ env('APP_HOST') }}" target="_blank" class="btn btn-primary btn-xs">들어가기</a></td>
                             </tr>
                             @endforeach
                             @endif

@@ -106,10 +106,10 @@
         <a class="has-arrow" href="javascript:;">
             <div class="parent-icon"><i class="bx bx-calendar-event"></i>
             </div>
-            <div class="menu-title">이벤트관리</div>
+            <div class="menu-title">TOPICIC관리</div>
         </a>
         <ul>
-            <li> <a href="/event/list"><i class="bx bx-right-arrow-alt"></i>이벤트</a>
+            <li> <a href="/event/list"><i class="bx bx-right-arrow-alt"></i>TOPICIC</a>
             </li>
             <li> <a href="/event/partner"><i class="bx bx-right-arrow-alt"></i>TOPIC</a>
             </li>

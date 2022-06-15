@@ -40,7 +40,7 @@
 										<h3 class="">로그인 </h3>
 									</div>
 									<div class="form-body">
-										<form class="row g-3" method="post" action="/adminloginok">
+										<form class="row g-3" method="post" action="/partner/loginok">
 											{{csrf_field()}}											
 											<div class="col-12">
 												<label for="login_id" class="form-label">아이디</label>

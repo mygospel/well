@@ -62,7 +62,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">사업자번호</label>
-                                <input type="text" class="form-control form-control-sm" name="bizno" maxlength="50" value="{{ $partner["p_bizno"] ?? '' }}">
+                                <input type="text" class="form-control form-control-sm" name="area" maxlength="50" value="{{ $partner["p_area"] ?? '' }}">
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label" for="ceo">대표자명</label>

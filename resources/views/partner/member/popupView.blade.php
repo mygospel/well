@@ -204,7 +204,7 @@
                             <div class="alert alert-sm alert-success my-2 p-2">
                                 <div class="bold font-weight-bold">개발가이드</div>
                                 1. 파트너에서 가입시 회원은 파트너회원으로만 등록됩니다.<br>
-                                2. 가입시 메세지, 이벤트 메세지를 통해 모바일에 가입하면 이후 모바일 회원을 전환됩니다.<br>
+                                2. 가입시 메세지, TOPIC 메세지를 통해 모바일에 가입하면 이후 모바일 회원을 전환됩니다.<br>
                             </div>
     
                         </div>

@@ -51,7 +51,7 @@ class SettingController extends Controller
 
         $partner->p_homepage = $request->homepage ?? "";
         $partner->p_phone = $request->phone ?? "";
-        $partner->p_bizno = $request->bizno ?? "";
+        $partner->p_area = $request->area ?? "";
         $partner->p_ceo = $request->ceo ?? "";
         $partner->p_email = $request->email ?? "";
         $partner->p_intro = $request->intro ?? "";

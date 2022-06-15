@@ -40,7 +40,7 @@ function view_point(point_idx){
 }
 
 function view_info_window(marker){
-	// 마커 클릭 이벤트 처리
+	// 마커 클릭 TOPIC 처리
 	naver.maps.Event.addListener(marker, "click", function(e) {
 		if (infowindow.getMap()) {
 			infowindow.close();

@@ -85,8 +85,12 @@
                             <input type="text" name="name" maxlength="50" class="form-control form-control-sm" value="{{ $partner["p_name"] ?? '' }}">
                         </div>
                         <div class="col-md-6">
+                            <label class="form-label">보여질이름</label>
+                            <input type="text" name="name_view" maxlength="50" class="form-control form-control-sm" value="{{ $partner["p_name_view"] ?? '' }}">
+                        </div>
+                        <div class="col-md-6">
                             <label class="form-label" for="address1">지역</label>
-                            <input type="text" class="form-control form-control-sm" name="address1" id="address1" maxlength="50" value="{{ $partner["p_address1"] ?? '' }}">
+                            <input type="text" class="form-control form-control-sm" name="area" id="area" maxlength="50" value="{{ $partner["p_area"] ?? '' }}">
                         </div>
 
 

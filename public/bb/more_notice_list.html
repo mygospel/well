@@ -35,7 +35,7 @@
 				</a>
 
 				<a href="#none" class="board-item">
-					<div class="txt-box">인터서브 응원하기 이벤트 당첨자 안내</div>
+					<div class="txt-box">인터서브 응원하기 TOPIC 당첨자 안내</div>
 				</a>
 
 

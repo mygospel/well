@@ -88,7 +88,7 @@
 							<a class="filter-item" href="/more_event_list">
 
 								<i class="ic ic-event"></i>
-								<div class="txt-box">이벤트 매장</div>
+								<div class="txt-box">TOPIC 매장</div>
 							</a>
 						</li>
 					</ul>

@@ -264,6 +264,7 @@ class EventController extends Controller
 
         $event->e_partner = $request->partner ?? 0;
         $event->e_admin = $request->admin ?? 0;
+        $event->e_name = $request->name ?? 0;
         $event->e_manager = $request->manager ?? 0;
         $event->e_sdate = $request->sdate ?? "";
         $event->e_edate = $request->edate ?? "";
@@ -357,6 +358,8 @@ class EventController extends Controller
                     'e_sdate as sdate',
                     'e_edate as edate',
                     'e_title as title',
+                    'e_name as name',
+                    'e_name_view as name_view',
                     'e_cont as cont',
                     'e_cont2 as cont2',
                     'e_img1 as img1',

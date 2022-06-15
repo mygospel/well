@@ -56,7 +56,6 @@ use App\Http\Controllers\Partner\SettingProductController;
 use App\Http\Controllers\Partner\MqttController;
 
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Partner\FrenchLoginController;
 
 use App\Http\Controllers\MobileController;
 
@@ -71,9 +70,9 @@ Route::get('/form', [EventController::class, 'form']);
 
 Route::prefix('/partner')->group(function () {
 
-    Route::get('/login', [FrenchLoginController::class, 'showPartnerLoginForm'])->name("partnerlogin");
-    Route::post('/loginok', [FrenchLoginController::class, 'partnerLogin']);
-    Route::get('/logout', [FrenchLoginController::class, 'logout']);
+    Route::get('/login', [LoginController::class, 'showPartnerLoginForm'])->name("partnerlogin");
+    Route::post('/loginok', [LoginController::class, 'partnerLogin']);
+    Route::get('/logout', [LoginController::class, 'logout']);
     
     Route::group(['middleware' => ['partner']], function () {
 

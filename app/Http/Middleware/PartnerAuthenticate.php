@@ -20,11 +20,9 @@ class PartnerAuthenticate extends Middleware
     public function handle(Request $request, Closure $next)
     {
 
-        Config::set('database.connections.partner.database',"boss_".$request->account); 
-
         if ( Auth::guard("partner")->check() ) {
             
-            if( $partner = \App\Models\Partner::select(["p_no","p_name"])->where('p_id', $request->account)->first() ) {
+            if( $partner = \App\Models\Partner::select(["p_no","p_name"])->where('p_id', $request->login_id)->first() ) {
                 $request->account_no = $partner->p_no;
                 $request->account_name = $partner->p_name;
             }
@@ -32,7 +30,7 @@ class PartnerAuthenticate extends Middleware
         } else {
 
             Auth::guard("partner")->logout();
-            return redirect('/partnerlogin');
+            return redirect('/partner/login');
             
         }
 

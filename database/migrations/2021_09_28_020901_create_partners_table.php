@@ -19,7 +19,8 @@ class CreatePartnersTable extends Migration
 
             $table->string('p_id', 20)->default('')->unique()->comment('아이디');
             $table->string('p_name', 20)->default('')->comment('파트너명');
-            $table->string('p_bizno', 20)->default('')->comment('사업자번호');
+            $table->string('p_name_view', 20)->default('')->comment('보여질파트너명');
+            $table->string('p_area', 20)->default('')->comment('국가/지역');
             $table->string('p_ceo', 20)->default('')->comment('대표자명');
             $table->string('p_email', 50)->default('')->comment('대표이메일');
             $table->string('p_passwd', 20)->default('')->comment('파트너번호');

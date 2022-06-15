@@ -15,13 +15,13 @@
         <div class="page-content">
             <!--breadcrumb-->
             <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                <div class="breadcrumb-title pe-3">이벤트관리</div>
+                <div class="breadcrumb-title pe-3">TOPIC관리</div>
                 <div class="ps-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0 p-0">
                             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">파트너 이벤트 목록</li>
+                            <li class="breadcrumb-item active" aria-current="page">파트너 TOPIC 목록</li>
                         </ol>
                     </nav>
                 </div>
@@ -122,7 +122,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="eventFormModalLabel">이벤트</h5>
+                    <h5 class="modal-title" id="eventFormModalLabel">TOPIC</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -134,6 +134,10 @@
                         <input type="hidden" name="partner" id="partner" value="">
                         <input name="partner_name" id="partner_name" style="ime-mode:disabled;" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="클릭하여 파트너검색" aria-label=".form-control-sm example" data-bs-toggle="modal" data-bs-target="#partnerSearchModal" search_mode="event">
                     </div>
+
+                    <div class="col-xs-12 mt-3">
+                        <input name="name" id="name" style="ime-mode:disabled;" class="form-control form-control-sm mb-3 col-6" type="text" placeholder="보여질이름">
+                    </div>                    
 
                     <div class="col-xs-12 mt-3">
                         <input type="date" name="sdate" id="sdate" value="" placeholder="날자시작일" class="form-control form-control-sm datepicker col-12">
@@ -284,6 +288,7 @@
                     if (res.event != null) {
                         $("#no").val(res.event.no);
                         $("#partner").val(res.event.partner);
+                        $("#name").val(res.event.name);
                         $("#partner_name").val(res.event.partner_name);
                         //$("#aid").val(res.event.id).attr("readonly", true);
                         $("#sdate").val(res.event.sdate);

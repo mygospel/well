@@ -19,7 +19,7 @@
 		<div class="wrap">
 			<article class="header-page-group">
 				<a href="#none" class="back-btn"></a>
-				<div class="page-txt">이벤트</div>
+				<div class="page-txt">TOPIC</div>
 			</article>
 		</div>
 	</header>
@@ -53,7 +53,7 @@
 							<div class="row">
 								<div class="subject">현장 수령</div>
 								<div class="con">인터서브 까페에서 굿즈 현장 수령<br/>
-									(이벤트 당첨자는 앱 공지사항 확인)</div>
+									(TOPIC 당첨자는 앱 공지사항 확인)</div>
 							</div>
 						</div>
 					</div>
@@ -64,7 +64,7 @@
 
 				<div class="info-box">
 
-					<div class="info-tit-box">이벤트 유의사항</div>
+					<div class="info-tit-box">TOPIC 유의사항</div>
 					<div class="info-txt-box">Duis euismod aliquet varius. Phasellus sed condimentum mauris. Aliquam sollicitudin nunc orci, vitae elementum velit ultrices a. Fusce eu arcu dignissim purus dignissim feugiat. Praesent ullamcorper volutpat est. Praesent sit amet diam nec libero euismod lacinia ut aliquet turpis. Suspendisse ac mauris id tellus porttitor ultrices vitae vitae dolor. Ut non sollicitudin sapien, et finibus arcu<br/><br/>Duis euismod aliquet varius. Phasellus sed condimentum mauris. Aliquam sollicitudin nunc orci, vitae elementum velit ultrices a. Fusce eu arcu dignissim purus dignissim feugiat. Praesent ullamcorper volutpat est. Praesent sit amet diam nec libero euismod lacinia ut aliquet turpis. Suspendisse ac mauris id tellus porttitor ultrices vitae vitae dolor. Ut non sollicitudin sapien, et finibus arcu</div>
 
 				</div>
