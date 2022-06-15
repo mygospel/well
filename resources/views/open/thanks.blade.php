@@ -31,8 +31,9 @@
 	
 				</div>
 	
-				<form class="form-horizontal" role="form" name="frm_event" id="frm_event">
-				<input type="hidden" name="e" id="e" value="{{ $event['e_no'] }}">
+				<form class="form-horizontal" method="post" role="form" name="frm_event" id="frm_event">
+					{{csrf_field()}}
+				<input type="hidden" name="e" id="e" value="{{ session('e') }}">
 				<div class="col-xs-12 mt-3 text-center">
 					<button type="button" class="btn btn-sm btn-primary" onclick="this.form.action='form';this.form.submit()">수정하기</button>
 					<button type="button" class="btn btn-sm btn-secondary" onclick="window.close();">닫기</button>

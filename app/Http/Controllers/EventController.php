@@ -273,8 +273,9 @@ class EventController extends Controller
             $result['result'] = $event->save();
         }
 
+        session(['e' =>  $event->e_no]);
 
-        $result['rURL'] = "/thanks?e=".$event->e_no;
+        $result['rURL'] = "/thanks";
 
 
         return response($result);
@@ -284,8 +285,9 @@ class EventController extends Controller
     public function thanks(Request $request){
 
         $data["result"] = true;
-        if( $request->e ) {
-            $data["event"] = $this->event->where("e_no", $request->e)->first();
+
+        if ($request->session()->has('e')) {
+            $data["event"] = $this->event->where("e_no", session('e'))->first();
 
         } else {
             $data["event"] = [];
