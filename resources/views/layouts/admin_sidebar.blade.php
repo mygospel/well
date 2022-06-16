@@ -1,7 +1,7 @@
 <div class="sidebar-header">
-    <div>
+    <!--div>
         <img src="/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
-    </div>
+    </div-->
     <div>
         <h4 class="logo-text">관리자</h4>
     </div>
@@ -31,9 +31,6 @@
             </li-->
             <li> 
                 <a href="/admin/emp"><i class="bx bx-right-arrow-alt"></i>관리자관리</a>
-            </li>
-            <li> 
-                <a href="/admin/customer/dev"><i class="bx bx-right-arrow-alt"></i>개발자게시판</a>
             </li>
         </ul>
     </li>

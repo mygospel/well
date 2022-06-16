@@ -120,7 +120,7 @@
 
             var form = $('#form1')[0];
             var formData = new FormData(form);
-            var url = '/customer/dev/answer'
+            var url = '/admin/customer/dev/answer'
             $.ajax({
                 url: url,
                 processData: false,

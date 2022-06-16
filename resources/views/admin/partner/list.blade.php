@@ -66,6 +66,7 @@
                                 <th scope="col" class="text-center">상태</th>
                                 <th scope="col" class="d-none d-md-table-cell text-center">ID</th>
                                 <th scope="col" class="text-center">파트너명</th>
+                                <th scope="col" class="text-center">보안명</th>
                                 <th class="d-none d-lg-table-cell" scope="col">지역</th>
                                 <th class="d-none d-md-table-cell" scope="col">연락처</th>
                             </tr>
@@ -84,6 +85,7 @@
                                 </td>
                                 <td class="d-none d-md-table-cell "><a href="/admin/partner/form/{{ $partner['p_no'] ?? '' }}">{{ $partner['p_id'] ?? '' }}</span></a></td>
                                 <td><a href="/admin/partner/form/{{ $partner['p_no'] ?? '' }}"><span style="font-size:11pt;font-weight:500;color:#000000;">{{ $partner['p_name'] ?? '' }}</span></a></td>
+                                <td><a href="/admin/partner/form/{{ $partner['p_no'] ?? '' }}"><span style="font-size:11pt;font-weight:500;color:#000000;">{{ $partner['p_name_view'] ?? '' }}</span></a></td>
                                 <td class="d-none d-lg-table-cell">{{ $partner['p_address1'] ?? '' }}</td>
                                 <td class="d-none d-md-table-cell">{{ $partner['p_phone'] ?? '' }}</td>
                             </tr>
@@ -92,9 +94,7 @@
 
                             </tbody>
                         </table>
-                        <div class="col-12 text-right mt-2 mb-3">
-                            <a href="/partner/deleted" class="btn btn-xs btn-secondary px-5">삭제된파트너보기</a>
-                        </div>
+
                     </div>
                     @foreach($errors->all() as $error)
                         {{ $error }}

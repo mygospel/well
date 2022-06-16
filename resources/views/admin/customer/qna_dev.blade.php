@@ -186,7 +186,7 @@
         function custom_update() {
             var req = $("#frm_custom").serialize();
             $.ajax({
-                url: '/customer/dev/update',
+                url: '/admin/customer/dev/update',
                 type: 'POST',
                 async: true,
                 beforeSend: function (xhr) {
@@ -215,7 +215,7 @@
             var req = $("#frm_custom").serialize();
             console.log(req);
             $.ajax({
-                url: '/emp/delete',
+                url: '/admin/emp/delete',
                 type: 'POST',
                 async: true,
                 beforeSend: function (xhr) {
@@ -240,7 +240,7 @@
             var req = "no=" + no;
             console.log(req);
             $.ajax({
-                url: '/emp/getInfo',
+                url: '/admin/emp/getInfo',
                 type: 'POST',
                 async: true,
                 beforeSend: function (xhr) {

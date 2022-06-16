@@ -123,7 +123,7 @@
         </div>
     </div>
     <div class="modal fade" id="eventFormModal" tabindex="-2" aria-labelledby="eventFormModalLabel" style="display: none;z-index:90000;" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="eventFormModalLabel">TOPIC</h5>
@@ -170,10 +170,16 @@
                         </div>
                         <div class="col-3">
                             <label class="form-label col-12">공개여부</label>
-                            <div class="form-check-inline col-12">
-                                <input type="radio" class='form-check-input' name="open" id="open_Y" value="Y"> 공개
-                                <input type="radio" class='form-check-input' name="open" id="open_N" value="N"> 비공개
-                            </div>
+
+                            <div class="btn-group btn-group-sm" role="group" aria-label="공개여부선택">
+                                <input type="radio" class="btn-check btn-info" name="open" id="open_Y" value="Y" autocomplete="off" checked>
+                                <label class="btn btn-outline-info" for="open_Y">&nbsp;&nbsp;공개&nbsp;&nbsp;</label>
+                              
+                                <input type="radio" class="btn-check" name="open" id="open_N" value="N" autocomplete="off">
+                                <label class="btn btn-outline-secondary" for="open_N">비공개</label>
+
+                            </div>                             
+                       
 
                         </div>
                         <div class="col-3">
@@ -198,6 +204,7 @@
                     </div>
 
                     <div class="col-xs-12 mt-3">
+                        <label class="form-label col-12">이름대신 표기할때( 예를 들어 본부에서 '공동체를 위한 기도' 같이 입력할때 )</label>
                         <input type="text" name="title" id="title" value="" placeholder="날자대신 제목을 표기하는 경우" class="form-control form-control-sm col-12">
                     </div>
 
@@ -207,7 +214,7 @@
                     </div>
 
                     <div class="col-xs-12 mt-3">
-                        <label class="form-label col-12">정리</label>
+                        <label class="form-label col-12">정리 - 여기에 입력하시면 이 내용이 나오고 없으면 위에 내용이 캘린더에 나옵니다.</label>
                         <textarea name="cont2" id="cont2" class="form-control" style="height:100px;"></textarea>
                     </div>
 
@@ -215,16 +222,12 @@
 
                     </div>
 
-
-                    <div class="col-xs-12 mt-3 text-center">
-                        <button type="button" class="btn btn-sm btn-primary" id="btn_event_update">글작성</button>
-                        
-                    </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-danger" id="btn_event_delete">삭제</button>
+                    <button type="button" class="btn btn-sm btn-primary" id="btn_event_update">확인</button>
                     <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-xs btn-danger" id="btn_event_delete">삭제</button>
                 </div>
             </div>
         </div>

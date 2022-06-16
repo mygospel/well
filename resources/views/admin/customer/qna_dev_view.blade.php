@@ -154,7 +154,7 @@
             var req = $("#frm_custom").serialize();
             console.log(req);
             $.ajax({
-                url: '/customer/dev/delete',
+                url: '/admin/customer/dev/delete',
                 type: 'POST',
                 async: true,
                 beforeSend: function (xhr) {
@@ -184,7 +184,7 @@
 
             var form = $('#form1')[0];
             var formData = new FormData(form);
-            var url = '/customer/dev/answer'
+            var url = '/admin/customer/dev/answer'
             $.ajax({
                 url: url,
                 processData: false,
@@ -224,7 +224,7 @@
 
         function comm_add(){
             var req = $("#comm_form").serialize();
-            var url = '/comments/update'
+            var url = '/admin/comments/update'
             $.ajax({
                 url: url,
                 data: req,
@@ -256,7 +256,7 @@
         function comm_del( q_no, comm_no ){
             var board = $("#comm_form #board").val();
             var req = "no=" + q_no + "&comm_no="+comm_no;
-            var url = '/comments/delete'
+            var url = '/admin/comments/delete'
             $.ajax({
                 url: url,
                 data: req,
@@ -287,7 +287,7 @@
         
         function comm_list(){
             var req = $("#comm_form").serialize();
-            var url = '/comments/list'
+            var url = '/admin/comments/list'
             $.ajax({
                 url: url,
                 data: req,

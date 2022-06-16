@@ -5,8 +5,7 @@
         <div class="top-menu-left d-none d-lg-block">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="app-emailbox.html"><span id="topTimer" style="font-size:12pt;"></span></a>
-                    
+                    <a class="nav-link text-white" href="#"><span id="topTimer" style="font-size:12pt;"></span></a>
                 </li>
             </ul>
         </div>
