@@ -69,7 +69,7 @@ Route::redirect('/', 'http://news.naver.com');
 
 
 Route::get('/calendar', [EventController::class, 'calendar']);
-Route::any('/form', [EventController::class, 'form']);
+Route::any('/form/{no?}', [EventController::class, 'form']);
 Route::post('/reg', [EventController::class, 'reg']);
 Route::get('/thanks', [EventController::class, 'thanks']);
 

@@ -3,14 +3,21 @@
 <div class="container mt-3">
 <div class="panel panel-default">
 	<div class="panel-body">
-
+{{ $partner['p_name'] }}
 		<form class="form-horizontal" role="form" name="frm_event" id="frm_event">
 			{{csrf_field()}}
 			<input type="hidden" name="no" id="no" value="{{ $event['e_no'] ?? "" }}">
+			@if( isset( $partner['p_name'] )  )
+			<div class="col-xs-12 mt-3">
+				<label>본명을 입력해주세요  예) 김온달/이평강</label>
+				<input name="name" id="name" value="{{ $partner['p_name'] ?? ""  }}" disabled=disabled style="ime-mode:disabled;" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="파트너본명/파트너본명">
+			</div>
+			@else
 			<div class="col-xs-12 mt-3">
 				<label>본명을 입력해주세요  예) 김온달/이평강</label>
 				<input name="name" id="name" value="{{ $event['e_name'] ?? ""  }}" style="ime-mode:disabled;" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="파트너본명/파트너본명">
 			</div>
+			@endif
 
 			<!--div class="col-xs-12 mt-3">
 				<select name="type" id="type" class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
@@ -18,12 +25,17 @@
 					<option value="S">긴급</option>
 				</select>
 			</div-->
-
+			@if( isset( $partner['p_name'] )  )
+			<div class="col-xs-12 mt-3">
+				<label>달력에 표기될 이름(보안명을 원하는 경우에만 입력)</label>
+				<input type="text" name="name_view" id="name_view" value="{{ $partner['p_name_view'] ?? ""  }}" disabled=disabled placeholder="표기될이름/표기될이름" class="form-control form-control-sm col-12">
+			</div>
+			@else
 			<div class="col-xs-12 mt-3">
 				<label>달력에 표기될 이름(보안명을 원하는 경우에만 입력)</label>
 				<input type="text" name="name_view" id="name_view" value="{{ $event['e_name_view'] ?? ""  }}" placeholder="표기될이름/표기될이름" class="form-control form-control-sm col-12">
 			</div>
-
+			@endif
 			<div class="col-xs-12 mt-3">
 				<label>아룀제목 1,000 자 이내로 입력해주세요(<span id="count_txt">0자</span>)</label>
 				<textarea name="cont" id="cont" class="form-control" style="height:200px;" placeholder="아룀제목">{{ $event['e_cont'] ?? ""  }}</textarea>
