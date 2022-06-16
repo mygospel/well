@@ -238,7 +238,8 @@
 
 
 @section('javascript')
-
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
     <script>
 
         $(document).ready(function () {
@@ -249,6 +250,9 @@
                 }
             });
 
+
+            $(document).ready(function () {
+            });
             $(document).on("click", ".event_item", function () {
                 var e_no = $(this).attr("event");
                 event_getInfo(e_no);
@@ -349,6 +353,11 @@
                         $("#type").val(res.event.type);
                         $("#open_"+res.event.open).prop("checked", true);
 
+                        $('#cont').summernote({
+                            placeholder: '내용을 작성하세요',
+                            height: 400,
+                            maxHeight: 400
+                        });
                     } else {
                         $("#eventDetail_msg").html(res.message);
                         console.log("실패.");

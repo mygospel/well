@@ -59,13 +59,12 @@ use App\Http\Controllers\Auth\LoginController;
 
 use App\Http\Controllers\MobileController;
 
-
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\PartnerAuthenticate;
 use App\Http\Middleware\UserAuthenticate;
 
 
-Route::redirect('/', 'http://news.naver.com');
+Route::redirect('/', '/admin');
 
 
 Route::get('/calendar', [EventController::class, 'calendar']);

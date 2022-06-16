@@ -66,11 +66,10 @@ class EventController extends Controller
     public function form(Request $request){
 
         $data["partner"] = [];
-        //    $data["partner"] = \App\Models\Partner::select("p_name","p_name_view")->where('p_no', $request->no)->firstorfail();
+        //$data["partner"] = \App\Models\Partner::select("p_name","p_name_view")->where('p_no', $request->no)->firstorfail();
 
-
-        if( $request->e ) {
-            $data["event"] = $this->event->where("e_no", $request->e)->first();
+        if( $request->input('e') ) {
+            $data["event"] = $this->event->where("e_no", $request->input('e'))->first();
         } else {
             $data["event"] = [];
         }

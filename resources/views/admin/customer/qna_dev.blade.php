@@ -138,7 +138,7 @@
                     </div>
 
                     <div class="col-xs-12 mt-3">
-                        <textarea name="cont" class="form-control" style="height:200px;"></textarea>
+                        <textarea name="cont" id="cont" class="form-control" style="height:200px;"></textarea>
                     </div>
 
                     <div class="col-xs-12 mt-3 text-center">
@@ -158,7 +158,8 @@
 
 
 @section('javascript')
-
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
     <script>
 
         $(document).ready(function () {
@@ -167,6 +168,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
+
             $(document).on("click", ".custom_item", function () {
                 var a_no = $(this).attr("custom");
                 custom_getInfo(a_no);

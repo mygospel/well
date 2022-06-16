@@ -7,41 +7,19 @@
 		<form class="form-horizontal" role="form" name="frm_event" id="frm_event">
 			{{csrf_field()}}
 			<input type="hidden" name="no" id="no" value="{{ $event['e_no'] ?? "" }}">
-			@if( isset( $partner['p_name'] )  )
-			<div class="col-xs-12 mt-3">
-				<label>본명을 입력해주세요  예) 김온달/이평강</label>
-				<input name="name" id="name" value="{{ $partner['p_name'] ?? ""  }}" disabled=disabled style="ime-mode:disabled;" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="파트너본명/파트너본명">
-			</div>
-			@else
-			<div class="col-xs-12 mt-3">
-				<label>본명을 입력해주세요  예) 김온달/이평강</label>
-				<input name="name" id="name" value="{{ $event['e_name'] ?? ""  }}" style="ime-mode:disabled;" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="파트너본명/파트너본명">
-			</div>
-			@endif
 
-			<!--div class="col-xs-12 mt-3">
-				<select name="type" id="type" class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
-					<option value="A">일반</option>
-					<option value="S">긴급</option>
-				</select>
-			</div-->
-			@if( isset( $partner['p_name'] )  )
 			<div class="col-xs-12 mt-3">
-				<label>달력에 표기될 이름(보안명을 원하는 경우에만 입력)</label>
-				<input type="text" name="name_view" id="name_view" value="{{ $partner['p_name_view'] ?? ""  }}" disabled=disabled placeholder="표기될이름/표기될이름" class="form-control form-control-sm col-12">
+				<label>제목</label>
+				<input name="title" id="title" value="{{ $event['e_title'] ?? ""  }}" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="파트너본명/파트너본명">
 			</div>
-			@else
+
 			<div class="col-xs-12 mt-3">
-				<label>달력에 표기될 이름(보안명을 원하는 경우에만 입력)</label>
-				<input type="text" name="name_view" id="name_view" value="{{ $event['e_name_view'] ?? ""  }}" placeholder="표기될이름/표기될이름" class="form-control form-control-sm col-12">
-			</div>
-			@endif
-			<div class="col-xs-12 mt-3">
-				<label>아룀제목 1,000 자 이내로 입력해주세요(<span id="count_txt">0자</span>)</label>
-				<textarea name="cont" id="cont" class="form-control" style="height:200px;" placeholder="아룀제목">{{ $event['e_cont'] ?? ""  }}</textarea>
+				<label>내용</label>
+				<textarea name="cont" id="cont" class="form-control" style="height:500px;" placeholder="아룀제목">{{ $event['e_cont'] ?? ""  }}</textarea>
 
 				<div id="count_txt2"></div>
 			</div>
+
 
 			<div class="col-xs-12 mt-3" id="eventDetail_msg" style="color:red">
 
@@ -49,7 +27,7 @@
 
 
 			<div class="col-xs-12 mt-3 text-center">
-				<button type="button" class="btn btn-sm btn-primary" id="btn_event_update">보내기</button>
+				<button type="button" class="btn btn-sm btn-primary" id="btn_event_update">저장</button>
 			</div>
 			</form>
 
@@ -59,6 +37,10 @@
 </div>
 
 @section('javascript')	
+<!-- summernote css/js-->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+
 <script>
 
 	$(document).ready(function () {
@@ -67,6 +49,14 @@
 			headers: {
 				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 			}
+		});
+
+		$(document).ready(function () {
+			$('#cont').summernote({
+				placeholder: '내용을 작성하세요',
+				height: 400,
+				maxHeight: 400
+			});
 		});
 
 		$(document).on("click", ".event_item", function () {
