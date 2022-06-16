@@ -67,6 +67,7 @@ use App\Http\Middleware\UserAuthenticate;
 
 Route::redirect('/', 'http://news.naver.com');
 
+
 Route::get('/calendar', [EventController::class, 'calendar']);
 Route::any('/form', [EventController::class, 'form']);
 Route::post('/reg', [EventController::class, 'reg']);
@@ -82,13 +83,13 @@ Route::prefix('/partner')->group(function () {
 
 Route::prefix('/admin')->group(function () {
 
+    Route::redirect('/', '/admin/partner');
+
     Route::get('/login', [LoginController::class, 'showAdminLoginForm'])->name("adminlogin");
     Route::post('/loginok', [LoginController::class, 'adminLogin']);
     Route::get('/logout', [AdminController::class, 'logout']);
 
     Route::group(['middleware' => ['admin']], function () {
-
-
 
         Route::prefix('/event')->group(function () {
             Route::any('/getInfo', [EventController::class, 'getInfo']);
@@ -99,8 +100,7 @@ Route::prefix('/admin')->group(function () {
             Route::post('/update', [EventController::class, 'update']);
         });
     
-    
-        Route::group(['prefix' => '/partner'],function () {
+        Route::prefix('/partner')->group(function () {
     
             //Route::any('/login', [PartnerController::class, 'login']);
             Route::get('/form/{no?}',  [PartnerController::class, 'form']);

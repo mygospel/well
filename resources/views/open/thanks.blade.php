@@ -15,7 +15,7 @@
 	
 
 				<div class="col-xs-12 mt-3">
-					<label>본부에서 알고 있는 이름을 입력해주세요</label>
+					<label>본명을 입력해주세요  예) 김온달/이평강</label>
 					<input value="{{ $event['e_name'] }}" style="ime-mode:disabled;" disabled=disabled class="input_partner form-control form-control-sm mb-3 col-6 " type="text" placeholder="파트너이름/파트너이름">
 				</div>
 	
@@ -27,12 +27,13 @@
 				</div-->
 	
 				<div class="col-xs-12 mt-3">
-					<label>달력에 표기될 이름을 입력해주세요(원하는 경우 선택)</label>
+					<label>달력에 표기될 이름(보안명을 원하는 경우에만 입력)</label>
 					<input type="text" value="{{ $event['e_name_view'] }}" disabled=disabled placeholder="표기될이름/표기될이름" class="form-control form-control-sm col-12">
 				</div>
 	
 				<div class="col-xs-12 mt-3">
-					<textarea name="cont" id="cont" class="form-control" disabled=disabled style="height:200px;" placeholder="이달의 제목을 입력해주세요.">{{ $event['e_cont'] }}</textarea>
+					<label>아룀제목</label>
+					<textarea name="cont" id="cont" class="form-control" disabled=disabled style="height:200px;" placeholder="아룀제목">{{ $event['e_cont'] }}</textarea>
 				</div>
 	
 				<div class="col-xs-12 mt-3" id="eventDetail_msg">

@@ -186,7 +186,6 @@ class EventController extends Controller
 
                 if( !$ev->e_cont2 ) $ev->e_cont2 = $ev->e_cont;
 
-                $ev->e_cont2 = nl2br($ev->e_cont2);
 
                 $data['events'][substr($ev->e_sdate,0,10)][] = $ev;
             }  

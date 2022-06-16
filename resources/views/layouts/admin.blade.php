@@ -650,10 +650,10 @@ function ajax_error(jsonData){
     } );
     $(".btn_logout").on("click",function(){
         var req = "step=logout";
-        $.get( "/logout", req, function( res ) {
+        $.get( "/admin/logout", req, function( res ) {
             if( res.result == true ){
                 var rURL = res.rURL;
-                location.href = "/adminlogin";
+                location.href = "/admin/login";
             }
         });
     });
