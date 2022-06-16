@@ -10,7 +10,7 @@
 
 			<div class="col-xs-12 mt-3">
 				<label>제목</label>
-				<input name="title" id="title" value="{{ $event['e_title'] ?? ""  }}" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="파트너본명/파트너본명">
+				<input name="title" id="title" value="{{ $event['e_title'] ?? ""  }}" class="input_partner form-control form-control-sm mb-3 col-6" type="text" placeholder="제목">
 			</div>
 
 			<div class="col-xs-12 mt-3">
