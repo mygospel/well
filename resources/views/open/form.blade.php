@@ -3,7 +3,7 @@
 <div class="container mt-3">
 <div class="panel panel-default">
 	<div class="panel-body">
-{{ $partner['p_name'] }}
+
 		<form class="form-horizontal" role="form" name="frm_event" id="frm_event">
 			{{csrf_field()}}
 			<input type="hidden" name="no" id="no" value="{{ $event['e_no'] ?? "" }}">
